@@ -1,9 +1,0 @@
-.*
-!.gitignore
-*.bak
-*.log
-[Ll]og
-[Ll]ogs
-node_modules
-debugs
-uploads

@@ -1,0 +1,7 @@
+.sass-cache
+*.bak
+*.log
+[Ll]og
+[Ll]ogs
+node_modules
+.DS_Store
