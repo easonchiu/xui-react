@@ -1,6 +1,6 @@
-var Vue = require('vue');
+import Vue from 'vue'
 
-var v = new Vue({
+new Vue({
 	el: '#app',
 	data: {
 		message: 'Hello Vue.js!'
@@ -9,5 +9,3 @@ var v = new Vue({
         
     }
 });
-
-

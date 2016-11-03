@@ -3,7 +3,7 @@ var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 
 var entrys = {
 	index: './src/js/index.js',
-    main: './src/js/main.js'
+	main: './src/js/main.js'
 };
 
 var chunks = [];
@@ -12,19 +12,30 @@ for (var i in entrys){
 }
 
 module.exports = {
-    //页面入口文件配置
-    entry: entrys,
-    //入口文件输出配置
-    output: {
-        filename: '[name]' + '.js'
-    },
-    module: {
-        //加载器配置
-        loaders: [{
-	      test: /\.js$/,
-	      exclude: /node_modules/,
-	      loader: 'babel-loader',
-	    }]
+	//页面入口文件配置
+	entry: entrys,
+	//入口文件输出配置
+	output: {
+		filename: '[name]' + '.js'
+	},
+	module: {
+		//加载器配置
+		loaders: [
+			//转化ES6语法
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				loader: 'babel',
+				query: {
+					"presets": ["es2015"]
+				}
+		    },
+			//解析.vue文件
+			{
+				test: /\.vue$/,
+				loader: 'vue'
+			}
+	    ]
     },
 	plugins: [
 	    new webpack.optimize.UglifyJsPlugin({
