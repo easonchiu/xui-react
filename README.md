@@ -1,2 +1,2 @@
-# mobilesite
-Vue+webpack_test
+# react_webpack_study
+react_webpack_study

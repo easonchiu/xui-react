@@ -1,73 +1,128 @@
 var webpack = require('webpack');
-var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+var htmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var entrys = {
-	index: './src/js/index.js',
-	main: './src/js/main.js'
-};
 
-var chunks = [];
-for (var i in entrys){
-	chunks.push(i);
-}
+var ENV = process.env.npm_lifecycle_event;
+var isTest = ENV === 'test' || ENV === 'test-watch';
+var isProd = ENV === 'build';
 
-module.exports = {
-	//页面入口文件配置
-	entry: entrys,
-	//入口文件输出配置
-	output: {
-		filename: '[name]' + '.js'
-	},
-	module: {
-		//加载器配置
+module.exports = function makeWebpackConfig(){
+
+	var config = {};
+
+	// 页面入口文件
+	config.entry = isTest ? {} : {
+		'vendors': [
+			
+		],
+		'app': ['./src/main.js'],
+	};
+
+
+	// 输出文件
+	config.output = isTest ? {} : {
+		path: __dirname + '/dist', // 输出到哪个目录下（__dirname当前项目目录）
+		publicPath: isProd ? '/' : 'http://localhost:8080/',
+		filename: isProd ? '[name].[hash].js' : '[name].bundle.js' // 最终打包生产的文件名
+	};
+
+
+	if (isTest) {
+        config.devtool = 'inline-source-map';
+    } else if (isProd) {
+        config.devtool = 'source-map';
+    } else {
+        config.devtool = 'eval-source-map';
+    }
+
+
+	// 插件项
+	config.plugins = [];
+	
+	// 自动生成html模板
+	config.plugins.push(
+		new htmlWebpackPlugin({
+			template: 'src/index.html',
+			inject: 'body'
+		})
+	);
+	
+	// 提取css
+	config.plugins.push(
+		new ExtractTextPlugin("[name].[hash].css", {allChunks: true})
+	);
+	
+	if (isProd){
+		config.plugins.push(
+			new webpack.NoErrorsPlugin()
+		);
+		config.plugins.push(
+			new webpack.optimize.DedupePlugin()
+		);
+		// 提取公共js
+		config.plugins.push(
+			new webpack.optimize.CommonsChunkPlugin({
+				name: 'vendors',
+				filename: 'vendors.[hash].js'
+			})
+		);
+		// js压缩混淆
+		config.plugins.push(
+			new webpack.optimize.UglifyJsPlugin({
+				compress: {
+					warnings: false
+				},
+				mangle: false
+		    })
+		);
+	}
+
+	// 加载器
+	config.module = {
 		loaders: [
-			//转化ES6语法
 			{
 				test: /\.js$/,
-				exclude: /node_modules/,
 				loader: 'babel',
+				exclude: /node_modules/,
 				query: {
-					"presets": ["es2015"]
+					presets: ['es2015']
 				}
-		    },
-			//解析.vue文件
+			},
 			{
-				test: /\.vue$/,
-				loader: 'vue'
+				test: /\.html$/,
+				loader: 'html',
+				query: {
+					minimize: true
+				}
+			},
+			{
+				test: /\.scss$/,
+				loader: ExtractTextPlugin.extract('style', 'css?minimize!sass?sourceMap')
+			},
+			{
+				test: /\.css$/,
+				loader: ExtractTextPlugin.extract('style', 'css?minimize')
+			},
+			{
+				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+				loader: 'url',
+				query: {
+					limit: 10000
+				}
+			},
+			{
+				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+				loader: 'url',
+				query: {
+					limit: 10000
+				}
 			}
-	    ]
-    },
-	plugins: [
-	    new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false,
-			},
-			output: {
-				comments: false,
-			},
-	    }),//压缩和丑化
-
-	    new webpack.ProvidePlugin({
-	    	$: 'jquery'
-	    }),//直接定义第三方库
-
-	    new CommonsChunkPlugin({
-			name: "commons",
-			// (the commons chunk name)
-
-			filename: "commons.js",
-			// (the filename of the commons chunk)
-
-			minChunks: 2,
-			// (Modules must be shared between 2 entries)
-
-			chunks: chunks
-			// (Only use these entries)
-	    })//定义公共chunk
-	],
-	resolve: {
-		alias: {
-			'vue$': 'vue/dist/vue.js'
-		}
+		]
 	}
-};
+
+
+
+
+	return config;
+}();

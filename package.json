@@ -1,44 +1,38 @@
 {
-  "name": "y",
+  "name": "react_webpack_study",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run server",
+    "build": "rm -rf ./dist && webpack --bail --progress --profile",
+    "watch": "webpack --progress --colors --watch",
+    "server": "webpack-dev-server --history-api-fallback --inline --progress"
   },
-  "keywords": [
-    "es6"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easonchiu/react_webpack_study.git"
+  },
   "author": "eason",
-  "license": "ISC",
-  "dependencies": {
-    "babel-polyfill": "^6.9.1",
-    "browser-sync": "^2.12.8",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-cache": "^0.4.5",
-    "gulp-notify": "^2.2.0",
-    "gulp-order": "^1.1.1",
-    "jquery": "^3.0.0"
-  },
+  "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
+    
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
     "babel-preset-es2015": "^6.18.0",
-    "gulp-clean": "^0.3.2",
-    "gulp-concat": "^2.6.0",
-    "gulp-file-include": "^0.13.7",
-    "gulp-imagemin": "^3.0.1",
-    "gulp-jshint": "^2.0.1",
-    "gulp-livereload": "^3.8.1",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^2.0.6",
-    "gulp-uglify": "^1.5.3",
-    "gulp-util": "^3.0.7",
-    "gulp-webpack": "^1.5.0",
-    "jshint": "^2.9.2",
-    "tiny-lr": "^0.2.1",
-    "webpack": "^1.13.1"
-  }
+    "css-loader": "^0.26.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.3"
+  },
+  "bugs": {
+    "url": "https://github.com/easonchiu/react_webpack_study/issues"
+  },
+  "homepage": "https://github.com/easonchiu/react_webpack_study#readme"
 }
