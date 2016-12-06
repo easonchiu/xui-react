@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Comp from './componets/comp.jsx'
+import Comp from './componets/Comp/index.jsx'
 
 
 ReactDOM.render(
-	<Comp />,
+	<Comp text="click me" />,
 	document.getElementById('app')
 );
