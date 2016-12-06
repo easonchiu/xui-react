@@ -16,7 +16,7 @@ module.exports = function makeWebpackConfig(){
 		'vendors': [
 			
 		],
-		'app': ['./src/main.js'],
+		'app': ['./src/main.jsx'],
 	};
 
 
@@ -87,6 +87,14 @@ module.exports = function makeWebpackConfig(){
 				exclude: /node_modules/,
 				query: {
 					presets: ['es2015']
+				}
+			},
+			{
+				test: /\.jsx$/,
+				loader: 'babel',
+				exclude: /node_modules/,
+				query: {
+					presets: ['react', 'es2015']
 				}
 			},
 			{
