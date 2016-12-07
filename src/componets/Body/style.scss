@@ -1,0 +1,132 @@
+body {
+
+}
+.body {
+	.hd {
+		background: #f1f1f1;
+		h1 {
+			font-size: 46px;
+			line-height: 50px;
+			height: 50px;
+			text-align: center;
+		}
+		.btn {
+			float: right;
+		}
+	}
+	.quebar {
+		h2 {
+			font-size: 20px;
+			line-height: 30px;
+			margin-bottom: 15px;
+		}
+		.input {
+			display: block;
+			width: 100%;
+			background: #fff;
+			border: 1px solid #ddd;
+			padding: 10px;
+			font-size: 16px;
+			margin-bottom: 15px;
+			border-radius: 6px;
+			outline: none;
+			&:focus {
+				background: #fffff0;
+				border: 1px solid #ff9900;
+			}
+		}
+		.btns {
+			float: right;
+			a {
+				float: left;
+				margin-left: 10px;
+			}
+		}
+		textarea.input {
+			height: 100px;
+		}
+	}
+	.list {
+		.item {
+			margin-bottom: 20px;
+			.l {
+				float: left;
+				width: 50px;
+				margin-right: 20px;
+				.sbtn {
+					display: block;
+					width: 50px;
+					height: 50px;
+					line-height: 50px;
+					text-align: center;
+					border: 1px solid #ddd;
+					color: #666;
+					font-size: 14px;
+					border-radius: 4px;
+					font-weight: bold;
+					&.up {
+						margin-bottom: 10px;
+						line-height: 20px;
+						height: auto;
+						padding: 10px 0;
+						span {
+							display: block;
+							color: #999;
+							font-weight: normal;
+						}
+					}
+					&:hover {
+						background: #f1f1f1;
+					}
+				}
+			}
+			.r {
+				float: left;
+				width: 730px;
+				h3 {
+					font-size: 16px;
+					line-height: 24px;
+					margin-bottom: 5px;
+				}
+				p {
+					font-size: 14px;
+					line-height: 20px;
+				}
+			}
+		}
+	}
+	.btn {
+		background: #ff6600;
+		display: block;
+		width: 7em;
+		text-align: center;
+		color: #fff;
+		font-size: 16px;
+		height: 40px;
+		line-height: 40px;
+		border-radius: 4px;
+		&:hover {
+			background: #ff5500;
+		}
+	}
+	.btnC {
+		background: #f1f1f1;
+		display: block;
+		width: 7em;
+		text-align: center;
+		color: #999;
+		font-size: 16px;
+		height: 40px;
+		line-height: 40px;
+		border-radius: 4px;
+		border: 1px solid #ddd;
+		&:hover {
+			background: #eee;
+		}
+	}
+	.inner {
+		width: 800px;
+		margin: 0 auto;
+		padding: 30px 0;
+	}
+}
