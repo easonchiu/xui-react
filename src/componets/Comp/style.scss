@@ -1,9 +1,23 @@
 
-.compname {
-	background: #eaeaea;
-	height: 20px;
-	a {
-		font-size: 12px;
-		line-height: 30px;
+.row {
+	padding: 0.2rem;
+	display: -webkit-box;
+	-webkit-box-align: center;
+	span {
+		font-size: 14px;
+		line-height: 0.4rem;
+		height: 0.4rem;
+		display: block;
+		margin-right: 0.1rem;
+	}
+	button {
+		border: 1px solid #999;
+		outline: none;
+		height: 0.3rem;
+		padding: 0 0.1rem;
+		margin-right: 0.1rem;
+		border-radius: 0.05rem;
+		font-size: 14px;
+		color: #666;
 	}
 }

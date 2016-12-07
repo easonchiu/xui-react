@@ -1,9 +1,14 @@
+import R from './styles/reset.scss'
+
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
 import Comp from './componets/Comp/index.jsx'
 
 
-ReactDOM.render(
-	<Comp text="click me" />,
+render(
+	<Comp />,
 	document.getElementById('app')
 );

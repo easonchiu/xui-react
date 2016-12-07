@@ -1,24 +1,31 @@
 import React, { Component, PropTypes } from 'react'
 import style from './style.scss'
 
-export default class Comp extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			foo: 'bar'
-		}
+class Comp extends Component {
+	componentDidMount () {
+		console.log('did mount');
 	}
 	render () {
+		const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props;
 		return (
-			<div className="compname">
-				<a href="javascript:;" onClick={ this.click.bind(this) }>{ this.props.text } { this.state.foo }</a>
+			<div className="row">
+				<span>Clicked: { counter } times</span>
+				<button onClick={ increment }>increment</button>
+				<button onClick={ decrement }>decrement</button>
+				<button onClick={ incrementIfOdd }>{'increment if odd'}</button>
+				<button onClick={ () => incrementAsync() }>increment async</button>
 			</div>
 		);
 	}
-	click () {
-	    console.log(this);
-	    this.setState({
-	    	foo: 'false'
-	    });
-	}
 }
+
+Comp.PropTypes = {
+	increment: PropTypes.func.isRequired,
+	decrement: PropTypes.func.isRequired,
+	incrementIfOdd: PropTypes.func.isRequired,
+	incrementAsync: PropTypes.func.isRequired,
+
+	counter: PropTypes.number.isRequired
+}
+
+export default Comp;
