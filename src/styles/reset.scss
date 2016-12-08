@@ -124,7 +124,7 @@ button {width: auto; overflow: visible; border: none; background: rgba(0,0,0,0.0
 -------------------------------------------------------------------------------*/
 
 /* new Linux- and Windows-friendly sans-serif font stack: http://mky.be/fontstack */
-body {font: 10px Helmet, Freesans, sans-serif;}
+body {font: 20px Helmet, Freesans, sans-serif;}
 
 /* using local fonts? make sure to read up on Paul Irish's 
 	Bulletproof @font-face syntax: http://mky.be/font-face/bulletproof/ */
@@ -162,4 +162,3 @@ input,textarea { -webkit-user-select: auto; background: rgba(0,0,0,0.05); height
 /* 阻止旋转屏幕时自动调整字体大小 */
 * { -webkit-text-size-adjust: none;}
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0; margin: 0; -webkit-transform-origin: 0 0;}
-

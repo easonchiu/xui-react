@@ -1,37 +1,47 @@
 import R from './styles/reset.scss'
 
-import React, { createClass, Children, PropTypes } from 'react'
+import React, { Children, PropTypes, Component } from 'react'
 import { render } from 'react-dom'
 
 // import Body from './componets/Body/index.jsx'
 
-let Comp = createClass({
-	getInitialState() {
-		return {
+class Comp extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
 			value: ''
-		}	
-	},
+		};
+
+		this.handleChange = this.handleChange.bind(this);
+	}
 	handleChange(e) {
-		var v = e.target.value;
-		if (parseInt(v) == v || v == ''){
-			this.setState({
-				value: v
-			});
-		}
-	},
+		this.setState({
+			value: e.target.value
+		});
+	}
 	render() {
 		return (
 			<div>
-				<input type="text" value={ this.state.value } onChange={ this.handleChange } placeholder="tips" />
+				<h1>{ this.props.title }</h1>
+				<input type="text" value={ this.state.value } onChange={ this.handleChange } />
 			</div>
 		);
 	}
-});
+}
+
+Comp.defaultProps = {
+	title: 'aaa'
+}
+
+Comp.propTypes = {
+	title: PropTypes.string.isRequired
+}
 
 
 render(
-	<Comp />,
+	<Comp title="标题" />,
 	document.getElementById('app')
 );
 
 // https://github.com/ruanyf/react-demos/tree/v15.0
+// http://www.cnblogs.com/yongjz/p/5356914.html
