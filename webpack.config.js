@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var opn = require('opn');
 var htmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -13,9 +14,6 @@ module.exports = function makeWebpackConfig(){
 
 	// 页面入口文件
 	config.entry = isTest ? {} : {
-		'vendors': [
-			
-		],
 		'app': ['./src/main.jsx'],
 	};
 
@@ -44,7 +42,17 @@ module.exports = function makeWebpackConfig(){
 	config.plugins.push(
 		new htmlWebpackPlugin({
 			template: 'src/index.html',
-			inject: 'body'
+			inject: 'body',
+			inject: true,
+			minify: {
+        		removeComments: true,
+        		collapseWhitespace: true,
+        		removeAttributeQuotes: true
+        		// more options:
+        		// https://github.com/kangax/html-minifier#options-quick-reference
+    		},
+    		// necessary to consistently work with multiple chunks via CommonsChunkPlugin
+    		chunksSortMode: 'dependency'
 		})
 	);
 	
@@ -52,20 +60,31 @@ module.exports = function makeWebpackConfig(){
 	config.plugins.push(
 		new ExtractTextPlugin("[name].[hash].css", {allChunks: true})
 	);
+	// 如果js是从node_modules文件夹引用的，全部打包到vendor里
+	config.plugins.push(
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor',
+			minChunks: function(module, count){
+		        return (
+		        	module.resource &&
+		        	/\.js$/.test(module.resource) &&
+		        	module.resource.indexOf('/node_modules/') != -1
+		        )
+		    }
+		})
+	);
+	// 提取公共js
+	config.plugins.push(
+		new webpack.optimize.CommonsChunkPlugin({
+      		name: 'manifest',
+      		chunks: ['vendor']
+    	})
+	);
 	
 	if (isProd){
-		config.plugins.push(
-			new webpack.NoErrorsPlugin()
-		);
+		// 查找相等或近似的模块，避免在最终生成的文件中出现重复的模块
 		config.plugins.push(
 			new webpack.optimize.DedupePlugin()
-		);
-		// 提取公共js
-		config.plugins.push(
-			new webpack.optimize.CommonsChunkPlugin({
-				name: 'vendors',
-				filename: 'vendors.[hash].js'
-			})
 		);
 		// js压缩混淆
 		config.plugins.push(
@@ -73,9 +92,15 @@ module.exports = function makeWebpackConfig(){
 				compress: {
 					warnings: false
 				},
-				mangle: false
+				mangle: false // 不加这条时压缩后会把function的参数名也压缩掉，导致angular报错
 		    })
 		);
+	}
+
+	// 自动打开浏览器
+	if (!isTest) {
+		var uri = 'http://localhost:8080';
+		opn(uri);
 	}
 
 	// 加载器
