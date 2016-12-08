@@ -9,21 +9,36 @@ class Comp extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			value: ''
+			value: 'aaa',
+			checked: true,
+			radio: 'b'
 		};
 
-		this.handleChange = this.handleChange.bind(this);
 	}
 	handleChange(e) {
 		this.setState({
 			value: e.target.value
 		});
 	}
+	handleChecked(e) {
+		this.setState({
+			checked: e.target.checked
+		});
+	}
+	handleChecked2(e){
+		this.setState({
+			radio: e.target.value
+		});
+	}
 	render() {
 		return (
 			<div>
 				<h1>{ this.props.title }</h1>
-				<input type="text" value={ this.state.value } onChange={ this.handleChange } />
+				<input type="text" value={ this.state.value } onChange={ this.handleChange.bind(this) } />
+				<input type="checkbox" value="222" name="r" checked={ this.state.checked } onChange={ this.handleChecked.bind(this) } />
+				<input type="radio" value="a" name="r" checked={ this.state.radio == 'a' } onChange={ this.handleChecked2.bind(this) } />
+				<input type="radio" value="b" name="r" checked={ this.state.radio == 'b' } onChange={ this.handleChecked2.bind(this) } />
+				<input type="radio" value="c" name="r" checked={ this.state.radio == 'c' } onChange={ this.handleChecked2.bind(this) } />
 			</div>
 		);
 	}

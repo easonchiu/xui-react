@@ -104,8 +104,8 @@ button {cursor: pointer;}
 input:focus { outline: none;}
 
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
-button, input, select, textarea {margin: 0; padding: 0;-webkit-appearance:none;background:rgba(0,0,0,0);}
-input { -webkit-appearance: none; border: none; background: rgba(0,0,0,0.3); border-radius: 0;}
+button, input, select, textarea {margin: 0; padding: 0; background:rgba(0,0,0,0);}
+input:not([type=radio]):not([type=checkbox]) { -webkit-appearance: none; border: none; background: rgba(0,0,0,0.3); border-radius: 0;}
 textarea { border: none; background: rgba(0,0,0,0.3); border-radius: 0;}
 input[type="file"] { display: none;}
 
@@ -156,8 +156,8 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 a,img { -webkit-touch-callout: none;}
 
 /* 无法选择复制内容 / 去除iphone中按下时的高亮效果 */
-a, select, input, textarea, button { -webkit-user-select: none; -webkit-tap-highlight-color: rgba(0,0,0,0); outline: none;}
-input,textarea { -webkit-user-select: auto; background: rgba(0,0,0,0.05); height: 30px; width: 100%;}
+a, select, input:not([type=radio]):not([type=checkbox]), textarea, button { -webkit-user-select: none; -webkit-tap-highlight-color: rgba(0,0,0,0); outline: none;}
+input:not([type=radio]):not([type=checkbox]),textarea { -webkit-user-select: auto; background: rgba(0,0,0,0.05); height: 30px; width: 100%;}
 
 /* 阻止旋转屏幕时自动调整字体大小 */
 * { -webkit-text-size-adjust: none;}
