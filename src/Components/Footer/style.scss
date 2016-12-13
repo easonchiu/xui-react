@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+.appFooter {
+	display: flex;
+	height: 1.0rem;
+	background: #fff;
+	position: relative;
+	&:before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 1px;
+		background: #dbdbdb;
+		position: absolute;
+		left: 0;
+		top: 0;
+		-webkit-transform: scaleY(0.5);
+		-webkit-transform-origin: 0 0;
+	}
+	a {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		flex-grow: 1;
+		font-size: 0.14rem;
+		line-height: 0.24rem;
+		height: 1.0rem;
+		color: #999;
+		i {
+			display: block;
+			width: 0.4rem;
+			height: 0.4rem;
+			background: #999;
+			margin-bottom: 0.08rem;
+		}
+	}
+}
