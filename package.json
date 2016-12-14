@@ -41,5 +41,8 @@
   "bugs": {
     "url": "https://github.com/easonchiu/react_webpack_study/issues"
   },
-  "homepage": "https://github.com/easonchiu/react_webpack_study#readme"
+  "homepage": "https://github.com/easonchiu/react_webpack_study#readme",
+  "dependencies": {
+    "classnames": "^2.2.5"
+  }
 }
