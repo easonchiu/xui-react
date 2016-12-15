@@ -8,9 +8,9 @@ class Item extends Component {
 	}
 	render() {
 		return (
-			<div className="friendItem">
-				<div className="head"></div>
-				<div className="content">
+			<div className="friend-item">
+				<div className="friend-item__head"></div>
+				<div className="friend-item__content">
 					<h2>用户名</h2>
 				</div>
 			</div>

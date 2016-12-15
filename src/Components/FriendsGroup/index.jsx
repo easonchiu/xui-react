@@ -9,8 +9,8 @@ class Group extends Component {
 	}
 	render() {
 		return (
-			<div className="friendsGroup">
-				<h2>{ this.props.g }</h2>
+			<div className="friends-group">
+				<h2 className="friends-group__title">{ this.props.g }</h2>
 				<Item />
 				<Item />
 				<Item />
