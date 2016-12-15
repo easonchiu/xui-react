@@ -8,19 +8,20 @@ class CellsGroup extends Component {
 		super(props);
 	}
 	render() {
-
+		let css = 'cells-group';
+		if (this.props.className) {
+			css += ' cells-group--' + this.props.className;
+		}
 		return (
-			<div className="cells-group">
-				{
-					this.props.group.map((e, i) => (<Cell { ...e } key={ i } />))
-				}
+			<div className={ css }>
+				{ this.props.children }
 			</div>
 		);
 	}
 }
 
 CellsGroup.propTypes = {
-	group: PropTypes.array.isRequired
+	className: PropTypes.string
 }
 
 export default CellsGroup;

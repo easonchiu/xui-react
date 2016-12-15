@@ -6,9 +6,9 @@ class MessageDetails extends Component {
 	render() {
 		return (
 			<div>
-				<Header title="hello some one" />
+				<Header title="messageDetails" />
 				<div className="app-body">
-					app-body
+					messageDetails
 				</div>
 			</div>
 		);

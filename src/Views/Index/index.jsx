@@ -21,7 +21,7 @@ class Index extends Component {
 			<div>
 				<Header { ...this.state } />
 				<div className="app-body">
-					{ this.props.children || <Home /> }
+					{ this.props.children }
 				</div>
 				<Footer onNavChange={ this.footerNavChange } />
 			</div>

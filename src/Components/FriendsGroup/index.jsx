@@ -1,7 +1,7 @@
 import './style.scss'
 import React, { Component, PropTypes } from 'react'
 
-import Item from '../FriendItem/index.jsx'
+
 
 class Group extends Component {
 	constructor(props) {
@@ -10,11 +10,8 @@ class Group extends Component {
 	render() {
 		return (
 			<div className="friends-group">
-				<h2 className="friends-group__title">{ this.props.g }</h2>
-				<Item />
-				<Item />
-				<Item />
-				<Item />
+				<h2 className="friends-group__title">{ this.props.tag }</h2>
+				{ this.props.children }
 			</div>
 		);
 	}

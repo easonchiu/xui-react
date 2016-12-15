@@ -2,6 +2,7 @@ import './style.scss'
 import React, { Component, PropTypes } from 'react'
 
 import CellsGroup from '../../Components/CellsGroup/index.jsx'
+import Cell from '../../Components/Cell/index.jsx'
 
 
 class Find extends Component {
@@ -43,7 +44,15 @@ class Find extends Component {
 		return (
 			<div className="view-find">
 				{
-					group.map((e, i) => (<CellsGroup group={ e } key={ i } />))
+					group.map((e, i) => (
+						<CellsGroup key={ i }>
+							{
+								e.map((e, i) => (
+									<Cell { ...e } key={ i } />
+								))
+							}
+						</CellsGroup>
+					))
 				}
 			</div>
 		);

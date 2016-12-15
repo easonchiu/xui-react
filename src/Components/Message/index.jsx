@@ -2,7 +2,7 @@ import './style.scss'
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
-class Item extends Component {
+class Message extends Component {
 	constructor(props) {
 		super(props);
 		
@@ -22,4 +22,4 @@ class Item extends Component {
 	}
 }
 
-export default Item;
+export default Message;

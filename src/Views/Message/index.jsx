@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-import MsgItem from '../../Components/MessageItem/index.jsx'
+import Msg from '../../Components/Message/index.jsx'
 
 
 
@@ -14,7 +14,7 @@ class Message extends Component {
 		return (
 			<div>
 			{
-				arr.map((e, i) => <MsgItem key={ i } />)
+				arr.map((e, i) => <Msg key={ i } />)
 			}
 			</div>
 		);

@@ -2,7 +2,7 @@ import './Assets/Styles/reset.css'
 
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, Redirect, IndexRedirect, hashHistory } from 'react-router'
 
 
 import AppIndex from './Views/Index/index.jsx'
@@ -24,6 +24,7 @@ render(
 			<Route path="/mine" component={ Mine }></Route>
 		</Route>
 		<Route path="/messageDetails" component={ MessageDetails }></Route>
+		<Redirect from="*" to="/" />
 	</Router>,
 	document.getElementById('app')
 );

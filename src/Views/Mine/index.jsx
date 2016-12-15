@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react'
 import ClassNames from 'classnames'
 
 import CellsGroup from '../../Components/CellsGroup/index.jsx'
+import Cell from '../../Components/Cell/index.jsx'
 
 
 class Mine extends Component {
@@ -44,15 +45,23 @@ class Mine extends Component {
 		];
 		return (
 			<div className="view-mine">
-				<div className="cells-group cells-group--use-info">
+				<CellsGroup className="use-info">
 					<img src="#" />
 					<div className="cells-group--use-info__content">
 						<h2>邪恶的罐子</h2>
 						<p>微信号：second-design</p>
 					</div>
-				</div>
+				</CellsGroup>
 				{
-					groups.map((e, i) => (<CellsGroup group={ e } key={ i } />))
+					groups.map((e, i) => (
+						<CellsGroup key={ i }>
+							{
+								e.map((e, i) => (
+									<Cell { ...e } key={ i } />
+								))
+							}
+						</CellsGroup>
+					))
 				}
 			</div>
 		);
