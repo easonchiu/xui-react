@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import ClassNames from 'classnames'
 
 import Footer from '../../Components/Footer/index.jsx'
 
