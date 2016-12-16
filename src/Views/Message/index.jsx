@@ -8,13 +8,31 @@ import Msg from '../../Components/Message/index.jsx'
 class Message extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			list: []
+		}
+	}
+	componentDidMount() {
+		fetch('./datas/friends.json', {
+			method: 'GET'
+		}).then(res => {
+			if (res.ok) {
+				res.json().then(d => {
+					console.log(d)
+					this.setState({
+						
+					});
+				});
+			}
+		}, error => {
+			console.log(error);
+		});
 	}
 	render() {
-		let arr = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 		return (
 			<div>
 			{
-				arr.map((e, i) => <Msg key={ i } />)
+				this.state.list.map((e, i) => <Msg key={ i } />)
 			}
 			</div>
 		);

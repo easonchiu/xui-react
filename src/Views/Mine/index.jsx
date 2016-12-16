@@ -9,40 +9,42 @@ import Cell from '../../Components/Cell/index.jsx'
 class Mine extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			group: [
+				[
+					{
+						title: '相册',
+						link: '#'
+					},
+					{
+						title: '收藏',
+						link: '#'
+					},
+					{
+						title: '钱包',
+						link: '#'
+					},
+					{
+						title: '卡包',
+						link: '#'
+					}
+				],
+				[
+					{
+						title: '表情',
+						link: '#'
+					}
+				],
+				[
+					{
+						title: '设置',
+						link: '#'
+					}
+				]
+			]
+		}
 	}
 	render() {
-		let groups = [
-			[
-				{
-					title: '相册',
-					link: '#'
-				},
-				{
-					title: '收藏',
-					link: '#'
-				},
-				{
-					title: '钱包',
-					link: '#'
-				},
-				{
-					title: '卡包',
-					link: '#'
-				}
-			],
-			[
-				{
-					title: '表情',
-					link: '#'
-				}
-			],
-			[
-				{
-					title: '设置',
-					link: '#'
-				}
-			]
-		];
 		return (
 			<div className="view-mine">
 				<CellsGroup className="use-info">
@@ -53,7 +55,7 @@ class Mine extends Component {
 					</div>
 				</CellsGroup>
 				{
-					groups.map((e, i) => (
+					this.state.group.map((e, i) => (
 						<CellsGroup key={ i }>
 							{
 								e.map((e, i) => (
