@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import ajax from '../../Assets/Js/ajax.js'
 
 import FriendsGroup from '../../Components/FriendsGroup/index.jsx'
 import Friend from '../../Components/Friend/index.jsx'
@@ -8,40 +9,24 @@ import Friend from '../../Components/Friend/index.jsx'
 class Friends extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			groups: []
+		};
+	}
+	componentDidMount() {
+		ajax.get('./datas/friendList.json').then(res => {
+			this.setState({
+				groups: res.data
+			});
+		}, error => {
+			console.log('error', error);
+		});
 	}
 	render() {
-		let groups = [
-			{
-				tag: 'A',
-				list: [
-					{
-						uid: 1,
-						name: '用户A'
-					},
-					{
-						uid: 2,
-						name: '用户B'
-					}
-				]
-			},
-			{
-				tag: 'B',
-				list: [
-					{
-						uid: 3,
-						name: '用户C'
-					},
-					{
-						uid: 4,
-						name: '用户D'
-					}
-				]
-			}
-		];
 		return (
 			<div>
 				{
-					groups.map((e, i) => (
+					this.state.groups.map((e, i) => (
 						<FriendsGroup tag={ e.tag } key={ i }>
 							{
 								e.list.map((e, i) => (

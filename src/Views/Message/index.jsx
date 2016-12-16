@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
+import ajax from '../../Assets/Js/ajax.js'
 
 import Msg from '../../Components/Message/index.jsx'
-
 
 
 
@@ -13,26 +13,19 @@ class Message extends Component {
 		}
 	}
 	componentDidMount() {
-		fetch('./datas/friends.json', {
-			method: 'GET'
-		}).then(res => {
-			if (res.ok) {
-				res.json().then(d => {
-					console.log(d)
-					this.setState({
-						
-					});
-				});
-			}
+		ajax.get('./datas/messageList.json').then(res => {
+			this.setState({
+				list: res.data
+			});
 		}, error => {
-			console.log(error);
+			console.log('error', error);
 		});
 	}
 	render() {
 		return (
 			<div>
 			{
-				this.state.list.map((e, i) => <Msg key={ i } />)
+				this.state.list.map((e, i) => <Msg { ...e } key={ i } />)
 			}
 			</div>
 		);

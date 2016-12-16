@@ -1,6 +1,6 @@
 import './style.scss'
 import React, { Component, PropTypes } from 'react'
-import ClassNames from 'classnames'
+import ajax from '../../Assets/Js/ajax.js'
 
 import CellsGroup from '../../Components/CellsGroup/index.jsx'
 import Cell from '../../Components/Cell/index.jsx'
@@ -10,7 +10,8 @@ class Mine extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			group: [
+			userinfo: {},
+			groups: [
 				[
 					{
 						title: '相册',
@@ -44,18 +45,27 @@ class Mine extends Component {
 			]
 		}
 	}
+	componentDidMount() {
+		ajax.get('./datas/UserInfo.json').then(res => {
+			this.setState({
+				userinfo: res.data
+			});
+		}, error => {
+			console.log('error', error);
+		});
+	}
 	render() {
 		return (
 			<div className="view-mine">
 				<CellsGroup className="use-info">
-					<img src="#" />
+					<img src={ this.state.userinfo.headpic } />
 					<div className="cells-group--use-info__content">
-						<h2>邪恶的罐子</h2>
-						<p>微信号：second-design</p>
+						<h2>{ this.state.userinfo.nickname }</h2>
+						<p>微信号：{ this.state.userinfo.wcid }</p>
 					</div>
 				</CellsGroup>
 				{
-					this.state.group.map((e, i) => (
+					this.state.groups.map((e, i) => (
 						<CellsGroup key={ i }>
 							{
 								e.map((e, i) => (

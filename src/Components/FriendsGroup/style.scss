@@ -1,14 +1,13 @@
 @charset "utf-8";
 
 .friends-group {
-	
+	&__title {
+		background: #eaeaea;
+		height: 0.36rem;
+		line-height: 0.36rem;
+		font-size: 0.28rem;
+		padding-left: 0.15rem;
+		color: #999;
+	}
 }
 
-.friends-group__title {
-	background: #eaeaea;
-	height: 0.36rem;
-	line-height: 0.36rem;
-	font-size: 0.28rem;
-	padding-left: 0.15rem;
-	color: #999;
-}
