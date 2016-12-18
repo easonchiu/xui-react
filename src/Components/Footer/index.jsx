@@ -10,45 +10,68 @@ class Footer extends Component {
 	handleClick(d, e) {
 		this.props.onNavChange(d);
 	}
+	componentDidMount() {
+		var cnav = this.refs.footer.querySelector('.active');
+		this.props.defaultTitle(cnav.dataset.title);
+	}
 	render() {
+		var menus = [
+			{
+				name: '微信',
+				link: '/'
+			},
+			{
+				name: '通讯录',
+				link: '/friends'
+			},
+			{
+				name: '发现',
+				link: '/find'
+			},
+			{
+				name: '我',
+				link: '/mine'
+			}
+		];
 		return (
-			<div className="app-footer">
-				<IndexLink
-					className="app-footer__nav"
-					activeClassName="active"
-					onClick={
-						e => this.handleClick(1, e)
-					}
-					to="/">
-					<i></i>微信
-				</IndexLink>
-				<Link
-					className="app-footer__nav"
-					activeClassName="active"
-					onClick={
-						e => this.handleClick(2, e)
-					}
-					to="/friends">
-					<i></i>通讯录
-				</Link>
-				<Link
-					className="app-footer__nav"
-					activeClassName="active"
-					onClick={
-						e => this.handleClick(3, e)
-					}
-					to="/find">
-					<i></i>发现
-				</Link>
-				<Link
-					className="app-footer__nav"
-					activeClassName="active"
-					onClick={
-						e => this.handleClick(4, e)
-					}
-					to="/mine">
-					<i></i>我
-				</Link>
+			<div className="app-footer" ref="footer">
+				{
+					menus.map((d, i) => {
+						if (d.link == '/'){
+							return (
+								<IndexLink
+									className="app-footer__nav"
+									activeClassName="active"
+									key={ i }
+									data-title={ d.name }
+									onClick={
+										e => {
+											return this.handleClick(d.name, e);
+										}
+									}
+									to={ d.link }>
+									<i></i>{ d.name }
+								</IndexLink>
+							);
+						} else {
+							return (
+								<Link
+									className="app-footer__nav"
+									activeClassName="active"
+									key={ i }
+									data-title={ d.name }
+									onClick={
+										e => {
+											return this.handleClick(d.name, e);
+										}
+									}
+									to={ d.link }>
+									<i></i>{ d.name }
+								</Link>
+							);
+						}
+					})
+				}
 			</div>
 		);
 	}

@@ -1,6 +1,7 @@
 import './style.scss'
 import React, { Component, PropTypes } from 'react'
 
+
 class QuanCover extends Component {
 	constructor(props) {
 		super(props);
