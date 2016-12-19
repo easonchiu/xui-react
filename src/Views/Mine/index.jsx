@@ -46,7 +46,7 @@ class Mine extends Component {
 		}
 	}
 	componentDidMount() {
-		ajax.get('./datas/UserInfo.json').then(res => {
+		ajax.get('./datas/userInfo.json').then(res => {
 			this.setState({
 				userinfo: res.data
 			});

@@ -28,17 +28,53 @@
 	}
 	&__content {
 		flex-grow: 1;
+		h2 {
+			font-size: 0.3rem;
+			line-height: 1.5;
+			color: #333;
+			margin-bottom: 0.1rem;
+		}
+		p {
+			font-size: 0.3rem;
+			line-height: 1.2;
+			color: #333;
+			margin-bottom: 0.15rem;
+		}
 	}
 	&__photos {
+		margin-bottom: 0.05rem;
 		&--only img {
 			display: block;
 			width: 60%;
+			margin: 0 0.05rem 0.05rem 0;
+		}
+		&--four .quan-item__photo {
+			width: 2.0rem;
+			height: 2.0rem;
+		}
+		&--nine .quan-item__photo {
+			width: 1.5rem;
+			height: 1.5rem;
 		}
 	}
-	&__location {
+	&__photo {
 		display: block;
+		float: left;
+		margin: 0 0.05rem 0.05rem 0;
+		background-size: contain;
+		background-position: center center;
+	}
+	&__location {
+		display: inline-block;
+		font-size: 0.26rem;
+		line-height: 1;
+		color: #333;
+		margin-bottom: 0.1rem;
 	}
 	time {
 		display: block;
+		font-size: 0.26rem;
+		line-height: 1;
+		color: #333;
 	}
 }

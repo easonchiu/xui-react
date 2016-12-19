@@ -6,12 +6,12 @@
 				{
 					"uid": 1,
 					"headpic": "./src/Assets/Images/head.jpg",
-					"nickname": "用户A"
+					"nickname": "邪恶的罐子A"
 				},
 				{
 					"uid": 2,
 					"headpic": "./src/Assets/Images/head.jpg",
-					"nickname": "用户B"
+					"nickname": "邪恶的罐子B"
 				}
 			]
 		},
@@ -21,12 +21,12 @@
 				{
 					"uid": 3,
 					"headpic": "./src/Assets/Images/head.jpg",
-					"nickname": "用户C"
+					"nickname": "邪恶的罐子C"
 				},
 				{
 					"uid": 4,
 					"headpic": "./src/Assets/Images/head.jpg",
-					"nickname": "用户D"
+					"nickname": "邪恶的罐子D"
 				}
 			]
 		}

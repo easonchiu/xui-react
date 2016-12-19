@@ -17,7 +17,6 @@ class Message extends Component {
 			this.setState({
 				list: res.data
 			});
-			console.log(res)
 		}, error => {
 			console.log('error', error);
 		});
