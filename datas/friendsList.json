@@ -5,11 +5,13 @@
 			"list": [
 				{
 					"uid": 1,
-					"name": "用户A"
+					"headpic": "./src/Assets/Images/head.jpg",
+					"nickname": "用户A"
 				},
 				{
 					"uid": 2,
-					"name": "用户B"
+					"headpic": "./src/Assets/Images/head.jpg",
+					"nickname": "用户B"
 				}
 			]
 		},
@@ -18,11 +20,13 @@
 			"list": [
 				{
 					"uid": 3,
-					"name": "用户C"
+					"headpic": "./src/Assets/Images/head.jpg",
+					"nickname": "用户C"
 				},
 				{
 					"uid": 4,
-					"name": "用户D"
+					"headpic": "./src/Assets/Images/head.jpg",
+					"nickname": "用户D"
 				}
 			]
 		}

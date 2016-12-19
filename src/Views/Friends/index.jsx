@@ -14,7 +14,7 @@ class Friends extends Component {
 		};
 	}
 	componentDidMount() {
-		ajax.get('./datas/friendList.json').then(res => {
+		ajax.get('./datas/friendsList.json').then(res => {
 			this.setState({
 				groups: res.data
 			});
