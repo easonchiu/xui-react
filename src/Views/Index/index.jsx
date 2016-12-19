@@ -8,12 +8,18 @@ class Index extends Component {
 	constructor(props) {
 		super(props);
 		this.footerNavChange = this.footerNavChange.bind(this);
+		this.setDefaultTitle = this.setDefaultTitle.bind(this);
 		this.state = {
-			channel: 1
+			title: ''
 		}
 	}
+	setDefaultTitle(v) {
+		this.setState({
+			title: v
+		});
+	}
 	footerNavChange(val) {
-		this.state.channel = val;
+		this.state.title = val;
 		this.setState(this.state);
 	}
 	render() {
@@ -23,7 +29,7 @@ class Index extends Component {
 				<div className="app-body">
 					{ this.props.children }
 				</div>
-				<Footer onNavChange={ this.footerNavChange } />
+				<Footer defaultTitle={ this.setDefaultTitle } onNavChange={ this.footerNavChange } />
 			</div>
 		);
 	}

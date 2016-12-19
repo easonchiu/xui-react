@@ -1,0 +1,34 @@
+{
+	"data": [
+		{
+			"tag": "A",
+			"list": [
+				{
+					"uid": 1,
+					"headpic": "./src/Assets/Images/head.jpg",
+					"nickname": "用户A"
+				},
+				{
+					"uid": 2,
+					"headpic": "./src/Assets/Images/head.jpg",
+					"nickname": "用户B"
+				}
+			]
+		},
+		{
+			"tag": "B",
+			"list": [
+				{
+					"uid": 3,
+					"headpic": "./src/Assets/Images/head.jpg",
+					"nickname": "用户C"
+				},
+				{
+					"uid": 4,
+					"headpic": "./src/Assets/Images/head.jpg",
+					"nickname": "用户D"
+				}
+			]
+		}
+	]
+}

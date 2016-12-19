@@ -8,9 +8,11 @@ class Item extends Component {
 	render() {
 		return (
 			<div className="friend-item">
-				<div className="friend-item__head"></div>
+				<div className="friend-item__head">
+					<img src={ this.props.headpic } />
+				</div>
 				<div className="friend-item__content">
-					<h2>{ this.props.name }</h2>
+					<h2>{ this.props.nickname }</h2>
 				</div>
 			</div>
 		);
