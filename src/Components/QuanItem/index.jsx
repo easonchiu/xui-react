@@ -14,15 +14,15 @@ class QuanItem extends Component {
 			text = <p>{ this.props.text }</p>
 		}
 		// 相册
-		let name = csn({
-			'clearfix': true,
-			'quan-item__photos': this.props.type == 'photos' && this.props.photos.length > 0,
-			'quan-item__photos--only': this.props.photos.length == 1,
-			'quan-item__photos--four': this.props.photos.length > 1 && this.props.photos.length <= 4,
-			'quan-item__photos--nine': this.props.photos.length > 4,
-		})
 		let photos = null
-		if (this.props.type == 'photos' && this.props.photos &&.length > 0){
+		if (this.props.type == 'photos' && this.props.photos != undefined && this.props.photos.length > 0){
+			let name = csn({
+				'clearfix': true,
+				'quan-item__photos': true,
+				'quan-item__photos--only': this.props.photos.length == 1,
+				'quan-item__photos--four': this.props.photos.length > 1 && this.props.photos.length <= 4,
+				'quan-item__photos--nine': this.props.photos.length > 4,
+			})
 			photos = (
 				<div className={ name }>
 					{
