@@ -7,7 +7,7 @@
     "start": "npm run server",
     "build": "rm -rf ./dist && webpack --bail --progress --profile",
     "watch": "webpack --progress --colors --watch",
-    "server": "webpack-dev-server --history-api-fallback --inline --progress"
+    "server": "webpack-dev-server --history-api-fallback --inline --progress --host 0.0.0.0"
   },
   "repository": {
     "type": "git",

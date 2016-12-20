@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+.app-body {
+	padding: 0.2rem;
+	> date {
+		display: block;
+		font-size: 0.28rem;
+		line-height: 2;
+		color: #999;
+		text-align: center;
+	}
+}

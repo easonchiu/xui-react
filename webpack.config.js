@@ -21,7 +21,7 @@ module.exports = function makeWebpackConfig(){
 	// 输出文件
 	config.output = isTest ? {} : {
 		path: __dirname + '/dist', // 输出到哪个目录下（__dirname当前项目目录）
-		publicPath: isProd ? '/' : 'http://localhost:8080/',
+		// publicPath: isProd ? '/' : 'http://localhost:8080/',
 		filename: isProd ? '[name].[hash].js' : '[name].bundle.js' // 最终打包生产的文件名
 	};
 

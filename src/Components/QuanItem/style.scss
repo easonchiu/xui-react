@@ -48,13 +48,19 @@
 			width: 60%;
 			margin: 0 0.05rem 0.05rem 0;
 		}
-		&--four .quan-item__photo {
-			width: 2.0rem;
-			height: 2.0rem;
+		&--four {
+			width: 4.1rem;
+			.quan-item__photo {
+				width: 2.0rem;
+				height: 2.0rem;
+			}
 		}
-		&--nine .quan-item__photo {
-			width: 1.5rem;
-			height: 1.5rem;
+		&--nine {
+			width: 4.65rem;
+			.quan-item__photo {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
 		}
 	}
 	&__photo {
