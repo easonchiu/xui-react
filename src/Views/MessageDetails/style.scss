@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.app-body {
+.app-body--message-details {
 	padding: 0.2rem;
 	> date {
 		display: block;
@@ -9,4 +9,28 @@
 		color: #999;
 		text-align: center;
 	}
+}
+
+@keyframes scaleUp {
+	from {
+		opacity: 0;
+		transform:scale(0.2);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+.wrapper-enter {
+	opacity: 0.01;
+}
+
+.wrapper-appear {
+	opacity: 1;
+	transition: scaleUp .5s ease-in;
+}
+
+.wrapper-enter.wrapper-enter-active {
+	opacity: 1;
+	transform:scale(1);
 }

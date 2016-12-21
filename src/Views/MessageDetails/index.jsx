@@ -1,11 +1,13 @@
 import './style.scss'
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import ajax from '../../Assets/Js/ajax.js'
 
 import Header from '../../Components/Header/index.jsx'
 import Talk from '../../Components/Talk/index.jsx'
+
 
 class MessageDetails extends Component {
 	constructor(props) {
@@ -24,7 +26,7 @@ class MessageDetails extends Component {
 		})
 	}
 	render() {
-		let content = [];
+		let content = []
 		this.state.content.map((e, i) => {
 			if (e.list && e.list.length > 0) {
 				if (e.date) {
@@ -36,17 +38,25 @@ class MessageDetails extends Component {
 			}
 		})
 		return (
-			<div>
-				<Header title={ this.props.params.id }>
-					<Link to="/" className="back">返回</Link>
-				</Header>
-				<div className="app-body">
-					{ content }
+			<ReactCSSTransitionGroup
+				transitionName="wrapper"
+				component="div"
+				transitionAppear={ true }
+				transitionAppearTimeout={ 3000 }
+				transitionEnterTimeout={ 3000 }
+				transitionLeaveTimeout={ 3000 }>
+				<div>
+					<Header title={ 'uid:' + this.props.params.id }>
+						<Link to="/" className="back">返回</Link>
+					</Header>
+					<div className="app-body app-body--message-details">
+						{ content }
+					</div>
+					<div className="app-footer">
+						111
+					</div>
 				</div>
-				<div className="app-footer">
-					111
-				</div>
-			</div>
+			</ReactCSSTransitionGroup>
 		);
 	}
 }
