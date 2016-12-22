@@ -9,33 +9,41 @@ class Index extends Component {
 		super(props);
 		this.footerNavClick = this.footerNavClick.bind(this);
 		this.state = {
-			title: ''
+			title: '',
+			menu: [
+				{
+					name: '微信',
+					link: '/'
+				},
+				{
+					name: '通讯录',
+					link: '/friends'
+				},
+				{
+					name: '发现',
+					link: '/find'
+				},
+				{
+					name: '我',
+					link: '/mine'
+				}
+			]
 		}
 	}
 	footerNavClick(val) {
 		this.state.title = val;
 		this.setState(this.state);
 	}
-	render() {
-		let menu = [
-			{
-				name: '微信',
-				link: '/'
-			},
-			{
-				name: '通讯录',
-				link: '/friends'
-			},
-			{
-				name: '发现',
-				link: '/find'
-			},
-			{
-				name: '我',
-				link: '/mine'
+	componentWillMount() {
+		this.state.menu.map(e => {
+			if (e.link == this.props.location.pathname){
+				this.setState({
+					title: e.name
+				});
 			}
-		];
-		
+		});
+	}
+	render() {
 		return (
 			<div>
 				<Header { ...this.state } />
@@ -44,7 +52,7 @@ class Index extends Component {
 				</div>
 				<Footer>
 					{
-						menu.map((e, i) => {
+						this.state.menu.map((e, i) => {
 							if (i == 0){
 								e.isIndex = true;
 							}

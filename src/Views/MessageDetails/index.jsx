@@ -6,6 +6,7 @@ import ajax from '../../Assets/Js/ajax.js'
 
 import Header from '../../Components/Header/index.jsx'
 import Talk from '../../Components/Talk/index.jsx'
+import Footer from '../../Components/Footer/index.jsx'
 
 
 
@@ -19,7 +20,7 @@ class MessageDetails extends Component {
 		}
 	}
 	componentWillMount() {
-		console.log(this.context)
+
 	}
 	componentDidMount() {
 		ajax.get('./datas/talkList.json').then(res => {
@@ -50,9 +51,9 @@ class MessageDetails extends Component {
 				<div className="app-body app-body--message-details">
 					{ content }
 				</div>
-				<div className="app-footer">
+				<Footer>
 					111
-				</div>
+				</Footer>
 			</div>
 		);
 	}

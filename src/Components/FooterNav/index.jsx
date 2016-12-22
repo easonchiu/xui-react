@@ -7,7 +7,6 @@ class Nav extends Component {
 	constructor(props) {
 		super(props);
 		this.handClick = this.handClick.bind(this);
-		console.log(props)
 	}
 	handClick(e) {
 		let ts = findDOMNode(this.refs.nav);
