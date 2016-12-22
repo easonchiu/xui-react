@@ -182,5 +182,5 @@ html, body, #app {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	background-color: #f5f5f5;
+	position: relative;
 }
-

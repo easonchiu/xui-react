@@ -1,12 +1,14 @@
 import './style.scss'
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import ajax from '../../Assets/Js/ajax.js'
 
 import Header from '../../Components/Header/index.jsx'
 import Talk from '../../Components/Talk/index.jsx'
+
+
+
 
 
 class MessageDetails extends Component {
@@ -15,6 +17,9 @@ class MessageDetails extends Component {
 		this.state = {
 			content: []
 		}
+	}
+	componentWillMount() {
+		console.log(this.context)
 	}
 	componentDidMount() {
 		ajax.get('./datas/talkList.json').then(res => {
@@ -38,27 +43,21 @@ class MessageDetails extends Component {
 			}
 		})
 		return (
-			<ReactCSSTransitionGroup
-				transitionName="wrapper"
-				component="div"
-				transitionAppear={ true }
-				transitionAppearTimeout={ 3000 }
-				transitionEnterTimeout={ 3000 }
-				transitionLeaveTimeout={ 3000 }>
-				<div>
-					<Header title={ 'uid:' + this.props.params.id }>
-						<Link to="/" className="back">返回</Link>
-					</Header>
-					<div className="app-body app-body--message-details">
-						{ content }
-					</div>
-					<div className="app-footer">
-						111
-					</div>
+			<div>
+				<Header title={ 'uid:' + this.props.params.id }>
+					<Link to="/" className="back">返回</Link>
+				</Header>
+				<div className="app-body app-body--message-details">
+					{ content }
 				</div>
-			</ReactCSSTransitionGroup>
+				<div className="app-footer">
+					111
+				</div>
+			</div>
 		);
 	}
 }
+
+
 
 export default MessageDetails

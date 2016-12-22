@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+.app-footer__nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	flex-grow: 1;
+	font-size: 0.14rem;
+	line-height: 0.24rem;
+	height: 1.0rem;
+	color: #999;
+	i {
+		display: block;
+		width: 0.4rem;
+		height: 0.4rem;
+		background: #999;
+		margin-bottom: 0.08rem;
+	}
+	&.active {
+		color: #5599ff;
+		i {
+			background: #5599ff;
+		}
+	}
+}
