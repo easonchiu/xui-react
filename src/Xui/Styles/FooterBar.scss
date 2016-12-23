@@ -1,0 +1,51 @@
+@charset "utf-8";
+@import "Config.scss";
+
+// 脚
+.x-app-footer-bar {
+	background: #fff;
+	@extend %line-top;
+	// 底部菜单组
+	&__nav-group {
+		display: flex;
+		height: pr(104);
+	}
+	// 底部菜单
+	&__nav {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		flex-grow: 1;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+		-webkit-box-flex: 1;
+		i[class^="x-icon"] {
+			position: relative;
+			top: pr(4);
+			&:before {
+				font-size: pr(44);
+			}
+		}
+		p {
+			display: block;
+			font-size: pr(20);
+			line-height: pr(32);
+			height: pr(32);
+			overflow: hidden;
+			color: cr(p);
+			position: relative;
+		}
+		&:active {
+			background: rgba(0,0,0,0.02);
+		}
+		&.active {
+			background-color: cr(default);
+			i:before, p {
+				color: #fff;
+			}
+		}
+	}
+}
+

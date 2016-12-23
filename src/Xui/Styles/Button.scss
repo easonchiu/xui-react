@@ -1,0 +1,66 @@
+@charset "utf-8";
+@import "Config.scss";
+
+
+// 按钮类
+$x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(cr(body),-5), vital: #04be02);
+@each $name, $color in $x-buttons {
+	.x-button__#{$name} {
+		display: -webkit-box;
+		-webkit-box-align: center;
+		-webkit-box-pack: center;
+		width: 100%;
+		height: pr(88);
+		text-align: center;
+		background-color: $color;
+		@if $name == default {
+			color: cr(span);
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 200%;
+				height: 200%;
+				border: 1px solid crcalc($color, -20);
+				border-radius: pr(12);
+				transform: scale(0.5, 0.5);
+				transform-origin: 0 0;
+			}
+		} @else {
+			color: #fff;
+		}
+		font-size: pr(32);
+		position: relative;
+		border-radius: pr(6);
+		border: none;
+		&:not(.x-disabled):active {
+			background-color: crcalc($color, -15);
+		}
+		&.x-disabled {
+			@if $name == default {
+				color: #bfbfbf;
+			} @else {
+				color: rgba(255,255,255,0.7);
+			}
+			opacity: 0.8;
+		}
+		&.x-mini {
+			height: pr(64);
+			font-size: pr(28);
+			[class^="x-icon-"] {
+				width: pr(36);
+				height: pr(36);
+				&:before {
+					color: inherit;
+					line-height: pr(36);
+					font-size: pr(28);
+				}
+			}
+		}
+		[class^="x-icon-"]:before {
+			color: inherit;
+		}
+	}
+}

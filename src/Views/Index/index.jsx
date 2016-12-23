@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 
-import Header from '../../Components/Header/index.jsx'
-import Footer from '../../Components/Footer/index.jsx'
-import FooterNav from '../../Components/FooterNav/index.jsx'
+
+import HeaderBar, { HeaderBarTools } from '../../Xui/Components/HeaderBar.jsx'
+import Body from '../../Xui/Components/Body.jsx'
+import FooterBar, { FooterBarNavGroup, FooterBarNav } from '../../Xui/Components/FooterBar.jsx'
+
+
 
 class Index extends Component {
 	constructor(props) {
@@ -10,35 +13,39 @@ class Index extends Component {
 		this.footerNavClick = this.footerNavClick.bind(this);
 		this.state = {
 			title: '',
-			menu: [
+			nav: [
 				{
-					name: '微信',
-					link: '/'
+					title: '微信',
+					link: '/',
+					icon: 'mobile'
 				},
 				{
-					name: '通讯录',
-					link: '/friends'
+					title: '通讯录',
+					link: '/friends',
+					icon: 'friend'
 				},
 				{
-					name: '发现',
-					link: '/find'
+					title: '发现',
+					link: '/find',
+					icon: 'mail'
 				},
 				{
-					name: '我',
-					link: '/mine'
+					title: '我',
+					link: '/mine',
+					icon: 'user'
 				}
 			]
 		}
 	}
-	footerNavClick(val) {
-		this.state.title = val;
+	footerNavClick(e) {
+		this.state.title = e.dataset.title;
 		this.setState(this.state);
 	}
 	componentWillMount() {
-		this.state.menu.map(e => {
+		this.state.nav.map(e => {
 			if (e.link == this.props.location.pathname){
 				this.setState({
-					title: e.name
+					title: e.title
 				});
 			}
 		});
@@ -46,20 +53,29 @@ class Index extends Component {
 	render() {
 		return (
 			<div>
-				<Header { ...this.state } />
-				<div className="app-body">
+				<HeaderBar title={ this.state.title }>
+					<HeaderBarTools>
+						<a href="javascript:;"><i className="x-icon--user" /></a>
+					</HeaderBarTools>
+					<HeaderBarTools align="right">
+						<a href="javascript:;"><i className="x-icon--more" /></a>
+					</HeaderBarTools>
+				</HeaderBar>
+
+				<Body>
 					{ this.props.children }
-				</div>
-				<Footer>
+				</Body>
+
+				<FooterBar>
+					<FooterBarNavGroup>
 					{
-						this.state.menu.map((e, i) => {
-							if (i == 0){
-								e.isIndex = true;
-							}
-							return <FooterNav key={ i } onClick={ this.footerNavClick } { ...e } />
+						this.state.nav.map((e, i) => {
+							return <FooterBarNav key={ i } onClick={ this.footerNavClick } { ...e } />
 						})
 					}
-				</Footer>
+					</FooterBarNavGroup>
+				</FooterBar>
+
 			</div>
 		);
 	}

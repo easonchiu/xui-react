@@ -15,18 +15,6 @@ import MessageDetails from './Views/MessageDetails/index.jsx'
 import Quan from './Views/Quan/index.jsx'
 
 
-// 页面进入时的过滤
-let requireCredentials = (nextState, replace, next) => {
-	// if (nextState.params.id == 1){
-	// 	replace('/find')
-	// 	next()
-	// } else {
-	// 	next()
-	// }
-	next()
-}
-
-
 // Router组件有一个参数history，它的值hashHistory表示，路由的切换由URL的hash变化决定，即URL的#部分发生变化。举例来说，用户访问http://www.example.com/，实际会看到的是http://www.example.com/#/
 
 render(
@@ -37,7 +25,7 @@ render(
 			<Route path="/find" component={ Find }></Route>
 			<Route path="/mine" component={ Mine }></Route>
 		</Route>
-		<Route path="/messageDetails/:id" component={ MessageDetails } onEnter={ requireCredentials }></Route>
+		<Route path="/messageDetails/:id" component={ MessageDetails }></Route>
 		<Route path="/quan" component={ Quan }></Route>
 		<Redirect from="*" to="/" />
 	</Router>,

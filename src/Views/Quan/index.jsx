@@ -3,7 +3,8 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import ajax from '../../Assets/Js/ajax.js'
 
-import Header from '../../Components/Header/index.jsx'
+import HeaderBar, { HeaderBarTools } from '../../Xui/Components/HeaderBar.jsx'
+import Body from '../../Xui/Components/Body.jsx'
 import QuanCover from '../../Components/QuanCover/index.jsx'
 import QuanItem from '../../Components/QuanItem/index.jsx'
 
@@ -26,15 +27,17 @@ class Quan extends Component {
 	render() {
 		return (
 			<div>
-				<Header title="朋友圈">
-					<Link className="back" to="/find">返回</Link>
-				</Header>
-				<div className="app-body">
+				<HeaderBar title="朋友圈">
+					<HeaderBarTools>
+						<Link to="/find"><i className="x-icon--back" />返回</Link>
+					</HeaderBarTools>
+				</HeaderBar>
+				<Body>
 					<QuanCover />
 					{
 						this.state.list.map((e, i) => (<QuanItem { ...e } key={ i } />))
 					}
-				</div>
+				</Body>
 			</div>
 		);
 	}

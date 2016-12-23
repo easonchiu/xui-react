@@ -6,7 +6,11 @@ import ajax from '../../Assets/Js/ajax.js'
 
 import Header from '../../Components/Header/index.jsx'
 import Talk from '../../Components/Talk/index.jsx'
-import Footer from '../../Components/Footer/index.jsx'
+
+
+import HeaderBar, { HeaderBarTools } from '../../Xui/Components/HeaderBar.jsx'
+import Body from '../../Xui/Components/Body.jsx'
+import FooterBar from '../../Xui/Components/FooterBar.jsx'
 
 
 
@@ -45,15 +49,17 @@ class MessageDetails extends Component {
 		})
 		return (
 			<div>
-				<Header title={ 'uid:' + this.props.params.id }>
-					<Link to="/" className="back">返回</Link>
-				</Header>
-				<div className="app-body app-body--message-details">
+				<HeaderBar title={ 'uid:' + this.props.params.id }>
+					<HeaderBarTools>
+						<Link to="/"><i className="x-icon--back" />返回</Link>
+					</HeaderBarTools>
+				</HeaderBar>
+				<Body className="app-body--message-details">
 					{ content }
-				</div>
-				<Footer>
+				</Body>
+				<FooterBar>
 					111
-				</Footer>
+				</FooterBar>
 			</div>
 		);
 	}

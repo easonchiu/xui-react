@@ -1,0 +1,11 @@
+@charset "utf-8";
+@import "Config.scss";
+
+// 主体
+.x-app-body {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	-webkit-box-flex: 1;
+}

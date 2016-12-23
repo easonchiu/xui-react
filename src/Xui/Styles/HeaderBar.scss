@@ -1,0 +1,61 @@
+@charset "utf-8";
+@import "Config.scss";
+
+// 头部
+.x-app-header-bar {
+	z-index: 2;
+	background: #fff;
+	@extend %line-bottom;
+	&__inner {
+		display: block;
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		height: pr(96);
+		h1 {
+			width: 100%;
+			height: pr(96);
+			line-height: pr(96);
+			font-size: pr(34);
+			z-index: 9;
+			font-weight: bold;
+			text-align: center;
+		}
+	}
+	&__tools {
+		&--left {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			padding: 0 pr(20);
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 2;
+			[class^="x-icon"] {
+				&:before {
+					font-size: pr(40);
+				}
+			}
+			a {
+				display: flex;
+				align-items: center;
+				color: cr(p);
+				font-size: pr(32);
+				margin-right: pr(10);
+				&:active {
+					opacity: 0.5;
+				}
+			}
+		}
+		&--right {
+			@extend .x-app-header-bar__tools--left;
+			left: auto;
+			right: 0;
+			a {
+				margin-right: 0;
+				margin-left: pr(10);
+			}
+		}
+	}
+}

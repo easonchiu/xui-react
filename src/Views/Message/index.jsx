@@ -24,9 +24,9 @@ class Message extends Component {
 	render() {
 		return (
 			<div>
-			{
-				this.state.list.map((e, i) => <Msg { ...e } key={ i } />)
-			}
+				{
+					this.state.list.map((e, i) => <Msg { ...e } key={ i } />)
+				}
 			</div>
 		);
 	}

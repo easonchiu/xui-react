@@ -1,0 +1,38 @@
+@charset "utf-8";
+@import "Config.scss";
+
+// icon字体
+@font-face {
+	font-family: 'icons';
+    src: url('../Fonts/icons.woff') format('woff'), /* chrome、firefox */
+    url('../Fonts/icons.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../Fonts/icons.svg#icons') format('svg'); /* iOS 4.1- */
+}
+
+// 基本图标类
+$x-icons: (check: "\e600", close: "\e601", round-check-fill: "\e602", round-check: "\e603", round-right: "\e604", unfold: "\e605", right: "\e606", scan: "\e607", pic: "\e608", top: "\e609", refresh: "\e60b", delete: "\e60c", square-check-fill: "\e60d", square: "\e60e", square-check: "\e60f", round: "\e610", fold: "\e611", pull-right: "\e612", refresh-arrow: "\e613", add: "\e614", search: "\e615", back: "\e61a", rmb: "\e616", user: "\e61f", phone: "\e60a", mobile: "\e617", address: "\e61e", home: "\e61c", more: "\e61d", friend: "\e619", help: "\e618", brand: "\e622", mail: "\e624");
+%x-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: pr(48);
+	height: pr(48);
+	overflow: hidden;
+	&:before {
+		content: "";
+		color: #535353;
+		font-size: pr(36);
+		line-height: 1;
+		font-family: "icons" !important;
+	    font-style: normal;
+	    -webkit-font-smoothing: antialiased;
+	}
+}
+@each $name, $font in $x-icons {
+	.x-icon--#{$name} {
+		@extend %x-icon;
+		&:before {
+			content: $font;
+		}
+	}
+}

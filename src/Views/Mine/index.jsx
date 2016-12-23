@@ -2,8 +2,7 @@ import './style.scss'
 import React, { Component, PropTypes } from 'react'
 import ajax from '../../Assets/Js/ajax.js'
 
-import CellsGroup from '../../Components/CellsGroup/index.jsx'
-import Cell from '../../Components/Cell/index.jsx'
+import Cell, { CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell.jsx'
 
 
 class Mine extends Component {
@@ -57,22 +56,31 @@ class Mine extends Component {
 	render() {
 		return (
 			<div className="view-mine">
-				<CellsGroup className="use-info">
+				<Cell className="cell--use-info">
 					<img src={ this.state.userinfo.headpic } />
-					<div className="cells-group--use-info__content">
+					<div className="cell--use-info__content">
 						<h2>{ this.state.userinfo.nickname }</h2>
 						<p>微信号：{ this.state.userinfo.wcid }</p>
 					</div>
-				</CellsGroup>
+				</Cell>
 				{
 					this.state.groups.map((e, i) => (
-						<CellsGroup key={ i }>
+						<Cell key={ i }>
 							{
-								e.map((e, i) => (
-									<Cell { ...e } key={ i } />
-								))
+								e.map((e, i) => {
+									return (
+										<CellRow key={ i }>
+											<CellRowHeader>
+												<i className="x-icon--scan"></i>
+											</CellRowHeader>
+											<CellRowBody>
+												<h6>{ e.title }</h6>
+											</CellRowBody>
+										</CellRow>
+									);
+								})
 							}
-						</CellsGroup>
+						</Cell>
 					))
 				}
 			</div>
