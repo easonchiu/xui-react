@@ -4,13 +4,13 @@ import { Link } from 'react-router'
 
 import ajax from '../../Assets/Js/ajax.js'
 
-import Header from '../../Components/Header/index.jsx'
 import Talk from '../../Components/Talk/index.jsx'
 
 
 import HeaderBar, { HeaderBarTools } from '../../Xui/Components/HeaderBar.jsx'
 import Body from '../../Xui/Components/Body.jsx'
-import FooterBar from '../../Xui/Components/FooterBar.jsx'
+import FooterBar, { FooterBarButtonGroup } from '../../Xui/Components/FooterBar.jsx'
+import Button from '../../Xui/Components/Button.jsx'
 
 
 
@@ -58,7 +58,12 @@ class MessageDetails extends Component {
 					{ content }
 				</Body>
 				<FooterBar>
-					111
+					<FooterBarButtonGroup>
+						<Button type="primary"><i className="x-icon--brand" />按钮</Button>
+						<Button type="warn">按钮</Button>
+						<Button type="default"><i className="x-icon--brand" />按钮</Button>
+						<Button type="vital">按钮</Button>
+					</FooterBarButtonGroup>
 				</FooterBar>
 			</div>
 		);

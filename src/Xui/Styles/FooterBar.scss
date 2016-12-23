@@ -37,14 +37,22 @@
 			color: cr(p);
 			position: relative;
 		}
-		&:active {
-			background: rgba(0,0,0,0.02);
+		&:active:not(.x-app-footer-bar__nav--active) {
+			background-color: rgba(0,0,0,0.02);
 		}
-		&.active {
+		&--active {
 			background-color: cr(default);
 			i:before, p {
 				color: #fff;
 			}
+		}
+	}
+	// 菜单
+	&__button-group {
+		display: flex;
+		padding: pr(20) pr(5) pr(20) pr(20);
+		a {
+			margin-right: pr(15);
 		}
 	}
 }

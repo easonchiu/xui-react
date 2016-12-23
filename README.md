@@ -4,6 +4,7 @@
 用到react + react-router
 接下来打算再加入redux
 
+
 ### BEM命名法
 样式采用BEM（块（block）、元素（element）、修饰符（modifier））命名法
 

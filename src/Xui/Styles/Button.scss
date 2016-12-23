@@ -6,15 +6,14 @@
 $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(cr(body),-5), vital: #04be02);
 @each $name, $color in $x-buttons {
 	.x-button__#{$name} {
-		display: -webkit-box;
-		-webkit-box-align: center;
-		-webkit-box-pack: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: 100%;
 		height: pr(88);
-		text-align: center;
 		background-color: $color;
 		@if $name == default {
-			color: cr(span);
+			color: cr(span) !important;
 			&:after {
 				content: "";
 				display: block;
@@ -29,38 +28,44 @@ $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(
 				transform-origin: 0 0;
 			}
 		} @else {
-			color: #fff;
+			color: #fff !important;
 		}
 		font-size: pr(32);
 		position: relative;
 		border-radius: pr(6);
 		border: none;
-		&:not(.x-disabled):active {
+		&:not(.x-button--disabled):active {
 			background-color: crcalc($color, -15);
 		}
-		&.x-disabled {
-			@if $name == default {
-				color: #bfbfbf;
-			} @else {
-				color: rgba(255,255,255,0.7);
-			}
-			opacity: 0.8;
-		}
-		&.x-mini {
-			height: pr(64);
-			font-size: pr(28);
-			[class^="x-icon-"] {
-				width: pr(36);
-				height: pr(36);
-				&:before {
-					color: inherit;
-					line-height: pr(36);
-					font-size: pr(28);
-				}
-			}
-		}
-		[class^="x-icon-"]:before {
+		[class^="x-icon"]:before {
 			color: inherit;
 		}
+	}
+}
+
+.x-button--mini {
+	height: pr(64);
+	font-size: pr(28);
+	[class^="x-icon"] {
+		width: pr(36);
+		height: pr(36);
+		&:before {
+			color: inherit;
+			font-size: pr(28);
+		}
+	}
+}
+
+.x-button--disabled {
+	&:before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: pr(6);
+		background-color: rgba(255,255,255,0.5);
 	}
 }

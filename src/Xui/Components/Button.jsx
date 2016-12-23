@@ -6,12 +6,23 @@ class Button extends Component {
 		super(props);
 	}
 	render() {
+		let css = this.props.type ? 'x-button__' + this.props.type : 'x-button__primary';
+		if (this.props.mini){
+			css += ' x-button--mini';
+		}
+		if (this.props.disabled){
+			css += ' x-button--disabled';
+		}
 		return (
-			<a className="x-button__primary">
-				button
+			<a className={ css }>
+				{ this.props.children }
 			</a>
 		);
 	}
+}
+
+Button.propTypes = {
+	type: PropTypes.string
 }
 
 export default Button

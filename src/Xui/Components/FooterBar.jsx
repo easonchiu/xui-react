@@ -49,7 +49,7 @@ class FooterBarNav extends Component {
 		return (
 			<Node
 				to={ this.props.link }
-				activeClassName="active"
+				activeClassName="x-app-footer-bar__nav--active"
 				data-title={ this.props.title }
 				ref="nav"
 				onClick={ this.onClick }
@@ -67,5 +67,18 @@ FooterBarNav.propTypes = {
 	onClick: PropTypes.func
 }
 
+class FooterBarButtonGroup extends Component {
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		return (
+			<div className="x-app-footer-bar__button-group">
+				{ this.props.children }
+			</div>
+		);
+	}
+}
+
 export default FooterBar;
-export { FooterBarNavGroup, FooterBarNav };
+export { FooterBarNavGroup, FooterBarNav, FooterBarButtonGroup };
