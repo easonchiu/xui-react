@@ -7,7 +7,7 @@ import { Router, Route, IndexRoute, Redirect, hashHistory } from 'react-router'
 
 import AppIndex from './Views/Index/index.jsx'
 
-import Message from './Views/Message/index.jsx'
+import Cell from './Views/Cell/index.jsx'
 import Friends from './Views/Friends/index.jsx'
 import Find from './Views/Find/index.jsx'
 import Mine from './Views/Mine/index.jsx'
@@ -20,7 +20,7 @@ import Quan from './Views/Quan/index.jsx'
 render(
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }>
-			<IndexRoute component={ Message }></IndexRoute>
+			<IndexRoute component={ Cell }></IndexRoute>
 			<Route path="/friends" component={ Friends }></Route>
 			<Route path="/find" component={ Find }></Route>
 			<Route path="/mine" component={ Mine }></Route>

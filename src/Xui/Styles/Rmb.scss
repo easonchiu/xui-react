@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import "Config.scss";
+
+.x-rmb {
+	display: flex;
+	align-items: center;
+	height: pr(40);
+	font-size: pr(30);
+	overflow: hidden;
+	color: cr(strong);
+	font-weight: normal;
+	&:before {
+		content: "\e616";
+		display: block;
+		position: relative;
+		top: pr(2.5);
+		font-size: pr(26);
+		font-family: "icons" !important;
+		font-style: normal;
+		-webkit-font-smoothing: antialiased;
+	}
+	&--dark {
+		color: crcalc(cr(span), -30);
+	}
+	&.x-s {
+		font-size: pr(28);
+		&:before {
+			line-height: pr(44);
+			font-size: pr(24);
+			width: 1.1em;
+		}
+	}
+}

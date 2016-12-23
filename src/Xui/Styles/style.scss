@@ -160,42 +160,7 @@ html, body {
 // label { color: cr(p);}
 // span { color: cr(span);}
 // strong { color: cr(strong);}
-// .x-rmb {
-// 	display: block;
-// 	position: relative;
-// 	height: pr(40);
-// 	line-height: pr(40);
-// 	font-size: pr(32);
-// 	overflow: hidden;
-// 	color: cr(strong);
-// 	padding-left: 0.8em;
-// 	&:before {
-// 		content: "\e616";
-// 		display: block;
-// 		position: absolute;
-// 		left: 0;
-// 		top: 50%;
-// 		-webkit-transform: translate(0, -50%);
-// 		width: 0.9em;
-// 		height: pr(40);
-// 		line-height: pr(46);
-// 		font-size: pr(28);
-// 		font-family: "icons" !important;
-// 		font-style: normal;
-// 		-webkit-font-smoothing: antialiased;
-// 	}
-// 	&.x-b {
-// 		color: crcalc(cr(span), -20);
-// 	}
-// 	&.x-s {
-// 		font-size: pr(28);
-// 		&:before {
-// 			line-height: pr(44);
-// 			font-size: pr(24);
-// 			width: 1.1em;
-// 		}
-// 	}
-// }
+
 // // 2行超出...
 // %x-line-clamp-2 {
 // 	display: -webkit-box !important;

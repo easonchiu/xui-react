@@ -23,15 +23,22 @@ class CellRow extends Component {
 		super(props);
 	}
 	render(){
-		if (this.props.link) {
+		if (this.props.link && !this.props.radio) {
 			return (
 				<Link to={ this.props.link } className="x-cell__row">
 					{ this.props.children }
 				</Link>
 			);
 		}
+		let css = classnames({
+			'x-cell__row': true,
+			'x-cell__row--radio': this.props.radio,
+			'x-cell__row--radio-checked': this.props.radio && this.props.checked,
+			'x-cell__row--checkbox': this.props.checkbox,
+			'x-cell__row--checkbox-checked': this.props.checkbox && this.props.checked,
+		});
 		return (
-			<div className="x-cell__row">
+			<div className={ css }>
 				{ this.props.children }
 			</div>
 		);
@@ -81,5 +88,18 @@ class CellRowFooter extends Component {
 	}
 }
 
+class CellTitle extends Component {
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		return (
+			<h2 className="x-cell__title">
+				{ this.props.title }
+			</h2>
+		);
+	}
+}
+
 export default Cell;
-export { CellRow, CellRowHeader, CellRowBody, CellRowFooter };
+export { CellRow, CellRowHeader, CellRowBody, CellRowFooter, CellTitle };

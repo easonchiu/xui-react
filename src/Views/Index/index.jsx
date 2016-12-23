@@ -15,24 +15,29 @@ class Index extends Component {
 			title: '',
 			nav: [
 				{
-					title: '微信',
+					title: '列表',
 					link: '/',
-					icon: 'mobile'
+					icon: 'home'
 				},
 				{
-					title: '通讯录',
+					title: '模块',
 					link: '/friends',
 					icon: 'friend'
 				},
 				{
-					title: '发现',
+					title: '商品',
 					link: '/find',
 					icon: 'mail'
 				},
 				{
-					title: '我',
+					title: '按钮',
 					link: '/mine',
 					icon: 'user'
+				},
+				{
+					title: '其他',
+					link: '/mine',
+					icon: 'more'
 				}
 			]
 		}
@@ -54,9 +59,6 @@ class Index extends Component {
 		return (
 			<div>
 				<HeaderBar title={ this.state.title }>
-					<HeaderBarTools>
-						<a href="javascript:;"><i className="x-icon--user" /></a>
-					</HeaderBarTools>
 					<HeaderBarTools align="right">
 						<a href="javascript:;"><i className="x-icon--more" /></a>
 					</HeaderBarTools>
