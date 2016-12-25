@@ -1,10 +1,14 @@
 import React, { Component, PropTypes } from 'react'
+
 import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell.jsx'
 import Rmb from '../../Xui/Components/Rmb.jsx'
 
 class Message extends Component {
 	constructor(props) {
 		super(props);
+	}
+	onCheckboxClick(v) {
+		console.log(v)
 	}
 	render() {
 		return (
@@ -141,7 +145,7 @@ class Message extends Component {
 					{
 						[1, 2, 3].map(e => {
 							return (
-								<CellRow key={ e } checkbox checked={ e == 1 }>
+								<CellRow key={ e } checkbox checked={ e == 1 } onClick={ this.onCheckboxClick }>
 									<CellRowBody>
 										<h6>标题文字</h6>
 									</CellRowBody>

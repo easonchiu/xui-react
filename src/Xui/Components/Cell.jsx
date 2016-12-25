@@ -1,8 +1,9 @@
 import '../Styles/Cell.scss'
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-
+import fastclick from '../../Assets/Js/fastclick.js'
 import classnames from 'classnames'
+
 
 class Cell extends Component {
 	constructor(props) {
@@ -22,10 +23,13 @@ class CellRow extends Component {
 	constructor(props) {
 		super(props);
 	}
+	tapHandle() {
+		console.log(1)
+	}
 	render(){
 		if (this.props.link && !this.props.radio) {
 			return (
-				<Link to={ this.props.link } className="x-cell__row">
+				<Link component="span" to={ this.props.link } className="x-cell__row" onClick={ this.tapHandle }>
 					{ this.props.children }
 				</Link>
 			);
@@ -68,9 +72,9 @@ class CellRowBody extends Component {
 	}
 	render(){
 		return (
-			<div className="x-cell__row__body">
+			<a className="x-cell__row__body">
 				{ this.props.children }
-			</div>
+			</a>
 		);
 	}
 }
