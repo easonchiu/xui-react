@@ -12,6 +12,7 @@ $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(
 		width: 100%;
 		height: pr(88);
 		background-color: $color;
+		padding: 0 pr(25);
 		@if $name == default {
 			color: cr(span) !important;
 			&:after {

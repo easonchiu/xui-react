@@ -53,7 +53,7 @@
 			color: cr(p);
 			p {
 				display: block;
-				font-size: pr(26);
+				font-size: pr(28);
 				line-height: 1.2;
 				padding: pr(6) 0;
 				text-align: justify;
@@ -66,12 +66,15 @@
 				font-weight: normal;
 				text-align: justify;
 			}
-			span {
+			span, time {
 				display: block;
-				font-size: pr(28);
+				font-size: pr(26);
 				line-height: 1.2;
 				color: cr(span);
 				text-align: justify;
+			}
+			time {
+				font-size: pr(24);
 			}
 			input, select, div {
 				display: block;
@@ -151,136 +154,34 @@
 			}
 		}
 	}
-	
-
-	&.x-logis {
-		.x-cell {
+	&--logis {
+		.x-cell__row {
 			padding-left: pr(80);
-			.x-cell-hd {
+			&:after {
+				content: "";
+				display: block;
+				width: pr(20);
+				height: pr(20);
+				border-radius: 50%;
+				background: cr(border);
 				position: absolute;
-				overflow: hidden;
-				left: 0;
-				top: 0;
-				width: pr(80);
-				height: 100%;
-				&:after {
-					content: "";
-					display: block;
-					width: pr(20);
-					height: pr(20);
-					border-radius: 50%;
-					background: cr(border);
-					position: absolute;
-					left: 50%;
-					top: 50%;
-					z-index: 2;
-					-webkit-transform: translate(-50%, -50%);
-				}
-				&:before {
-					content: "";
-					display: block;
-					position: absolute;
-					left: 50%;
-					top: 0;
-					z-index: 2;
-					transform-origin: 0 0;
-					transform: scaleX(0.5);
-					width: 1px;
-					height: 100%;
-					border-left: 1px solid cr(border);
-				}
-			}
-			.x-cell-bd {
-				-webkit-box-orient: vertical;
-				-webkit-box-align: start;
-				p {
-					font-size: pr(28);
-					color: cr(span);
-					a {
-						color: inherit;
-						text-decoration: underline;
-					}
-				}
-				span {
-					display: block;
-					line-height: pr(32);
-					font-size: pr(24);
-					color: crcalc(cr(span), 20);
-				}
+				left: pr(40);
+				top: 50%;
+				z-index: 2;
+				-webkit-transform: translate(-50%, -50%);
 			}
 			&:before {
-				left: pr(80);
-			}
-			&:first-child {
-				.x-cell-hd:after {
-					background: cr(default);
-					width: pr(24);
-					height: pr(24);
-				}
-				.x-cell-hd:before {
-					top: 50%;
-				}
-				.x-cell-bd {
-					p, span {
-						color: cr(default);
-					}
-				}
-			}
-		}
-	}
-	&.x-goods {
-		float: none;
-		.x-cell {
-			-webkit-box-align: center;
-		}
-		.x-cell-hd img {
-			display: block;
-			width: pr(120);
-			height: pr(120);
-			margin-right: pr(10);
-		}
-		.x-cell-bd {
-			-webkit-box-orient: vertical;
-			-webkit-box-align: start;
-			margin-right: pr(10);
-			h6 {
-				@extend %x-line-clamp-2;
-				height: auto;
-				padding: 0;
-				margin-bottom: pr(4);
-				max-height: pr(80);
-				font-size: pr(28);
-				color: cr(p);
-			}
-			p {
+				content: "";
 				display: block;
-				font-size: pr(24);
-				color: cr(span);
-			}
-		}
-		.x-cell-ft {
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-box-align: end;
-			.x-quantity {
-				margin-top: pr(10);
-				display: -webkit-box;
-				height: pr(40);
-				line-height: pr(40);
-				font-size: pr(24);
-				color: cr(span);
-				&:before {
-					content: "\e601";
-					display: block;
-					color: cr(span);
-					width: 1em;
-					height: pr(40);
-					line-height: pr(42);
-					font-size: pr(22);
-					font-family: "icons" !important;
-					font-style: normal;
-					-webkit-font-smoothing: antialiased;
-				}
+				position: absolute;
+				left: pr(40);
+				top: 0;
+				z-index: 2;
+				transform-origin: 0 0;
+				transform: scaleX(0.5);
+				width: 1px;
+				height: 100%;
+				border-left: 1px solid cr(border);
 			}
 		}
 	}

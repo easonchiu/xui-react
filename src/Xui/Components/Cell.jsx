@@ -12,9 +12,9 @@ class Cell extends Component {
 	render(){
 		let css = classnames('x-cell', this.props.className);
 		return (
-			<div className={ css }>
+			<section className={ css }>
 				{ this.props.children }
-			</div>
+			</section>
 		);
 	}
 }

@@ -9,11 +9,7 @@ import { Router, Route, IndexRoute, Redirect, hashHistory } from 'react-router'
 import AppIndex from './Views/Index/index.jsx'
 
 import Cell from './Views/Cell/index.jsx'
-import Friends from './Views/Friends/index.jsx'
-import Find from './Views/Find/index.jsx'
-import Mine from './Views/Mine/index.jsx'
-import MessageDetails from './Views/MessageDetails/index.jsx'
-import Quan from './Views/Quan/index.jsx'
+import Button from './Views/Button/index.jsx'
 
 
 // Router组件有一个参数history，它的值hashHistory表示，路由的切换由URL的hash变化决定，即URL的#部分发生变化。举例来说，用户访问http://www.example.com/，实际会看到的是http://www.example.com/#/
@@ -22,12 +18,12 @@ render(
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }>
 			<IndexRoute component={ Cell }></IndexRoute>
-			<Route path="/friends" component={ Friends }></Route>
-			<Route path="/find" component={ Find }></Route>
-			<Route path="/mine" component={ Mine }></Route>
+			<Route path="/friends" component={ Button }></Route>
+			<Route path="/find" component={ Button }></Route>
+			<Route path="/button" component={ Button }></Route>
 		</Route>
-		<Route path="/messageDetails/:id" component={ MessageDetails }></Route>
-		<Route path="/quan" component={ Quan }></Route>
+		<Route path="/messageDetails/:id" component={ Button }></Route>
+		<Route path="/quan" component={ Button }></Route>
 		<Redirect from="*" to="/" />
 	</Router>,
 	document.getElementById('app')

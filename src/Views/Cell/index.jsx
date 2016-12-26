@@ -3,6 +3,8 @@ import React, { Component, PropTypes } from 'react'
 import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell.jsx'
 import Rmb from '../../Xui/Components/Rmb.jsx'
 
+import Logis, { LogisRow } from '../../Xui/Components/Logis.jsx'
+
 class Message extends Component {
 	constructor(props) {
 		super(props);
@@ -26,10 +28,9 @@ class Message extends Component {
 		}
 	}
 	render() {
-		return (
+		let cell1 = (
 			<div>
 				<CellTitle title="带链接的商品列表" />
-
 				<Cell>
 					{
 						[1, 2, 3].map(e => {
@@ -47,9 +48,12 @@ class Message extends Component {
 						})
 					}
 				</Cell>
+			</div>
+		)
 
+		let cell2 = (
+			<div>
 				<CellTitle title="带购买信息的商品列表" />
-
 				<Cell>
 					{
 						[1, 2, 3].map(e => {
@@ -71,9 +75,12 @@ class Message extends Component {
 						})
 					}
 				</Cell>
+			</div>
+		)
 
+		let cell3 = (
+			<div>
 				<CellTitle title="带说明的列表" />
-
 				<Cell>
 					{
 						[1, 2, 3].map(e => {
@@ -90,9 +97,12 @@ class Message extends Component {
 						})
 					}
 				</Cell>
+			</div>
+		)
 
+		let cell4 = (
+			<div>
 				<CellTitle title="带说明的链接列表" />
-
 				<Cell>
 					{
 						[1, 2, 3].map(e => {
@@ -109,9 +119,12 @@ class Message extends Component {
 						})
 					}
 				</Cell>
+			</div>
+		)
 
+		let cell5 = (
+			<div>
 				<CellTitle title="带图标的列表" />
-
 				<Cell>
 					{
 						[1, 2, 3].map(e => {
@@ -131,9 +144,12 @@ class Message extends Component {
 						})
 					}
 				</Cell>
+			</div>
+		)
 
+		let cell6 = (
+			<div>
 				<CellTitle title="多选框" />
-
 				<Cell>
 					{
 						[1, 2, 3].map(e => {
@@ -153,9 +169,12 @@ class Message extends Component {
 						})
 					}
 				</Cell>
+			</div>
+		)
 
+		let cell7 = (
+			<div>
 				<CellTitle title="单选框" />
-
 				<Cell>
 					{
 						[1, 2, 3].map(e => {
@@ -169,6 +188,36 @@ class Message extends Component {
 						})
 					}
 				</Cell>
+			</div>
+		)
+
+		let cell8 = (
+			<div>
+				<CellTitle title="物流跟踪" />
+				<Logis>
+					{
+						[1, 2, 3].map(e => {
+							return (
+								<LogisRow key={ e }>
+									<p>已离开收寄点，发往上海速递处理中心，南通市</p>
+									<time>2016-01-21 11:45:20</time>
+								</LogisRow>
+							)
+						})
+					}
+				</Logis>
+			</div>
+		)
+		return (
+			<div>
+				{ cell8 }
+				{ cell1 }
+				{ cell2 }
+				{ cell3 }
+				{ cell4 }
+				{ cell5 }
+				{ cell6 }
+				{ cell7 }
 			</div>
 		);
 	}

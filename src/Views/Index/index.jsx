@@ -21,22 +21,22 @@ class Index extends Component {
 				},
 				{
 					title: '模块',
-					link: '/friends',
+					link: '/module',
 					icon: 'friend'
 				},
 				{
 					title: '商品',
-					link: '/find',
+					link: '/goods',
 					icon: 'mail'
 				},
 				{
 					title: '按钮',
-					link: '/mine',
+					link: '/button',
 					icon: 'user'
 				},
 				{
 					title: '其他',
-					link: '/mine',
+					link: '/others',
 					icon: 'more'
 				}
 			]
@@ -77,7 +77,6 @@ class Index extends Component {
 					}
 					</FooterBarNavGroup>
 				</FooterBar>
-
 			</div>
 		);
 	}
