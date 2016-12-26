@@ -23,13 +23,17 @@ class CellRow extends Component {
 	constructor(props) {
 		super(props);
 	}
-	tapHandle() {
-		console.log(1)
+	clickHandle(e) {
+		this.props.onClick(e);
 	}
 	render(){
+		var others = {};
+		if (this.props.onClick){
+			others.onClick = this.clickHandle.bind(this);
+		}
 		if (this.props.link && !this.props.radio) {
 			return (
-				<Link component="span" to={ this.props.link } className="x-cell__row" onClick={ this.tapHandle }>
+				<Link to={ this.props.link } className="x-cell__row" { ...others }>
 					{ this.props.children }
 				</Link>
 			);
@@ -42,15 +46,16 @@ class CellRow extends Component {
 			'x-cell__row--checkbox-checked': this.props.checkbox && this.props.checked,
 		});
 		return (
-			<div className={ css }>
+			<article className={ css } { ...others }>
 				{ this.props.children }
-			</div>
+			</article>
 		);
 	}
 }
 
 CellRow.propTypes = {
-	link: PropTypes.string
+	link: PropTypes.string,
+	onClick: PropTypes.func
 }
 
 class CellRowHeader extends Component {
@@ -72,9 +77,9 @@ class CellRowBody extends Component {
 	}
 	render(){
 		return (
-			<a className="x-cell__row__body">
+			<div className="x-cell__row__body">
 				{ this.props.children }
-			</a>
+			</div>
 		);
 	}
 }

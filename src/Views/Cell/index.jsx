@@ -6,9 +6,24 @@ import Rmb from '../../Xui/Components/Rmb.jsx'
 class Message extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			checkboxid: 1,
+			radioid: 1
+		};
 	}
 	onCheckboxClick(v) {
-		console.log(v)
+		if (!this.checked){
+			this.setState({
+				checkboxid: v
+			});
+		}
+	}
+	onRadioClick(v) {
+		if (!this.checked){
+			this.setState({
+				radioid: v
+			});
+		}
 	}
 	render() {
 		return (
@@ -123,7 +138,7 @@ class Message extends Component {
 					{
 						[1, 2, 3].map(e => {
 							return (
-								<CellRow key={ e } radio checked={ e == 1 }>
+								<CellRow key={ e } radio checked={ this.state.radioid == e } onClick={ this.onRadioClick.bind(this, e) }>
 									<CellRowHeader>
 										<img src="./src/Assets/Images/headpic.jpeg" />
 									</CellRowHeader>
@@ -145,7 +160,7 @@ class Message extends Component {
 					{
 						[1, 2, 3].map(e => {
 							return (
-								<CellRow key={ e } checkbox checked={ e == 1 } onClick={ this.onCheckboxClick }>
+								<CellRow key={ e } checkbox checked={ this.state.checkboxid == e } onClick={ this.onCheckboxClick.bind(this, e) }>
 									<CellRowBody>
 										<h6>标题文字</h6>
 									</CellRowBody>

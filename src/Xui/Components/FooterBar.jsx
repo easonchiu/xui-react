@@ -11,9 +11,9 @@ class FooterBar extends Component {
 	}
 	render() {
 		return (
-			<div className="x-app-footer-bar">
+			<footer className="x-app-footer-bar">
 				{ this.props.children }
-			</div>
+			</footer>
 		);
 	}
 }
@@ -24,9 +24,9 @@ class FooterBarNavGroup extends Component {
 	}
 	render() {
 		return (
-			<div className="x-app-footer-bar__nav-group">
+			<nav className="x-app-footer-bar__nav-group">
 				{ this.props.children }
-			</div>
+			</nav>
 		);
 	}
 }
@@ -73,9 +73,9 @@ class FooterBarButtonGroup extends Component {
 	}
 	render() {
 		return (
-			<div className="x-app-footer-bar__button-group">
+			<nav className="x-app-footer-bar__button-group">
 				{ this.props.children }
-			</div>
+			</nav>
 		);
 	}
 }

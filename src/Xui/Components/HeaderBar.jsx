@@ -9,12 +9,12 @@ class HeaderBar extends Component {
 	render() {
 		let title = this.props.title ? <h1>{ this.props.title }</h1> : null;
 		return (
-			<div className="x-app-header-bar">
+			<header className="x-app-header-bar">
 				<div className="x-app-header-bar__inner">
+					{ title }
 			    	{ this.props.children }
-			    	{ title }
 			    </div>
-			</div>
+			</header>
 		);
 	}
 }
@@ -33,9 +33,9 @@ class HeaderBarTools extends Component {
 			css = 'x-app-header-bar__tools--right';
 		}
 		return (
-			<div className={ css }>
+			<nav className={ css }>
 				{ this.props.children }
-			</div>
+			</nav>
 		);
 	}
 }

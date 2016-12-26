@@ -1,4 +1,5 @@
 import './Assets/Styles/reset.css'
+import FastClick from './Assets/Js/fastclick.js'
 
 import React from 'react'
 import { render } from 'react-dom'
@@ -32,6 +33,8 @@ render(
 	document.getElementById('app')
 );
 
+
+FastClick.attach(document.body);
 
 
 // https://github.com/ruanyf/react-demos/tree/v15.0
