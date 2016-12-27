@@ -85,7 +85,7 @@ class Mine extends Component {
 						<Button type="vital">提交</Button>
 					</ButtonGroup>
 				</FooterBar>
-
+				
 			</div>
 		);
 	}
