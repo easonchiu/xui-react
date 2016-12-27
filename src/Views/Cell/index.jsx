@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from 'react'
 import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell.jsx'
 import Rmb from '../../Xui/Components/Rmb.jsx'
 
-import Logis, { LogisRow } from '../../Xui/Components/Logis.jsx'
 
 class Message extends Component {
 	constructor(props) {
@@ -191,26 +190,9 @@ class Message extends Component {
 			</div>
 		)
 
-		let cell8 = (
-			<div>
-				<CellTitle title="物流跟踪" />
-				<Logis>
-					{
-						[1, 2, 3].map(e => {
-							return (
-								<LogisRow key={ e }>
-									<p>已离开收寄点，发往上海速递处理中心，南通市</p>
-									<time>2016-01-21 11:45:20</time>
-								</LogisRow>
-							)
-						})
-					}
-				</Logis>
-			</div>
-		)
+		
 		return (
 			<div>
-				{ cell8 }
 				{ cell1 }
 				{ cell2 }
 				{ cell3 }

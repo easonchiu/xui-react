@@ -4,7 +4,7 @@ import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } f
 import ajax from '../../Assets/Js/ajax.js'
 
 
-class Friends extends Component {
+class OthersView extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -13,7 +13,7 @@ class Friends extends Component {
 			<div>
 				<CellTitle title="其他" />
 				<Cell>
-					<CellRow to="/">
+					<CellRow to="/logis">
 						<CellRowBody>
 							<h6>物流信息</h6>
 						</CellRowBody>
@@ -29,4 +29,4 @@ class Friends extends Component {
 	}
 }
 
-export default Friends;
+export default OthersView;
