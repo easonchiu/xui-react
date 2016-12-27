@@ -35,7 +35,7 @@ class Message extends Component {
 					{
 						[1, 2, 3].map(e => {
 							return (
-								<CellRow key={ e } link="/">
+								<CellRow key={ e } to="/">
 									<CellRowHeader>
 										<img src="./src/Assets/Images/headpic.jpeg" />
 									</CellRowHeader>
@@ -107,7 +107,7 @@ class Message extends Component {
 					{
 						[1, 2, 3].map(e => {
 							return (
-								<CellRow key={ e } link="/">
+								<CellRow key={ e } to="/">
 									<CellRowBody>
 										<h6>标题文字</h6>
 									</CellRowBody>

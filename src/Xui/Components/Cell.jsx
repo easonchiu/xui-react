@@ -31,9 +31,9 @@ class CellRow extends Component {
 		if (this.props.onClick){
 			others.onClick = this.clickHandle.bind(this);
 		}
-		if (this.props.link && !this.props.radio) {
+		if (this.props.to && !this.props.radio) {
 			return (
-				<Link to={ this.props.link } className="x-cell__row" { ...others }>
+				<Link to={ this.props.to } className="x-cell__row" { ...others }>
 					{ this.props.children }
 				</Link>
 			);
@@ -54,7 +54,7 @@ class CellRow extends Component {
 }
 
 CellRow.propTypes = {
-	link: PropTypes.string,
+	to: PropTypes.string,
 	onClick: PropTypes.func
 }
 

@@ -21,7 +21,7 @@ class Index extends Component {
 				},
 				{
 					title: '模块',
-					link: '/module',
+					link: '/panel',
 					icon: 'friend'
 				},
 				{
