@@ -1,3 +1,50 @@
 @charset "utf-8";
 @import "Config.scss";
 
+.x-panel {
+	overflow: hidden;
+	position: relative;
+	background-color: #fff;
+	@extend %line-top;
+	@extend %line-bottom;
+	&__header {
+		padding: pr(20);
+		display: flex;
+		align-items: center;
+		h2 {
+			font-size: pr(30);
+			line-height: 1.5;
+			color: cr(p);
+			flex-grow: 1;
+		}
+		a {
+			display: flex;
+			align-items: center;
+			font-size: pr(26);
+			line-height: 1.5;
+			color: cr(default);
+			i[class^="x-icon"] {
+				width: auto;
+				height: auto;
+				&:before {
+					color: inherit;
+					font-size: pr(30);
+				}
+			}
+		}
+	}
+	&__body {
+
+	}
+	&__footer {
+		padding: pr(20);
+		p, span {
+			display: block;
+			font-size: pr(26);
+			line-height: 1.2;
+		}
+		span {
+			color: cr(span);
+		}
+	}
+}
