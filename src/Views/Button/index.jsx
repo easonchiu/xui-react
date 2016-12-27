@@ -2,7 +2,8 @@ import './style.scss'
 import React, { Component, PropTypes } from 'react'
 
 import Cell, { CellRow, CellRowHeader, CellRowBody, CellRowFooter, CellTitle } from '../../Xui/Components/Cell.jsx'
-import Button from '../../Xui/Components/Button.jsx'
+import Button, { ButtonGroup } from '../../Xui/Components/Button.jsx'
+import FooterBar from '../../Xui/Components/FooterBar.jsx'
 
 class Mine extends Component {
 	constructor(props) {
@@ -48,6 +49,16 @@ class Mine extends Component {
 						</CellRowBody>
 					</CellRow>
 					<CellRow>
+						<CellRowBody>
+							<ButtonGroup>
+								<Button mini>小按钮</Button>
+								<Button type="warn" mini>小按钮</Button>
+								<Button type="primary" mini>小按钮</Button>
+								<Button type="vital" mini>小按钮</Button>
+							</ButtonGroup>
+						</CellRowBody>
+					</CellRow>
+					<CellRow>
 						<CellRowHeader>
 							<label>验证码</label>
 						</CellRowHeader>
@@ -59,6 +70,22 @@ class Mine extends Component {
 						</CellRowFooter>
 					</CellRow>
 				</Cell>
+
+				<CellTitle title="底菜单按钮" />
+				<FooterBar>
+					<ButtonGroup>
+						<Button type="warn">删除</Button>
+					</ButtonGroup>
+				</FooterBar>
+
+				<CellTitle title="底菜单按钮组合" />
+				<FooterBar>
+					<ButtonGroup>
+						<Button>取消</Button>
+						<Button type="vital">提交</Button>
+					</ButtonGroup>
+				</FooterBar>
+
 			</div>
 		);
 	}

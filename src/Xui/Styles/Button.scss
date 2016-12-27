@@ -70,3 +70,13 @@ $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(
 		background-color: rgba(255,255,255,0.5);
 	}
 }
+
+.x-button-group {
+	display: flex;
+	a[class^="x-button"] {
+		margin-right: pr(10);
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

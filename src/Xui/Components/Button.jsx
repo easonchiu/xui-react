@@ -1,5 +1,6 @@
 import '../Styles/Button.scss'
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 
 class Button extends Component {
 	constructor(props) {
@@ -13,6 +14,13 @@ class Button extends Component {
 		if (this.props.disabled){
 			css += ' x-button--disabled';
 		}
+		if (this.props.to){
+			return (
+				<Link to={ this.props.to } className={ css }>
+					{ this.props.children }
+				</Link>
+			);
+		}
 		return (
 			<a className={ css }>
 				{ this.props.children }
@@ -22,7 +30,22 @@ class Button extends Component {
 }
 
 Button.propTypes = {
-	type: PropTypes.string
+	type: PropTypes.string,
+	to: PropTypes.string
 }
 
-export default Button
+class ButtonGroup extends Component {
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		return (
+			<menu className="x-button-group">
+				{ this.props.children }
+			</menu>
+		);
+	}
+}
+
+export default Button;
+export { ButtonGroup };

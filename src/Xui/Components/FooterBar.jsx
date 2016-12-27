@@ -67,18 +67,5 @@ FooterBarNav.propTypes = {
 	onClick: PropTypes.func
 }
 
-class FooterBarButtonGroup extends Component {
-	constructor(props) {
-		super(props);
-	}
-	render() {
-		return (
-			<nav className="x-app-footer-bar__button-group">
-				{ this.props.children }
-			</nav>
-		);
-	}
-}
-
 export default FooterBar;
-export { FooterBarNavGroup, FooterBarNav, FooterBarButtonGroup };
+export { FooterBarNavGroup, FooterBarNav };

@@ -47,13 +47,8 @@
 			}
 		}
 	}
-	// 菜单
-	&__button-group {
-		display: flex;
-		padding: pr(20) pr(5) pr(20) pr(20);
-		a {
-			margin-right: pr(15);
-		}
+	.x-button-group {
+		padding: pr(20);
 	}
 }
 
