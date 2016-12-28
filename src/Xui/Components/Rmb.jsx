@@ -1,4 +1,4 @@
-import '../Styles/Rmb.scss'
+import '../Styles/Rmb'
 import React, { Component } from 'react'
 
 class Rmb extends Component {

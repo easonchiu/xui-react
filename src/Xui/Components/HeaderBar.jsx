@@ -1,5 +1,5 @@
-import '../Styles/HeaderBar.scss'
-import '../Styles/Icon.scss'
+import '../Styles/HeaderBar'
+
 import React, { Component, PropTypes } from 'react'
 
 class HeaderBar extends Component {

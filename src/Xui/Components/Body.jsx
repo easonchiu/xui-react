@@ -1,4 +1,4 @@
-import '../Styles/Body.scss'
+import '../Styles/Body'
 import React, { Component } from 'react'
 import classnames from 'classnames'
 

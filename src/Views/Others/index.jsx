@@ -1,9 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell.jsx'
 
-import ajax from '../../Assets/Js/ajax.js'
-
-
 class OthersView extends Component {
 	constructor(props) {
 		super(props);

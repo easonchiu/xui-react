@@ -1,7 +1,6 @@
-import '../Styles/Cell.scss'
+import '../Styles/Cell'
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-import fastclick from '../../Assets/Js/fastclick.js'
 import classnames from 'classnames'
 
 

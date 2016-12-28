@@ -1,5 +1,4 @@
-import '../Styles/FooterBar.scss'
-import '../Styles/Icon.scss'
+import '../Styles/FooterBar'
 
 import React, { Component, PropTypes } from 'react'
 import { findDOMNode } from 'react-dom'

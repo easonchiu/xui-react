@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var opn = require('opn');
+var path = require('path');
 var htmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -14,14 +15,14 @@ module.exports = function makeWebpackConfig(){
 
 	// 页面入口文件
 	config.entry = isTest ? {} : {
-		'app': ['./src/main.jsx'],
+		'app': path.resolve(__dirname, 'src/main.jsx'),
 	};
 
 
 	// 输出文件
 	config.output = isTest ? {} : {
-		path: __dirname + '/dist', // 输出到哪个目录下（__dirname当前项目目录）
-		// publicPath: isProd ? '/' : 'http://localhost:8080/',
+		path: path.resolve(__dirname, 'dist'), // 输出到哪个目录下（__dirname当前项目目录）
+		publicPath: isProd ? '/' : '/',
 		filename: isProd ? '[name].[hash].js' : '[name].bundle.js' // 最终打包生产的文件名
 	};
 
@@ -98,7 +99,7 @@ module.exports = function makeWebpackConfig(){
 	}
 
 	// 自动打开浏览器
-	if (!isTest) {
+	if (!isProd) {
 		var uri = 'http://localhost:8080';
 		opn(uri);
 	}
@@ -154,6 +155,9 @@ module.exports = function makeWebpackConfig(){
 		]
 	}
 
+	config.resolve = {
+		extensions: ['', '.js', '.jsx', '.scss', '.css']
+	}
 
 
 

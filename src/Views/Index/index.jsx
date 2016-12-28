@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 
-
 import HeaderBar, { HeaderBarTools } from '../../Xui/Components/HeaderBar.jsx'
 import Body from '../../Xui/Components/Body.jsx'
 import FooterBar, { FooterBarNavGroup, FooterBarNav } from '../../Xui/Components/FooterBar.jsx'
+
 
 
 

@@ -1,4 +1,4 @@
-import '../Styles/Button.scss'
+import '../Styles/Button'
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
