@@ -64,9 +64,9 @@ class CellRowHeader extends Component {
 	}
 	render(){
 		return (
-			<div className="x-cell__row__header">
+			<header className="x-cell__row__header">
 				{ this.props.children }
-			</div>
+			</header>
 		);
 	}
 }
@@ -90,9 +90,9 @@ class CellRowFooter extends Component {
 	}
 	render(){
 		return (
-			<div className="x-cell__row__footer">
+			<footer className="x-cell__row__footer">
 				{ this.props.children }
-			</div>
+			</footer>
 		);
 	}
 }
