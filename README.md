@@ -1,8 +1,8 @@
-# react_webpack_study
+# react_react-router_webpack
 
-参考微信界面做练习题，进行中...
-用到react + react-router
-接下来打算再加入redux
+
+### 研究项目，自己试着学react + react-router并封装一套适合移动端的ui界面。
+
 
 
 ### BEM命名法
@@ -32,3 +32,5 @@
 <IndexLink to="/" activeClassName="active"></IndexLink>
 ```
 如果是如果route是/，相对应的Link用IndexLink代替，不然/下的任何页面都会匹配Link的activeClassName
+
+
