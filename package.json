@@ -1,5 +1,5 @@
 {
-  "name": "react_webpack_study",
+  "name": "react_react-router_webpack",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/easonchiu/react_webpack_study.git"
+    "url": "git+https://github.com/easonchiu/react_react-router_webpack.git"
   },
   "author": "eason",
   "license": "MIT",
@@ -44,9 +44,9 @@
     "webpack": "^1.13.3"
   },
   "bugs": {
-    "url": "https://github.com/easonchiu/react_webpack_study/issues"
+    "url": "https://github.com/easonchiu/react_react-router_webpack/issues"
   },
-  "homepage": "https://github.com/easonchiu/react_webpack_study#readme",
+  "homepage": "https://github.com/easonchiu/react_react-router_webpack#readme",
   "dependencies": {
     "classnames": "^2.2.5"
   }
