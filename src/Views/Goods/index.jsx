@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { CellTitle } from '../../Xui/Components/Cell.jsx'
+import { CellTitle } from '../../Xui/Components/Cell'
 
 class Goods extends Component {
 	constructor(props) {

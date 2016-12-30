@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 
-import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell.jsx'
-import Rmb from '../../Xui/Components/Rmb.jsx'
+import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell'
+import Rmb from '../../Xui/Components/Rmb'
+import Icon from '../../Xui/Components/Icon'
 
 
 class Message extends Component {
@@ -130,7 +131,7 @@ class Message extends Component {
 							return (
 								<CellRow key={ e }>
 									<CellRowHeader>
-										<i className="x-icon--home" />
+										<Icon name="home" />
 									</CellRowHeader>
 									<CellRowBody>
 										<h6>标题文字</h6>

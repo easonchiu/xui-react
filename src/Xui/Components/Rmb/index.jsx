@@ -1,4 +1,4 @@
-import '../Styles/Rmb'
+import './style'
 import React, { Component } from 'react'
 
 class Rmb extends Component {

@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody } from '../../Xui/Components/Cell.jsx'
-import Panel, { PanelHeader, PanelBody, PanelFooter } from '../../Xui/Components/Panel.jsx'
-
-
+import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody } from '../../Xui/Components/Cell'
+import Panel, { PanelHeader, PanelBody, PanelFooter } from '../../Xui/Components/Panel'
+import Icon from '../../Xui/Components/Icon'
 
 class PanelView extends Component {
 	constructor(props) {
@@ -35,7 +34,7 @@ class PanelView extends Component {
 				<Panel>
 					<PanelHeader>
 						<h2>模块名称</h2>
-						<a>更多<i className="x-icon--right" /></a>
+						<a>更多<Icon name="right" /></a>
 					</PanelHeader>
 					<PanelBody>
 						

@@ -1,4 +1,3 @@
-import './Xui/Styles/Icon'
 import './Assets/Styles/reset'
 import React from 'react'
 import { render } from 'react-dom'

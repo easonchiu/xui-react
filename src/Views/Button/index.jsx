@@ -1,9 +1,9 @@
 import './style.scss'
 import React, { Component, PropTypes } from 'react'
 
-import Cell, { CellRow, CellRowHeader, CellRowBody, CellRowFooter, CellTitle } from '../../Xui/Components/Cell.jsx'
-import Button, { ButtonGroup } from '../../Xui/Components/Button.jsx'
-import FooterBar from '../../Xui/Components/FooterBar.jsx'
+import Cell, { CellRow, CellRowHeader, CellRowBody, CellRowFooter, CellTitle } from '../../Xui/Components/Cell'
+import Button, { ButtonGroup } from '../../Xui/Components/Button'
+import Footer from '../../Xui/Components/Footer'
 
 class Mine extends Component {
 	constructor(props) {
@@ -72,19 +72,19 @@ class Mine extends Component {
 				</Cell>
 
 				<CellTitle title="底菜单按钮" />
-				<FooterBar>
+				<Footer>
 					<ButtonGroup>
 						<Button type="warn">删除</Button>
 					</ButtonGroup>
-				</FooterBar>
+				</Footer>
 
 				<CellTitle title="底菜单按钮组合" />
-				<FooterBar>
+				<Footer>
 					<ButtonGroup>
 						<Button>取消</Button>
 						<Button type="vital">提交</Button>
 					</ButtonGroup>
-				</FooterBar>
+				</Footer>
 				
 			</div>
 		);

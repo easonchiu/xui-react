@@ -2,11 +2,11 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { createHistory } from 'history'
 
-import HeaderBar, { HeaderBarTools } from '../../Xui/Components/HeaderBar.jsx'
-import Body from '../../Xui/Components/Body.jsx'
-import { CellTitle } from '../../Xui/Components/Cell.jsx'
-import Logis, { LogisRow } from '../../Xui/Components/Logis.jsx'
-
+import Header, { HeaderTools } from '../../Xui/Components/Header'
+import Body from '../../Xui/Components/Body'
+import { CellTitle } from '../../Xui/Components/Cell'
+import Logis, { LogisRow } from '../../Xui/Components/Logis'
+import Icon from '../../Xui/Components/Icon'
 
 
 class LogisView extends Component {
@@ -21,11 +21,11 @@ class LogisView extends Component {
 	render() {
 		return (
 			<div>
-				<HeaderBar title="物流跟踪">
-					<HeaderBarTools>
-						<a onClick={ this.goBack }><i className="x-icon--back" />返回</a>
-					</HeaderBarTools>
-				</HeaderBar>
+				<Header title="物流跟踪">
+					<HeaderTools>
+						<a onClick={ this.goBack }><Icon name="back" />返回</a>
+					</HeaderTools>
+				</Header>
 				<Body>
 					<CellTitle title="物流跟踪" />
 					<Logis>

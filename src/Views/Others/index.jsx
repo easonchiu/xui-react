@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell.jsx'
+import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell'
 
 class OthersView extends Component {
 	constructor(props) {

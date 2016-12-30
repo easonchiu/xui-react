@@ -1,6 +1,5 @@
 @charset "utf-8";
-@import "Config.scss";
-
+@import "../../Styles/Config.scss";
 
 // 按钮类
 $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(cr(body),-5), vital: #04be02);

@@ -1,4 +1,4 @@
-import '../Styles/Cell'
+import './style'
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import classnames from 'classnames'
