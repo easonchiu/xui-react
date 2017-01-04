@@ -5,7 +5,6 @@ import { Router, hashHistory } from 'react-router'
 
 import Routes from './Routes'
 
-
 render(
 	<Router history={ hashHistory } routes={ Routes } />,
 	document.getElementById('app')

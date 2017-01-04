@@ -14,11 +14,17 @@ class Button extends Component {
 		if (this.props.disabled){
 			css += ' x-button--disabled';
 		}
-		if (this.props.to){
+		if (this.props.to && this.props.onClick == undefined){
 			return (
 				<Link to={ this.props.to } className={ css }>
 					{ this.props.children }
 				</Link>
+			);
+		} else if (this.props.onClick) {
+			return (
+				<a onClick={ this.props.onClick } className={ css }>
+					{ this.props.children }
+				</a>
 			);
 		}
 		return (
@@ -31,7 +37,8 @@ class Button extends Component {
 
 Button.propTypes = {
 	type: PropTypes.string,
-	to: PropTypes.string
+	to: PropTypes.string,
+	onClick: PropTypes.func
 }
 
 class ButtonGroup extends Component {

@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { CellTitle } from '../../Xui/Components/Cell'
+import Button from '../../Xui/Components/Button'
+
 
 class Goods extends Component {
 	constructor(props) {
@@ -8,7 +10,7 @@ class Goods extends Component {
 	render() {
 		return (
 			<div>
-				<CellTitle title="商品" />
+				<Button type="warn">aaa</Button>
 			</div>
 		);
 	}
