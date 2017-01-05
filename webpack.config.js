@@ -9,21 +9,27 @@ var ENV = process.env.npm_lifecycle_event;
 var isTest = ENV === 'test' || ENV === 'test-watch';
 var isProd = ENV === 'build';
 
+var ROOT_PATH = path.resolve(__dirname);
+var SRC_PATH = path.resolve(ROOT_PATH, 'src');
+var MAIN_FILE = path.resolve(SRC_PATH, 'main.jsx');
+var DIST_PATH = path.resolve(ROOT_PATH, 'dist');
+
 module.exports = function makeWebpackConfig(){
 
 	var config = {};
 
 	// 页面入口文件
 	config.entry = isTest ? {} : {
-		'app': path.resolve(__dirname, 'src/main.jsx'),
+		'app': MAIN_FILE,
 	};
 
 
 	// 输出文件
 	config.output = isTest ? {} : {
-		path: path.resolve(__dirname, 'dist'), // 输出到哪个目录下（__dirname当前项目目录）
 		publicPath: isProd ? '/' : '/',
-		filename: isProd ? '[name].[hash].js' : '[name].bundle.js' // 最终打包生产的文件名
+		path: DIST_PATH, // 输出到哪个目录下（__dirname当前项目目录）
+		filename: isProd ? '[name].[hash].js' : '[name].bundle.js', // 最终打包生产的文件名
+		chunkFilename: '[name].[chunkhash:5].min.js',
 	};
 
 

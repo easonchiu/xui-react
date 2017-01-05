@@ -3,30 +3,68 @@ import { Router, Route, IndexRoute, Redirect, hashHistory } from 'react-router'
 
 import AppIndex from '../Views/Index'
 import Cell from '../Views/Cell'
-import Panel from '../Views/Panel'
-import Goods from '../Views/Goods'
-import Button from '../Views/Button'
-import Others from '../Views/Others'
-import Logis from '../Views/Logis'
 
-import Test from '../Views/Test'
+
+const Panel = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Panel').default);
+    }, 'panel');
+}
+
+const Goods = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Goods').default);
+    }, 'goods');
+}
+
+const Button = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Button').default);
+    }, 'button');
+}
+
+const Others = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Others').default);
+    }, 'others');
+}
+
+const Logis = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Logis').default);
+    }, 'logis');
+}
+
+const Test = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Test').default);
+    }, 'test');
+}
+
+
 
 const Routes = (
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }>
 			<IndexRoute component={ Cell }></IndexRoute>
-			<Route path="/panel" component={ Panel }></Route>
-			<Route path="/goods" component={ Goods }></Route>
-			<Route path="/button" component={ Button }></Route>
-			<Route path="/others" component={ Others }></Route>
+			<Route path="/panel" getComponent={ Panel }></Route>
+			<Route path="/goods" getComponent={ Goods }></Route>
+			<Route path="/button" getComponent={ Button }></Route>
+			<Route path="/others" getComponent={ Others }></Route>
 		</Route>
-		<Route path="/logis" component={ Logis }></Route>
-		<Route path="/t" component={ Test }></Route>
+		<Route path="/logis" getComponent={ Logis }></Route>
+		<Route path="/t" getComponent={ Test }></Route>
 		<Redirect from="*" to="/" />
 	</Router>
 );
 
 export default Routes;
+
+
+
+
+
+
 
 
 
