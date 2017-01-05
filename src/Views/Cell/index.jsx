@@ -6,6 +6,136 @@ import Rmb from '../../Xui/Components/Rmb'
 import Icon from '../../Xui/Components/Icon'
 
 
+const CellA = () => {
+	return (
+		<div>
+			<CellTitle title="带链接的商品列表" />
+			<Cell>
+				{
+					[1, 2, 3].map(e => {
+						return (
+							<CellRow key={ e } to="/" vstart>
+								<CellRowHeader>
+									<img src="./src/Assets/Images/headpic.jpeg" />
+								</CellRowHeader>
+								<CellRowBody>
+									<h6>列表的大标题，可以是产品名称等</h6>
+									<span>产品的描述性文字</span>
+								</CellRowBody>
+							</CellRow>
+						);
+					})
+				}
+			</Cell>
+		</div>
+	);
+}
+
+const CellB = () => {
+	return (
+		<div>
+			<CellTitle title="带购买信息的商品列表" />
+			<Cell>
+				{
+					[1, 2, 3].map(e => {
+						return (
+							<CellRow key={ e }>
+								<CellRowHeader>
+									<img src="./src/Assets/Images/headpic.jpeg" />
+								</CellRowHeader>
+								<CellRowBody>
+									<h6>列表的产品名称等</h6>
+									<span>产品的描述性文字</span>
+								</CellRowBody>
+								<CellRowFooter>
+									<Rmb price="199.00" />
+									<small>共2件</small>
+								</CellRowFooter>
+							</CellRow>
+						);
+					})
+				}
+			</Cell>
+		</div>
+	)
+}
+
+const CellC = () => {
+	return (
+		<div>
+			<CellTitle title="带说明的列表" />
+			<Cell>
+				{
+					[1, 2, 3].map(e => {
+						return (
+							<CellRow key={ e }>
+								<CellRowBody>
+									<h6>标题文字</h6>
+								</CellRowBody>
+								<CellRowFooter>
+									<span>说明描述</span>
+								</CellRowFooter>
+							</CellRow>
+						);
+					})
+				}
+			</Cell>
+		</div>
+	)
+}
+
+const CellD = () => {
+	return (
+		<div>
+			<CellTitle title="带说明的链接列表" />
+			<Cell>
+				{
+					[1, 2, 3].map(e => {
+						return (
+							<CellRow key={ e } to="/">
+								<CellRowBody>
+									<h6>标题文字</h6>
+								</CellRowBody>
+								<CellRowFooter>
+									<span>说明描述</span>
+								</CellRowFooter>
+							</CellRow>
+						);
+					})
+				}
+			</Cell>
+		</div>
+	)
+}
+
+const CellE = () => {
+	return (
+		<div>
+			<CellTitle title="带图标的列表" />
+			<Cell>
+				{
+					[1, 2, 3].map(e => {
+						return (
+							<CellRow key={ e }>
+								<CellRowHeader>
+									<Icon name="home" />
+								</CellRowHeader>
+								<CellRowBody>
+									<h6>标题文字</h6>
+								</CellRowBody>
+								<CellRowFooter>
+									<span>说明描述</span>
+								</CellRowFooter>
+							</CellRow>
+						);
+					})
+				}
+			</Cell>
+		</div>
+	)
+}
+
+
 class Message extends Component {
 	constructor(props) {
 		super(props);
@@ -36,69 +166,20 @@ class Message extends Component {
 		});
 	}
 	render() {
-		let cell1 = (
-			<div>
-				<CellTitle title="带链接的商品列表" />
-				<Cell>
-					{
-						[1, 2, 3].map(e => {
-							return (
-								<CellRow key={ e } to="/" vstart>
-									<CellRowHeader>
-										<img src="./src/Assets/Images/headpic.jpeg" />
-									</CellRowHeader>
-									<CellRowBody>
-										<h6>列表的大标题，可以是产品名称等</h6>
-										<span>产品的描述性文字</span>
-									</CellRowBody>
-								</CellRow>
-							);
-						})
-					}
-				</Cell>
-			</div>
-		)
 
-		let cell2 = (
+		let CellG = (
 			<div>
-				<CellTitle title="带购买信息的商品列表" />
+				<CellTitle title="单选框" />
 				<Cell>
 					{
 						[1, 2, 3].map(e => {
 							return (
-								<CellRow key={ e }>
-									<CellRowHeader>
-										<img src="./src/Assets/Images/headpic.jpeg" />
-									</CellRowHeader>
-									<CellRowBody>
-										<h6>列表的产品名称等</h6>
-										<span>产品的描述性文字</span>
-									</CellRowBody>
-									<CellRowFooter>
-										<Rmb price="199.00" />
-										<small>共2件</small>
-									</CellRowFooter>
-								</CellRow>
-							);
-						})
-					}
-				</Cell>
-			</div>
-		)
-
-		let cell3 = (
-			<div>
-				<CellTitle title="带说明的列表" />
-				<Cell>
-					{
-						[1, 2, 3].map(e => {
-							return (
-								<CellRow key={ e }>
+								<CellRow key={ e } checkbox checked={ this.state.checkboxid == e } onClick={ this.onCheckboxClick.bind(this, e) }>
 									<CellRowBody>
 										<h6>标题文字</h6>
 									</CellRowBody>
 									<CellRowFooter>
-										<span>说明描述</span>
+										<small>描述</small>
 									</CellRowFooter>
 								</CellRow>
 							);
@@ -108,54 +189,7 @@ class Message extends Component {
 			</div>
 		)
 
-		let cell4 = (
-			<div>
-				<CellTitle title="带说明的链接列表" />
-				<Cell>
-					{
-						[1, 2, 3].map(e => {
-							return (
-								<CellRow key={ e } to="/">
-									<CellRowBody>
-										<h6>标题文字</h6>
-									</CellRowBody>
-									<CellRowFooter>
-										<span>说明描述</span>
-									</CellRowFooter>
-								</CellRow>
-							);
-						})
-					}
-				</Cell>
-			</div>
-		)
-
-		let cell5 = (
-			<div>
-				<CellTitle title="带图标的列表" />
-				<Cell>
-					{
-						[1, 2, 3].map(e => {
-							return (
-								<CellRow key={ e }>
-									<CellRowHeader>
-										<Icon name="home" />
-									</CellRowHeader>
-									<CellRowBody>
-										<h6>标题文字</h6>
-									</CellRowBody>
-									<CellRowFooter>
-										<span>说明描述</span>
-									</CellRowFooter>
-								</CellRow>
-							);
-						})
-					}
-				</Cell>
-			</div>
-		)
-
-		let cell6 = (
+		let CellF = (
 			<div>
 				<CellTitle title="多选框" />
 				<Cell>
@@ -179,31 +213,9 @@ class Message extends Component {
 				</Cell>
 			</div>
 		)
-
-		let cell7 = (
-			<div>
-				<CellTitle title="单选框" />
-				<Cell>
-					{
-						[1, 2, 3].map(e => {
-							return (
-								<CellRow key={ e } checkbox checked={ this.state.checkboxid == e } onClick={ this.onCheckboxClick.bind(this, e) }>
-									<CellRowBody>
-										<h6>标题文字</h6>
-									</CellRowBody>
-									<CellRowFooter>
-										<small>描述</small>
-									</CellRowFooter>
-								</CellRow>
-							);
-						})
-					}
-				</Cell>
-			</div>
-		)
-
+		
 		let selectcss = this.state.select == '' ? 'empty-select' : ''
-		let cell8 = (
+		let CellH = (
 			<div>
 				<CellTitle title="单选框" />
 				<Cell>
@@ -253,18 +265,17 @@ class Message extends Component {
 				</Cell>
 			</div>
 		)
-
 		
 		return (
 			<div>
-				{ cell8 }
-				{ cell1 }
-				{ cell2 }
-				{ cell3 }
-				{ cell4 }
-				{ cell5 }
-				{ cell6 }
-				{ cell7 }
+				{ CellH }
+				<CellA />
+				<CellB />
+				<CellC />
+				<CellD />
+				<CellE />
+				{ CellF }
+				{ CellG }
 			</div>
 		);
 	}

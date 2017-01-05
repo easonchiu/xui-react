@@ -9,6 +9,8 @@ import Button from '../Views/Button'
 import Others from '../Views/Others'
 import Logis from '../Views/Logis'
 
+import Test from '../Views/Test'
+
 const Routes = (
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }>
@@ -19,6 +21,7 @@ const Routes = (
 			<Route path="/others" component={ Others }></Route>
 		</Route>
 		<Route path="/logis" component={ Logis }></Route>
+		<Route path="/t" component={ Test }></Route>
 		<Redirect from="*" to="/" />
 	</Router>
 );
