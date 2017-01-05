@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react'
+import { findDOMNode } from 'react-dom'
 
-import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell.jsx'
-import Rmb from '../../Xui/Components/Rmb.jsx'
+import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell'
+import Rmb from '../../Xui/Components/Rmb'
+import Icon from '../../Xui/Components/Icon'
 
 
 class Message extends Component {
@@ -9,7 +11,8 @@ class Message extends Component {
 		super(props);
 		this.state = {
 			checkboxid: 1,
-			radioid: 1
+			radioid: 1,
+			select: ''
 		};
 	}
 	onCheckboxClick(v) {
@@ -26,6 +29,12 @@ class Message extends Component {
 			});
 		}
 	}
+	onSelectChange() {
+		let val = findDOMNode(this.refs.select).value;
+		this.setState({
+			select: val
+		});
+	}
 	render() {
 		let cell1 = (
 			<div>
@@ -34,7 +43,7 @@ class Message extends Component {
 					{
 						[1, 2, 3].map(e => {
 							return (
-								<CellRow key={ e } to="/">
+								<CellRow key={ e } to="/" vstart>
 									<CellRowHeader>
 										<img src="./src/Assets/Images/headpic.jpeg" />
 									</CellRowHeader>
@@ -130,7 +139,7 @@ class Message extends Component {
 							return (
 								<CellRow key={ e }>
 									<CellRowHeader>
-										<i className="x-icon--home" />
+										<Icon name="home" />
 									</CellRowHeader>
 									<CellRowBody>
 										<h6>标题文字</h6>
@@ -182,6 +191,9 @@ class Message extends Component {
 									<CellRowBody>
 										<h6>标题文字</h6>
 									</CellRowBody>
+									<CellRowFooter>
+										<small>描述</small>
+									</CellRowFooter>
 								</CellRow>
 							);
 						})
@@ -190,9 +202,62 @@ class Message extends Component {
 			</div>
 		)
 
+		let selectcss = this.state.select == '' ? 'empty-select' : ''
+		let cell8 = (
+			<div>
+				<CellTitle title="单选框" />
+				<Cell>
+					<CellRow>
+						<CellRowHeader>
+							<label>姓名</label>
+						</CellRowHeader>
+						<CellRowBody>
+							<input type="text" placeholder="请输入" />
+						</CellRowBody>
+						<CellRowHeader>
+							<label>手机号</label>
+						</CellRowHeader>
+						<CellRowBody>
+							<input type="text" placeholder="请输入" />
+						</CellRowBody>
+					</CellRow>
+					<CellRow>
+						<CellRowHeader>
+							<label>单行文本</label>
+						</CellRowHeader>
+						<CellRowBody>
+							<input type="text" placeholder="请输入" />
+						</CellRowBody>
+					</CellRow>
+					<CellRow vstart>
+						<CellRowHeader>
+							<label>多行文本</label>
+						</CellRowHeader>
+						<CellRowBody>
+							<textarea placeholder="请输入"></textarea>
+						</CellRowBody>
+					</CellRow>
+					<CellRow>
+						<CellRowHeader>
+							<label>下拉菜单</label>
+						</CellRowHeader>
+						<CellRowBody>
+							<select className={ selectcss } onChange={ this.onSelectChange.bind(this) } ref="select">
+								<option value="">请选择</option>
+								<option value="2">下拉菜单A</option>
+								<option value="3">下拉菜单B</option>
+								<option value="4">下拉菜单C</option>
+							</select>
+						</CellRowBody>
+					</CellRow>
+				</Cell>
+			</div>
+		)
+
 		
 		return (
 			<div>
+				{ cell8 }
 				{ cell1 }
 				{ cell2 }
 				{ cell3 }

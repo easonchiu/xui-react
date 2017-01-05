@@ -1,4 +1,4 @@
-import '../Styles/Panel'
+import './style'
 import React, { Component, PropTypes } from 'react'
 
 class Panel extends Component {

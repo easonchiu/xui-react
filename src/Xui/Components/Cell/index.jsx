@@ -1,4 +1,4 @@
-import '../Styles/Cell'
+import './style'
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import classnames from 'classnames'
@@ -31,18 +31,22 @@ class CellRow extends Component {
 			others.onClick = this.clickHandle.bind(this);
 		}
 		if (this.props.to && !this.props.radio) {
+			let css = classnames('x-cell__row', {
+				'x-cell__row--vstart': this.props.vstart
+			});
 			return (
-				<Link to={ this.props.to } className="x-cell__row" { ...others }>
+				<Link to={ this.props.to } className={ css } { ...others }>
 					{ this.props.children }
 				</Link>
 			);
 		}
-		let css = classnames({
-			'x-cell__row': true,
+		let css = classnames('x-cell__row', {
 			'x-cell__row--radio': this.props.radio,
 			'x-cell__row--radio-checked': this.props.radio && this.props.checked,
 			'x-cell__row--checkbox': this.props.checkbox,
 			'x-cell__row--checkbox-checked': this.props.checkbox && this.props.checked,
+			'x-cell__row--vstart': this.props.vstart,
+			'x-cell__row--arrow': this.props.arrow
 		});
 		return (
 			<article className={ css } { ...others }>

@@ -1,10 +1,11 @@
-import '../Styles/FooterBar'
+import './style'
 
 import React, { Component, PropTypes } from 'react'
 import { findDOMNode } from 'react-dom'
 import { Link, IndexLink } from 'react-router'
+import Icon from '../Icon'
 
-class FooterBar extends Component {
+class Footer extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -17,7 +18,7 @@ class FooterBar extends Component {
 	}
 }
 
-class FooterBarNavGroup extends Component {
+class FooterNavGroup extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -30,7 +31,7 @@ class FooterBarNavGroup extends Component {
 	}
 }
 
-class FooterBarNav extends Component {
+class FooterNav extends Component {
 	constructor(props) {
 		super(props);
 		this.onClick = this.onClick.bind(this);
@@ -42,8 +43,7 @@ class FooterBarNav extends Component {
 		}
 	}
 	render() {
-		let iconName = this.props.icon ? 'x-icon--' + this.props.icon : null;
-		let icon = iconName ? <i className={ iconName }></i> : null;
+		let icon = this.props.icon ? <Icon name={ this.props.icon } /> : null;
 		let Node = this.props.link == '/' ? IndexLink : Link;
 		return (
 			<Node
@@ -60,11 +60,11 @@ class FooterBarNav extends Component {
 	}
 }
 
-FooterBarNav.propTypes = {
+FooterNav.propTypes = {
 	title: PropTypes.string.isRequired,
 	link: PropTypes.string.isRequired,
 	onClick: PropTypes.func
 }
 
-export default FooterBar;
-export { FooterBarNavGroup, FooterBarNav };
+export default Footer;
+export { FooterNavGroup, FooterNav };

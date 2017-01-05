@@ -1,8 +1,8 @@
-import '../Styles/HeaderBar'
+import './style'
 
 import React, { Component, PropTypes } from 'react'
 
-class HeaderBar extends Component {
+class Header extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -19,11 +19,11 @@ class HeaderBar extends Component {
 	}
 }
 
-HeaderBar.propTypes = {
+Header.propTypes = {
 	title: PropTypes.string
 }
 
-class HeaderBarTools extends Component {
+class HeaderTools extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -40,9 +40,9 @@ class HeaderBarTools extends Component {
 	}
 }
 
-HeaderBarTools.propTypes = {
+HeaderTools.propTypes = {
 	children: PropTypes.any.isRequired
 }
 
-export default HeaderBar;
-export { HeaderBarTools };
+export default Header;
+export { HeaderTools };

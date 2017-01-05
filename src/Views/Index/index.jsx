@@ -1,11 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 
-import HeaderBar, { HeaderBarTools } from '../../Xui/Components/HeaderBar.jsx'
-import Body from '../../Xui/Components/Body.jsx'
-import FooterBar, { FooterBarNavGroup, FooterBarNav } from '../../Xui/Components/FooterBar.jsx'
-
-
-
+import Header, { HeaderTools } from '../../Xui/Components/Header'
+import Body from '../../Xui/Components/Body'
+import Footer, { FooterNavGroup, FooterNav } from '../../Xui/Components/Footer'
+import Icon from '../../Xui/Components/Icon'
 
 class Index extends Component {
 	constructor(props) {
@@ -58,25 +56,25 @@ class Index extends Component {
 	render() {
 		return (
 			<div>
-				<HeaderBar title={ this.state.title }>
-					<HeaderBarTools align="right">
-						<a href="javascript:;"><i className="x-icon--more" /></a>
-					</HeaderBarTools>
-				</HeaderBar>
+				<Header title={ this.state.title }>
+					<HeaderTools align="right">
+						<a href="javascript:;"><Icon name="more" /></a>
+					</HeaderTools>
+				</Header>
 
 				<Body>
 					{ this.props.children }
 				</Body>
 
-				<FooterBar>
-					<FooterBarNavGroup>
+				<Footer>
+					<FooterNavGroup>
 					{
 						this.state.nav.map((e, i) => {
-							return <FooterBarNav key={ i } onClick={ this.footerNavClick } { ...e } />
+							return <FooterNav key={ i } onClick={ this.footerNavClick } { ...e } />
 						})
 					}
-					</FooterBarNavGroup>
-				</FooterBar>
+					</FooterNavGroup>
+				</Footer>
 			</div>
 		);
 	}

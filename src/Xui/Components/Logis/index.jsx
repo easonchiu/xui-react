@@ -1,4 +1,4 @@
-import '../Styles/Logis'
+import './style'
 import React, { Component, PropTypes } from 'react'
 
 class Logis extends Component {
