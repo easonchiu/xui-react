@@ -36,7 +36,7 @@ module.exports = function makeWebpackConfig(){
 	if (isTest) {
         config.devtool = 'inline-source-map';
     } else if (isProd) {
-        config.devtool = 'source-map';
+        // config.devtool = 'source-map';
     } else {
         config.devtool = 'eval-source-map';
     }
@@ -65,7 +65,7 @@ module.exports = function makeWebpackConfig(){
 	
 	// 提取css
 	config.plugins.push(
-		new ExtractTextPlugin("[name].[hash].css", {allChunks: true})
+		new ExtractTextPlugin("styles/[name].[hash].css", {allChunks: true})
 	);
 	// 如果js是从node_modules文件夹引用的，全部打包到vendor里
 	config.plugins.push(
@@ -96,10 +96,12 @@ module.exports = function makeWebpackConfig(){
 		// js压缩混淆
 		config.plugins.push(
 			new webpack.optimize.UglifyJsPlugin({
-				compress: {
-					warnings: false
-				},
-				mangle: false // 不加这条时压缩后会把function的参数名也压缩掉，导致angular报错
+				output: {
+	                comments: false, // remove all comments
+	            },
+	            compress: {
+	                warnings: false
+	            }
 		    })
 		);
 	}
@@ -138,22 +140,22 @@ module.exports = function makeWebpackConfig(){
 			},
 			{
 				test: /\.scss$/,
-				loader: ExtractTextPlugin.extract('style', 'css?minimize!sass?sourceMap')
+				loader: ExtractTextPlugin.extract('style', 'css?minimize&!sass')
 			},
 			{
 				test: /\.css$/,
 				loader: ExtractTextPlugin.extract('style', 'css?minimize')
 			},
 			{
-				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-				loader: 'url',
+				test: /\.(png|jpe?g|gif)(\?.*)?$/,
+				loader: 'url?limit=8192&name=images/[name].[hash].[ext]',
 				query: {
 					limit: 10000
 				}
 			},
 			{
-				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-				loader: 'url',
+				test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
+				loader: 'file?name=images/[name].[hash].[ext]',
 				query: {
 					limit: 10000
 				}
