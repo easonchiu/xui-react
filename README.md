@@ -44,6 +44,9 @@ const [SomeComponent] = (ns, cb) => {
     }, '[ChunkName]');
 }
 ```
+```
+<Route path="/xxx" getComponent={ [SomeComponent] }></Route>
+```
 
 并且在webpack配置时在`output`增加一条
 ```
