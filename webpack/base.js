@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var htmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var extractTextPlugin = require("extract-text-webpack-plugin");
 
 var ROOT_PATH = path.resolve(__dirname, '../');
 var SRC_PATH = path.resolve(ROOT_PATH, 'src');
@@ -20,9 +20,9 @@ module.exports = function makeWebpackConfig(){
 	// 输出文件
 	config.output = {
 		publicPath: '/',
-		path: DIST_PATH, // 输出目录
-		filename: '[name].bundle.js', // 最终打包生产的文件名
-		chunkFilename: '[name].bundle.js',
+		path: DIST_PATH,
+		filename: 'static/js/[name].bundle.js',
+		chunkFilename: 'static/js/[name].bundle.js',
 	};
 
 	// 插件项
@@ -48,7 +48,7 @@ module.exports = function makeWebpackConfig(){
 	
 	// 提取css
 	config.plugins.push(
-		new ExtractTextPlugin('styles/[name].[contenthash:8].css', { allChunks: true })
+		new extractTextPlugin('static/css/[name].[contenthash:8].css', { allChunks: true })
 	);
 
 	// 将第三方框架打包进vendor
@@ -100,25 +100,25 @@ module.exports = function makeWebpackConfig(){
 			},
 			{
 				test: /\.scss$/,
-				loader: ExtractTextPlugin.extract('style', 'css?minimize!sass?sourceMap')
+				loader: extractTextPlugin.extract('style', 'css?minimize!sass?sourceMap')
 			},
 			{
 				test: /\.css$/,
-				loader: ExtractTextPlugin.extract('style', 'css?minimize')
+				loader: extractTextPlugin.extract('style', 'css?minimize')
 			},
 			{
 				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
 				loader: 'url',
 				query: {
 					limit: 8192,
-					name: 'images/[name].[hash:8].[ext]',
+					name: 'static/images/[name].[hash:8].[ext]',
 				}
 			},
 			{
 				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
 				loader: 'file',
 				query: {
-					name: 'images/[name].[hash:8].[ext]',
+					name: 'static/images/[name].[hash:8].[ext]',
 				}
 			}
 		]

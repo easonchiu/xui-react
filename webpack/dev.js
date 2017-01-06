@@ -4,6 +4,8 @@ var opn = require('opn');
 
 var config = require('./base');
 
+config.devtool = 'source-map';
+
 //代理服务器
 var proxy = [{
 	path: '*', //必须得有一个文件地址，如果顶层文件夹名字不同，则用/*代替
