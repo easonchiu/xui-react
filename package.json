@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run server",
-    "build": "rm -rf ./dist && webpack --bail --progress --profile",
-    "watch": "webpack --progress --colors --watch",
-    "server": "webpack-dev-server --history-api-fallback --inline --progress --host 0.0.0.0"
+    "start": "npm run dev",
+    "build": "rm -rf ./dist && webpack --config webpack/dist.js --bail --progress --profile",
+    "dev": "node webpack/dev.js"
   },
   "repository": {
     "type": "git",
