@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var config = require('./base');
 
 // 配置公共路径
-config.output.publicPath = '/';
+config.output.publicPath = 'http://web-img.todoingnow.com/';
 
 // 文件重命名
 config.output.filename = '[name].[chunkhash:8].js';
@@ -23,6 +23,15 @@ config.plugins.push(
             warnings: false,
         }
     })
+);
+
+// 切换到产品版本
+config.plugins.push(
+	new webpack.DefinePlugin({
+		"process.env": { 
+			NODE_ENV: JSON.stringify("production")
+		}
+	})
 );
 
 module.exports = config;

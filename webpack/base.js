@@ -51,7 +51,7 @@ module.exports = function makeWebpackConfig(){
 		new ExtractTextPlugin('styles/[name].[contenthash:8].css', { allChunks: true })
 	);
 
-	// 如果js是从node_modules文件夹引用的，全部打包到vendor里
+	// 将第三方框架打包进vendor
 	config.plugins.push(
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',
@@ -62,6 +62,13 @@ module.exports = function makeWebpackConfig(){
 		        	module.resource.indexOf('/node_modules/') != -1
 		        )
 		    }
+		})
+	);
+
+	// 将运行时runtime抽离出来放到manifest
+	config.plugins.push(
+		new webpack.optimize.CommonsChunkPlugin({
+			name: ['vendor', 'manifest'],
 		})
 	);
 
