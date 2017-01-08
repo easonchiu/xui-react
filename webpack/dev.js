@@ -23,9 +23,9 @@ var server = new WebpackDevServer(webpack(config), {
 	proxy
 });
 
-server.listen(8088, function() {
+server.listen(8001, function() {
 	// 自动打开浏览器
-	var uri = 'http://localhost:8088';
+	var uri = 'http://localhost:8001';
 	opn(uri);
 });
 

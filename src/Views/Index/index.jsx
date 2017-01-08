@@ -5,6 +5,7 @@ import Body from '../../Xui/Components/Body'
 import Footer, { FooterNavGroup, FooterNav } from '../../Xui/Components/Footer'
 import Icon from '../../Xui/Components/Icon'
 
+
 class Index extends Component {
 	constructor(props) {
 		super(props);
