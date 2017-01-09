@@ -8,8 +8,8 @@ config.output.publicPath = '/';
 config.output.filename = 'static/js/[name].[chunkhash:8].js';
 config.output.chunkFilename = 'static/js/[name].[chunkhash:8].js';
 config.cssPlugin.filename = 'static/css/[name].[contenthash:8].css';
-config.fileLoader.query.name = 'images/[name].[hash:8].[ext]';
-config.urlLoader.query.name = 'images/[name].[hash:8].[ext]';
+config.fileLoader.query.name = 'static/images/[name].[hash:8].[ext]';
+config.urlLoader.query.name = 'static/images/[name].[hash:8].[ext]';
 
 // 重新配置模板信息
 config.templateSetting.options.title = 'react';

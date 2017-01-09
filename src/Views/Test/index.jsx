@@ -1,53 +1,19 @@
 import React, { Component } from 'react'
 
 
-import { createStore } from 'redux'
-import keyMirror from 'keyMirror'
-import { is, fromJS } from 'immutable'
 
+import { testReducer } from '../../Redux/Reducer'
+import { actions, testAction, otherAction } from '../../Redux/Action'
+import store from '../../Redux/Store'
 
-const Action = keyMirror({
-	ALL: null,
-});
-
-// init state
-let defaultState = {
-	user: []
-}
-
-// reducer
-const reducer = (state = defaultState, action = {}) => {
-	const { type, payload } = action;
-	switch (type){
-		case Action.ALL:
-			return Object.assign({}, state,
-				{
-					user: payload,
-				}	
-			);
-		default:
-			return state;
-	}
-}
-
-// store
-let store = createStore(reducer);
-
-
-// listener
 store.subscribe((e) => {
 	let state = store.getState();
 	console.log(state)
 });
 
-// action
-let all = () => ({
-	type: Action.ALL,
-	payload: [4, 5, 6],
-});
+store.dispatch(testAction(123));
+store.dispatch(otherAction(444));
 
-// dispatch
-store.dispatch(all());
 
 
 
@@ -57,7 +23,7 @@ class Test extends Component {
 	}
 	render() {
 		return (
-			<div>test</div>
+			<div>testb</div>
 		);
 	}
 }

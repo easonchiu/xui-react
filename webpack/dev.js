@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
+var webpackDevServer = require('webpack-dev-server');
 var opn = require('opn');
 
 var config = require('./base');
@@ -14,18 +14,22 @@ var proxy = [{
 	secure: false
 }];
 
-var server = new WebpackDevServer(webpack(config), {
+var server = new webpackDevServer(webpack(config), {
 	publicPath: config.output.publicPath,
 	progress: true,
+	hot: true,
+	historyApiFallback: true,
 	stats: {
 	    colors: true
 	},
 	proxy
 });
 
-server.listen(8001, function() {
+var port = 8001;
+
+server.listen(port, function() {
 	// 自动打开浏览器
-	var uri = 'http://localhost:8001';
+	var uri = 'http://localhost:' + port;
 	opn(uri);
 });
 

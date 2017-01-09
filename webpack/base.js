@@ -75,7 +75,7 @@ module.exports = function makeWebpackConfig(){
 		test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
 		loader: 'file',
 		query: {
-			name: 'images/[name].[ext]',
+			name: 'static/images/[name].[ext]',
 		}
 	};
 	config.urlLoader = {
@@ -83,7 +83,7 @@ module.exports = function makeWebpackConfig(){
 		loader: 'url',
 		query: {
 			limit: 8192,
-			name: 'images/[name].[ext]',
+			name: 'static/images/[name].[ext]',
 		}
 	};
 	config.module = {
