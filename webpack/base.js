@@ -29,26 +29,24 @@ module.exports = function makeWebpackConfig(){
 	config.plugins = [];
 	
 	// 自动生成html模板
+	config.templateSetting = new htmlWebpackPlugin({
+		title: 'react dev',
+		template: 'src/index.html',
+		filename: 'index.html',
+		inject: 'body', // 所有javascript资源将被注入至body底部
+		minify: {
+    		removeComments: true, // 删除注释
+    		collapseWhitespace: true, // 压缩成一行
+		}
+	})
 	config.plugins.push(
-		new htmlWebpackPlugin({
-			template: 'src/index.html',
-			inject: 'body',
-			inject: true,
-			minify: {
-        		removeComments: true,
-        		collapseWhitespace: true,
-        		removeAttributeQuotes: true
-        		// more options:
-        		// https://github.com/kangax/html-minifier#options-quick-reference
-    		},
-    		// necessary to consistently work with multiple chunks via CommonsChunkPlugin
-    		chunksSortMode: 'dependency'
-		})
+		config.templateSetting
 	);
 	
 	// 提取css
+	config.cssPlugin = new extractTextPlugin('static/css/[name].bundle.css', { allChunks: true /*是否将分散的css文件合并成一个文件*/ });
 	config.plugins.push(
-		new extractTextPlugin('static/css/[name].[contenthash:8].css', { allChunks: true })
+		config.cssPlugin
 	);
 
 	// 将第三方框架打包进vendor
@@ -73,6 +71,21 @@ module.exports = function makeWebpackConfig(){
 	);
 
 	// 加载器
+	config.fileLoader = {
+		test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+		loader: 'file',
+		query: {
+			name: 'images/[name].[ext]',
+		}
+	};
+	config.urlLoader = {
+		test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+		loader: 'url',
+		query: {
+			limit: 8192,
+			name: 'images/[name].[ext]',
+		}
+	};
 	config.module = {
 		loaders: [
 			{
@@ -91,13 +104,14 @@ module.exports = function makeWebpackConfig(){
 					presets: ['react', 'es2015']
 				}
 			},
-			{
-				test: /\.html$/,
-				loader: 'html',
-				query: {
-					minimize: true
-				}
-			},
+			// 该loader会与htmlWebpackPlugin插件冲突导致title变量不起作用，故注释掉
+			// {
+			// 	test: /\.html$/,
+			// 	loader: 'html',
+			// 	query: {
+			// 		minimize: true
+			// 	}
+			// },
 			{
 				test: /\.scss$/,
 				loader: extractTextPlugin.extract('style', 'css?minimize!sass?sourceMap')
@@ -106,21 +120,8 @@ module.exports = function makeWebpackConfig(){
 				test: /\.css$/,
 				loader: extractTextPlugin.extract('style', 'css?minimize')
 			},
-			{
-				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-				loader: 'url',
-				query: {
-					limit: 8192,
-					name: 'static/images/[name].[hash:8].[ext]',
-				}
-			},
-			{
-				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-				loader: 'file',
-				query: {
-					name: 'static/images/[name].[hash:8].[ext]',
-				}
-			}
+			config.urlLoader,
+			config.fileLoader,
 		]
 	}
 
