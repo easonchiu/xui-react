@@ -1,8 +1,6 @@
 import { actions } from '../Action'
 
-const initialState = {}
-
-export const testReducer = (state = initialState, action = {}) => {
+export const testReducer = (state = {}, action = {}) => {
 	switch (action.type) {
 		case actions.TEST:
 			state.payload = action.payload;
@@ -13,7 +11,7 @@ export const testReducer = (state = initialState, action = {}) => {
 }
 
 
-export const otherReducer = (state = initialState, action = {}) => {
+export const otherReducer = (state = {}, action = {}) => {
 	switch (action.type) {
 		case actions.OTHER:
 			state.payload = action.payload;

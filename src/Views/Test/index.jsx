@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-
-
 import { testReducer } from '../../Redux/Reducer'
 import { actions, testAction, otherAction } from '../../Redux/Action'
 import store from '../../Redux/Store'
@@ -11,8 +9,6 @@ store.subscribe((e) => {
 	console.log(state)
 });
 
-store.dispatch(testAction(123));
-store.dispatch(otherAction(444));
 
 
 
