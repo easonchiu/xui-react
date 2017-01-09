@@ -2,8 +2,13 @@ import React from 'react'
 import { Router, Route, IndexRoute, Redirect, hashHistory } from 'react-router'
 
 import AppIndex from '../Views/Index'
-import Cell from '../Views/Cell'
 
+
+const Cell = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Cell').default);
+    }, 'cell');
+}
 
 const Panel = (ns, cb) => {
     require.ensure([], (require) => {
@@ -23,7 +28,7 @@ const Button = (ns, cb) => {
     }, 'button');
 }
 
-const Others = (ns, cb) => {
+const Others =(ns, cb) => {
     require.ensure([], (require) => {
         cb(null, require('../Views/Others').default);
     }, 'others');
@@ -46,7 +51,7 @@ const Test = (ns, cb) => {
 const Routes = (
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }>
-			<IndexRoute component={ Cell }></IndexRoute>
+			<IndexRoute getComponent={ Cell }></IndexRoute>
 			<Route path="/panel" getComponent={ Panel }></Route>
 			<Route path="/goods" getComponent={ Goods }></Route>
 			<Route path="/button" getComponent={ Button }></Route>
