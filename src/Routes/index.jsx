@@ -40,6 +40,12 @@ const Logis = (ns, cb) => {
     }, 'logis');
 }
 
+const Icons = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Icons').default);
+    }, 'icons');
+}
+
 const Test = (ns, cb) => {
     require.ensure([], (require) => {
         cb(null, require('../Views/Test').default);
@@ -57,7 +63,8 @@ const Routes = (
 			<Route path="/button" getComponent={ Button }></Route>
 			<Route path="/others" getComponent={ Others }></Route>
 		</Route>
-		<Route path="/logis" getComponent={ Logis }></Route>
+        <Route path="/logis" getComponent={ Logis }></Route>
+		<Route path="/icons" getComponent={ Icons }></Route>
 		<Route path="/t" getComponent={ Test }></Route>
 		<Redirect from="*" to="/" />
 	</Router>

@@ -15,6 +15,11 @@ class OthersView extends Component {
 							<h6>物流信息</h6>
 						</CellRowBody>
 					</CellRow>
+					<CellRow to="/icons">
+						<CellRowBody>
+							<h6>图标</h6>
+						</CellRowBody>
+					</CellRow>
 					<CellRow to="/">
 						<CellRowBody>
 							<h6>用户列表</h6>
