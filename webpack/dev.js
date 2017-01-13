@@ -31,6 +31,6 @@ server.listen(port, function() {
 	// 自动打开浏览器
 	var uri = 'http://localhost:' + port;
 	opn(uri);
-	console.log('打开浏览器：', 'http://localhost:' + port);
+	console.log('打开浏览器', uri);
 });
 

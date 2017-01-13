@@ -1,16 +1,14 @@
-import keyMirror from 'keyMirror'
+import types from '../ActionTypes'
 
-export const actions = keyMirror({
-	TEST: null,
-	OTHER: null,
-})
 
-export const testAction = (payload = {}) => ({
-	type: actions.TEST,
-	payload,
-})
+export const r = (payload = {}) => {
+	return {
+		type: types.TEST,
+		payload,
+	}
+}
 
-export const otherAction = (payload = {}) => ({
-	type: actions.OTHER,
+export const other = (payload = {}) => ({
+	type: types.OTHER,
 	payload,
 })

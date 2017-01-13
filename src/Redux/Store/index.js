@@ -1,14 +1,18 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-import createLogger from 'redux-logger'
 
-import * as reducer from '../Reducer'
+import DevTools from '../../Assets/Js/DevTools'
+import reducers from '../Reducer'
 
-
-let store = createStore(
-	combineReducers(reducer),
+const composedCreateStore = compose(
+	// DevTools.instrument(),
 	applyMiddleware(thunk)
-)
+)(createStore);
 
-export default store;
+const configureStore = (initialState = {}) => {
+	const store = composedCreateStore(reducers, initialState);
+	return store;
+}
 
+export default configureStore;
+export { DevTools };

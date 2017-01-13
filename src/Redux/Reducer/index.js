@@ -1,22 +1,17 @@
-import { actions } from '../Action'
+import { combineReducers } from 'redux'
+import r from './Test'
 
-export const testReducer = (state = {}, action = {}) => {
-	switch (action.type) {
-		case actions.TEST:
-			state.payload = action.payload;
-			return state;
-		default:
-			return state;
-	}
+
+let reducers = {
+	r
 }
 
+export default combineReducers({
+	...reducers
+});
 
-export const otherReducer = (state = {}, action = {}) => {
-	switch (action.type) {
-		case actions.OTHER:
-			state.payload = action.payload;
-			return state;
-		default:
-			return state;
-	}
-}
+
+
+
+
+

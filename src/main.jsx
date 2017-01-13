@@ -4,14 +4,19 @@ import { render } from 'react-dom'
 import { Router, hashHistory } from 'react-router'
 import { Provider } from 'react-redux'
 
-import store from './Redux/Store'
+import configureStore, { DevTools } from './Redux/Store'
 import Routes from './Routes'
 
-console.log(store.getState())
+let store = configureStore();
+
+//<DevTools store={ store } />
 
 render(
-	<Provider store={ store }>
-		<Router history={ hashHistory } routes={ Routes } />
-	</Provider>,
+	<div>
+		<Provider store={ store }>
+			<Router history={ hashHistory } routes={ Routes } />
+		</Provider>
+		
+	</div>,
 	document.getElementById('app')
 );

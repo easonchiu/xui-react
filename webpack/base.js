@@ -93,7 +93,11 @@ module.exports = function makeWebpackConfig(){
 				loader: 'babel',
 				exclude: /node_modules/,
 				query: {
-					presets: ['es2015']
+					cacheDirectory: true,
+					presets: ['es2015', 'stage-1'],
+					plugins: [
+						'transform-decorators-legacy'
+					]
 				}
 			},
 			{
@@ -101,7 +105,11 @@ module.exports = function makeWebpackConfig(){
 				loader: 'babel',
 				exclude: /node_modules/,
 				query: {
-					presets: ['react', 'es2015']
+					cacheDirectory: true,
+					presets: ['react', 'es2015', 'stage-1'],
+					plugins: [
+						'transform-decorators-legacy'
+					]
 				}
 			},
 			// 该loader会与htmlWebpackPlugin插件冲突导致title变量不起作用，故注释掉

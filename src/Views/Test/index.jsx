@@ -1,27 +1,44 @@
 import React, { Component } from 'react'
+import { immutableRenderDecorator } from 'react-immutable-render-mixin'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-import { testReducer } from '../../Redux/Reducer'
-import { actions, testAction, otherAction } from '../../Redux/Action'
-import store from '../../Redux/Store'
-
-store.subscribe((e) => {
-	let state = store.getState();
-	console.log(state)
-});
-
-
-
+import * as actions from '../../Redux/Action'
 
 
 class Test extends Component {
 	constructor(props) {
 		super(props);
 	}
+	componentWillMount() {
+		this.state = {
+			bbb: 1,
+		};
+		this.props.act.r({
+			a: 1,
+			b: 2
+		});
+	}
 	render() {
 		return (
-			<div>testb</div>
+			<div>{ this.props.r.a }</div>
 		);
 	}
 }
 
-export default Test;
+
+// 把状态转换成属性 state => props
+const mapStateToProps = state => {
+	return {
+		...state
+	};
+}
+
+const mapDispatchToProps = dispatch => ({
+	act: bindActionCreators(actions, dispatch)
+})
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps,
+)(Test);
