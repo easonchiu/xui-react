@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { immutableRenderDecorator } from 'react-immutable-render-mixin'
-import connect from '../../Redux/ConnectProps'
 
+import * as actions from '../../Redux/Action'
+import connect from '../../Redux/ConnectProps'
 
 class Test extends Component {
 	constructor(props) {
 		super(props);
 	}
-	
+
 	componentWillMount() {
 		this.props.actions.setData({
 			a: 1
@@ -29,4 +30,4 @@ class Test extends Component {
 }
 
 
-export default connect(Test);
+export default connect(Test, actions);
