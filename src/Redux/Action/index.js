@@ -1,14 +1,9 @@
 import types from '../ActionTypes'
 
 
-export const test = (payload = {}) => {
+export const setData = (payload = {}) => {
 	return {
 		type: types.TEST,
 		payload,
 	}
 }
-
-export const other = (payload = {}) => ({
-	type: types.OTHER,
-	payload,
-})

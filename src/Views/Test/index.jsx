@@ -11,17 +11,30 @@ class Test extends Component {
 		super(props);
 	}
 	componentWillMount() {
-		this.state = {
-			bbb: 1,
-		};
-		this.props.act.r({
-			a: 1,
-			b: 2
+		
+		this.props.act.setData({
+			a: 1
 		});
+
 	}
+
+	_onClick() {
+		let a = this.props.data.p.a + 1;
+
+		this.props.act.setData({
+			a: a
+		});
+
+		console.log(11)
+	}
+
 	render() {
+		let { data } = this.props;
+
+		console.log(111)
+
 		return (
-			<div>{ this.props.r.a }</div>
+			<div onClick={ this._onClick.bind(this) }>{ data.p.a }</div>
 		);
 	}
 }
