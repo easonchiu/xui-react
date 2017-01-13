@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { immutableRenderDecorator } from 'react-immutable-render-mixin'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-
-import * as actions from '../../Redux/Action'
+import connect from '../../Redux/ConnectProps'
 
 
 class Test extends Component {
@@ -30,9 +27,6 @@ class Test extends Component {
 
 	render() {
 		let { data } = this.props;
-
-		console.log(111)
-
 		return (
 			<div onClick={ this._onClick.bind(this) }>{ data.p.a }</div>
 		);
@@ -40,18 +34,4 @@ class Test extends Component {
 }
 
 
-// 把状态转换成属性 state => props
-const mapStateToProps = state => {
-	return {
-		...state
-	};
-}
-
-const mapDispatchToProps = dispatch => ({
-	act: bindActionCreators(actions, dispatch)
-})
-
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps,
-)(Test);
+export default connect(Test);
