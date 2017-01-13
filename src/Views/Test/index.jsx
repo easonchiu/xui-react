@@ -27,8 +27,9 @@ class Test extends Component {
 
 	render() {
 		let { data } = this.props;
+		console.log(data)
 		return (
-			<div onClick={ this._onClick.bind(this) }>{ data.p.a }</div>
+			<div onClick={ this._onClick.bind(this) }>{ 1 }</div>
 		);
 	}
 }

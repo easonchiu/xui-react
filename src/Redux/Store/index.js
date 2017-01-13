@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 
-import DevTools from '../../Assets/Js/DevTools'
+// import DevTools from '../../Assets/Js/DevTools'
 import reducers from '../Reducer'
 
 const composedCreateStore = compose(
@@ -15,4 +15,4 @@ const configureStore = (initialState = {}) => {
 }
 
 export default configureStore;
-export { DevTools };
+// export { DevTools };
