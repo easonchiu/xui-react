@@ -4,6 +4,7 @@ import thunk from 'redux-thunk'
 // import DevTools from '../../Assets/Js/DevTools'
 import reducers from '../Reducer'
 
+
 const composedCreateStore = compose(
 	// DevTools.instrument(),
 	applyMiddleware(thunk)
