@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import r from './Test'
+import test from './Test'
 
 
 let reducers = {
-	r
+	test
 }
 
 export default combineReducers({

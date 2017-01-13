@@ -1,7 +1,7 @@
 import types from '../ActionTypes'
 
 
-export const r = (payload = {}) => {
+export const test = (payload = {}) => {
 	return {
 		type: types.TEST,
 		payload,
