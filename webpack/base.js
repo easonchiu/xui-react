@@ -8,7 +8,7 @@ var SRC_PATH = path.resolve(ROOT_PATH, 'src');
 var MAIN_FILE = path.resolve(SRC_PATH, 'main.jsx');
 var DIST_PATH = path.resolve(ROOT_PATH, 'dist');
 
-module.exports = function makeWebpackConfig(){
+module.exports = function makeWebpackConfig() {
 
 	var config = {};
 
@@ -27,7 +27,7 @@ module.exports = function makeWebpackConfig(){
 
 	// 插件项
 	config.plugins = [];
-	
+
 	// 自动生成html模板
 	config.templateSetting = new htmlWebpackPlugin({
 		title: 'react dev',
@@ -35,16 +35,18 @@ module.exports = function makeWebpackConfig(){
 		filename: 'index.html',
 		inject: 'body', // 所有javascript资源将被注入至body底部
 		minify: {
-    		removeComments: true, // 删除注释
-    		collapseWhitespace: true, // 压缩成一行
+			removeComments: true, // 删除注释
+			collapseWhitespace: true, // 压缩成一行
 		}
 	})
 	config.plugins.push(
 		config.templateSetting
 	);
-	
+
 	// 提取css
-	config.cssPlugin = new extractTextPlugin('static/css/[name].bundle.css', { allChunks: true /*是否将分散的css文件合并成一个文件*/ });
+	config.cssPlugin = new extractTextPlugin('static/css/[name].bundle.css', {
+		allChunks: true /*是否将分散的css文件合并成一个文件*/
+	});
 	config.plugins.push(
 		config.cssPlugin
 	);
@@ -53,13 +55,13 @@ module.exports = function makeWebpackConfig(){
 	config.plugins.push(
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',
-			minChunks: function(module, count){
-		        return (
-		        	module.resource &&
-		        	/\.js$/.test(module.resource) &&
-		        	module.resource.indexOf('/node_modules/') != -1
-		        )
-		    }
+			minChunks: function(module, count) {
+				return (
+					module.resource &&
+					/\.js$/.test(module.resource) &&
+					module.resource.indexOf('/node_modules/') != -1
+				)
+			}
 		})
 	);
 
@@ -87,8 +89,7 @@ module.exports = function makeWebpackConfig(){
 		}
 	};
 	config.module = {
-		loaders: [
-			{
+		loaders: [{
 				test: /\.js$/,
 				loader: 'babel',
 				exclude: /node_modules/,
@@ -99,8 +100,7 @@ module.exports = function makeWebpackConfig(){
 						'transform-decorators-legacy'
 					]
 				}
-			},
-			{
+			}, {
 				test: /\.jsx$/,
 				loader: 'babel',
 				exclude: /node_modules/,
@@ -123,8 +123,7 @@ module.exports = function makeWebpackConfig(){
 			{
 				test: /\.scss$/,
 				loader: extractTextPlugin.extract('style', 'css?minimize!sass?sourceMap')
-			},
-			{
+			}, {
 				test: /\.css$/,
 				loader: extractTextPlugin.extract('style', 'css?minimize')
 			},
