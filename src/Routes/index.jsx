@@ -16,9 +16,9 @@ const Panel = (ns, cb) => {
     }, 'panel');
 }
 
-const Goods = (ns, cb) => {
+const Media = (ns, cb) => {
     require.ensure([], (require) => {
-        cb(null, require('../Views/Goods').default);
+        cb(null, require('../Views/Media').default);
     }, 'goods');
 }
 
@@ -59,7 +59,7 @@ const Routes = (
 		<Route path="/" component={ AppIndex }>
 			<IndexRoute getComponent={ Cell }></IndexRoute>
 			<Route path="/panel" getComponent={ Panel }></Route>
-			<Route path="/goods" getComponent={ Goods }></Route>
+			<Route path="/media" getComponent={ Media }></Route>
 			<Route path="/button" getComponent={ Button }></Route>
 			<Route path="/others" getComponent={ Others }></Route>
 		</Route>

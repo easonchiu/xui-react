@@ -24,8 +24,8 @@ class Index extends Component {
 					icon: 'friend'
 				},
 				{
-					title: '商品',
-					link: '/goods',
+					title: '媒体',
+					link: '/media',
 					icon: 'mail'
 				},
 				{
