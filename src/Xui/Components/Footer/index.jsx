@@ -66,5 +66,8 @@ FooterNav.propTypes = {
 	onClick: PropTypes.func
 }
 
+Footer.Nav = FooterNav;
+Footer.Nav.Group = FooterNavGroup;
+
 export default Footer;
 export { FooterNavGroup, FooterNav };

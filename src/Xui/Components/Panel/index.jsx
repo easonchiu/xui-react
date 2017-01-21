@@ -53,6 +53,9 @@ class PanelFooter extends Component {
 	}
 }
 
+Panel.Header = PanelHeader;
+Panel.Body = PanelBody;
+Panel.Footer = PanelFooter;
 
 export default Panel;
 export { PanelHeader, PanelBody, PanelFooter };

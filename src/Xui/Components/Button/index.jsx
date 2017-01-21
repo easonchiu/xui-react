@@ -54,5 +54,7 @@ class ButtonGroup extends Component {
 	}
 }
 
+Button.Group = ButtonGroup;
+
 export default Button;
 export { ButtonGroup };

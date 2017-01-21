@@ -28,5 +28,7 @@ class LogisRow extends Component {
 	}
 }
 
+Logis.Row = LogisRow;
+
 export default Logis;
 export { LogisRow };

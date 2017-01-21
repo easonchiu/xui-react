@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { CellTitle } from '../../Xui/Components/Cell'
+import Cell from '../../Xui/Components/Cell'
 import Media from '../../Xui/Components/Media'
 
 
@@ -10,6 +10,7 @@ class View extends Component {
 	render() {
 		return (
 			<div>
+				<Cell.Title title="媒体" />
 				<Media>
 					<Media.Body>
 						adf

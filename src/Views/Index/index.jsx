@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 
-import Header, { HeaderTools } from '../../Xui/Components/Header'
+import Header from '../../Xui/Components/Header'
 import Body from '../../Xui/Components/Body'
-import Footer, { FooterNavGroup, FooterNav } from '../../Xui/Components/Footer'
+import Footer from '../../Xui/Components/Footer'
 import Icon from '../../Xui/Components/Icon'
 
 
@@ -58,9 +58,9 @@ class Index extends Component {
 		return (
 			<div>
 				<Header title={ this.state.title }>
-					<HeaderTools align="right">
+					<Header.Tools align="right">
 						<a href="javascript:;"><Icon name="more" /></a>
-					</HeaderTools>
+					</Header.Tools>
 				</Header>
 
 				<Body>
@@ -68,13 +68,13 @@ class Index extends Component {
 				</Body>
 
 				<Footer>
-					<FooterNavGroup>
+					<Footer.Nav.Group>
 					{
 						this.state.nav.map((e, i) => {
-							return <FooterNav key={ i } onClick={ this.footerNavClick } { ...e } />
+							return <Footer.Nav key={ i } onClick={ this.footerNavClick } { ...e } />
 						})
 					}
-					</FooterNavGroup>
+					</Footer.Nav.Group>
 				</Footer>
 			</div>
 		);

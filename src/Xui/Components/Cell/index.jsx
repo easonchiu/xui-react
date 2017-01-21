@@ -113,5 +113,13 @@ class CellTitle extends Component {
 	}
 }
 
+
+Cell.Row = CellRow;
+Cell.Row.Header = CellRowHeader;
+Cell.Row.Body = CellRowBody;
+Cell.Row.Footer = CellRowFooter;
+Cell.Title = CellTitle;
+
+
 export default Cell;
 export { CellRow, CellRowHeader, CellRowBody, CellRowFooter, CellTitle };

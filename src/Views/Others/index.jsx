@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell'
+import Cell from '../../Xui/Components/Cell'
 
 class OthersView extends Component {
 	constructor(props) {
@@ -8,23 +8,23 @@ class OthersView extends Component {
 	render() {
 		return (
 			<div>
-				<CellTitle title="其他" />
+				<Cell.Title title="其他" />
 				<Cell>
-					<CellRow to="/logis">
-						<CellRowBody>
+					<Cell.Row to="/logis">
+						<Cell.Row.Body>
 							<h6>物流信息</h6>
-						</CellRowBody>
-					</CellRow>
-					<CellRow to="/icons">
-						<CellRowBody>
+						</Cell.Row.Body>
+					</Cell.Row>
+					<Cell.Row to="/icons">
+						<Cell.Row.Body>
 							<h6>图标</h6>
-						</CellRowBody>
-					</CellRow>
-					<CellRow to="/">
-						<CellRowBody>
+						</Cell.Row.Body>
+					</Cell.Row>
+					<Cell.Row to="/">
+						<Cell.Row.Body>
 							<h6>用户列表</h6>
-						</CellRowBody>
-					</CellRow>
+						</Cell.Row.Body>
+					</Cell.Row>
 				</Cell>
 			</div>
 		);

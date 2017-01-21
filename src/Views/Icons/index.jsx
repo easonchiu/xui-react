@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import { createHistory } from 'history'
 
-import Header, { HeaderTools } from '../../Xui/Components/Header'
+import Header from '../../Xui/Components/Header'
 import Body from '../../Xui/Components/Body'
 import Icon from '../../Xui/Components/Icon'
-import Cell, { CellTitle, CellRow, CellRowHeader, CellRowBody, CellRowFooter } from '../../Xui/Components/Cell'
+import Cell from '../../Xui/Components/Cell'
 
 class Icons extends Component {
 	constructor(props) {
@@ -49,24 +49,24 @@ class Icons extends Component {
 		return (
 			<div>
 				<Header title="图标">
-					<HeaderTools>
+					<Header.Tools>
 						<a onClick={ this.goBack }><Icon name="back" />返回</a>
-					</HeaderTools>
+					</Header.Tools>
 				</Header>
 				<Body>
-					<CellTitle title="图标列表" />
+					<Cell.Title title="图标列表" />
 
 					<Cell>
 						{
 							this.icons.map((e, i) => (
-								<CellRow>
-									<CellRowHeader>
+								<Cell.Row key={ i }>
+									<Cell.Row.Header>
 										<Icon name={ e.name } />
-									</CellRowHeader>
-									<CellRowBody>
+									</Cell.Row.Header>
+									<Cell.Row.Body>
 										<p>{ e.p }</p>
-									</CellRowBody>
-								</CellRow>
+									</Cell.Row.Body>
+								</Cell.Row>
 							))
 						}
 					</Cell>

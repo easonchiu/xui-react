@@ -44,5 +44,7 @@ HeaderTools.propTypes = {
 	children: PropTypes.any.isRequired
 }
 
+Header.Tools = HeaderTools;
+
 export default Header;
 export { HeaderTools };

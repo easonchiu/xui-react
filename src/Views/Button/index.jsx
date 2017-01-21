@@ -1,8 +1,8 @@
 import './style.scss'
 import React, { Component, PropTypes } from 'react'
 
-import Cell, { CellRow, CellRowHeader, CellRowBody, CellRowFooter, CellTitle } from '../../Xui/Components/Cell'
-import Button, { ButtonGroup } from '../../Xui/Components/Button'
+import Cell from '../../Xui/Components/Cell'
+import Button from '../../Xui/Components/Button'
 import Footer from '../../Xui/Components/Footer'
 
 class Mine extends Component {
@@ -12,78 +12,78 @@ class Mine extends Component {
 	render() {
 		return (
 			<div>
-				<CellTitle title="按钮" />
+				<Cell.Title title="按钮" />
 				<Cell>
-					<CellRow>
-						<CellRowBody>
+					<Cell.Row>
+						<Cell.Row.Body>
 							<Button>取消操作（默认）</Button>
-						</CellRowBody>
-					</CellRow>
-					<CellRow>
-						<CellRowBody>
+						</Cell.Row.Body>
+					</Cell.Row>
+					<Cell.Row>
+						<Cell.Row.Body>
 							<Button type="warn">否认操作</Button>
-						</CellRowBody>
-					</CellRow>
-					<CellRow>
-						<CellRowBody>
+						</Cell.Row.Body>
+					</Cell.Row>
+					<Cell.Row>
+						<Cell.Row.Body>
 							<Button type="primary">确认操作</Button>
-						</CellRowBody>
-					</CellRow>
-					<CellRow>
-						<CellRowBody>
+						</Cell.Row.Body>
+					</Cell.Row>
+					<Cell.Row>
+						<Cell.Row.Body>
 							<Button type="vital">关键节点操作</Button>
-						</CellRowBody>
-					</CellRow>
+						</Cell.Row.Body>
+					</Cell.Row>
 				</Cell>
 
-				<CellTitle title="其他形式" />
+				<Cell.Title title="其他形式" />
 				<Cell>
-					<CellRow>
-						<CellRowBody>
+					<Cell.Row>
+						<Cell.Row.Body>
 							<Button type="primary" disabled>不可用</Button>
-						</CellRowBody>
-					</CellRow>
-					<CellRow>
-						<CellRowBody>
+						</Cell.Row.Body>
+					</Cell.Row>
+					<Cell.Row>
+						<Cell.Row.Body>
 							<Button type="primary" mini>小按钮</Button>
-						</CellRowBody>
-					</CellRow>
-					<CellRow>
-						<CellRowBody>
-							<ButtonGroup>
+						</Cell.Row.Body>
+					</Cell.Row>
+					<Cell.Row>
+						<Cell.Row.Body>
+							<Button.Group>
 								<Button mini>小按钮</Button>
 								<Button type="warn" mini>小按钮</Button>
 								<Button type="primary" mini>小按钮</Button>
 								<Button type="vital" mini>小按钮</Button>
-							</ButtonGroup>
-						</CellRowBody>
-					</CellRow>
-					<CellRow>
-						<CellRowHeader>
+							</Button.Group>
+						</Cell.Row.Body>
+					</Cell.Row>
+					<Cell.Row>
+						<Cell.Row.Header>
 							<label>验证码</label>
-						</CellRowHeader>
-						<CellRowBody>
+						</Cell.Row.Header>
+						<Cell.Row.Body>
 							<input type="text" placeholder="请输入验证码" />
-						</CellRowBody>
-						<CellRowFooter>
+						</Cell.Row.Body>
+						<Cell.Row.Footer>
 							<Button type="primary" mini>验证</Button>
-						</CellRowFooter>
-					</CellRow>
+						</Cell.Row.Footer>
+					</Cell.Row>
 				</Cell>
 
-				<CellTitle title="底菜单按钮" />
+				<Cell.Title title="底菜单按钮" />
 				<Footer>
-					<ButtonGroup>
+					<Button.Group>
 						<Button type="warn">删除</Button>
-					</ButtonGroup>
+					</Button.Group>
 				</Footer>
 
-				<CellTitle title="底菜单按钮组合" />
+				<Cell.Title title="底菜单按钮组合" />
 				<Footer>
-					<ButtonGroup>
+					<Button.Group>
 						<Button>取消</Button>
 						<Button type="vital">提交</Button>
-					</ButtonGroup>
+					</Button.Group>
 				</Footer>
 				
 			</div>
