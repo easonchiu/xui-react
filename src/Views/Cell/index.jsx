@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { findDOMNode } from 'react-dom'
 
+import Layout from '../../Xui/Components/Layout'
 import Cell from '../../Xui/Components/Cell'
 import Rmb from '../../Xui/Components/Rmb'
 import Icon from '../../Xui/Components/Icon'
@@ -267,16 +268,23 @@ class Message extends Component {
 		)
 		
 		return (
-			<div>
-				{ CellH }
-				<CellA />
-				<CellB />
-				<CellC />
-				<CellD />
-				<CellE />
-				{ CellF }
-				{ CellG }
-			</div>
+			<Layout>
+				<Layout.Header title="列表">
+					<Layout.Header.Tools>
+						<a onClick={ this.props.router.goBack }><Icon name="back" />返回</a>
+					</Layout.Header.Tools>
+				</Layout.Header>
+				<Layout.Body>
+					{ CellH }
+					<CellA />
+					<CellB />
+					<CellC />
+					<CellD />
+					<CellE />
+					{ CellF }
+					{ CellG }
+				</Layout.Body>
+			</Layout>
 		);
 	}
 }

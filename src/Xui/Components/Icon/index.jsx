@@ -6,8 +6,17 @@ class Icon extends Component {
 		super(props);
 	}
 	render() {
+		console.log(this.props)
+
+		let css = 'x-icon x-icon--' + this.props.name;
+		css += this.props.type ? ' x-icon--' + this.props.type : '';
+
+		if (this.props.large){
+			css += ' x-icon--large';
+		}
+
 		return (
-			<i className={ 'x-icon--' + this.props.name } />
+			<i className={ css } />
 		);
 	}
 }

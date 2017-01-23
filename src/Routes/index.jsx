@@ -40,25 +40,24 @@ const Logis = (ns, cb) => {
     }, 'logis');
 }
 
-const Icons = (ns, cb) => {
+const Icon = (ns, cb) => {
     require.ensure([], (require) => {
-        cb(null, require('../Views/Icons').default);
-    }, 'icons');
+        cb(null, require('../Views/Icon').default);
+    }, 'icon');
 }
 
 
 
 const Routes = (
 	<Router history={ hashHistory }>
-		<Route path="/" component={ AppIndex }>
-			<IndexRoute getComponent={ Cell }></IndexRoute>
-			<Route path="/panel" getComponent={ Panel }></Route>
-			<Route path="/media" getComponent={ Media }></Route>
-			<Route path="/button" getComponent={ Button }></Route>
-			<Route path="/others" getComponent={ Others }></Route>
-		</Route>
+		<Route path="/" component={ AppIndex }></Route>
+        <Route path="/cell" getComponent={ Cell }></Route>
+        <Route path="/panel" getComponent={ Panel }></Route>
+        <Route path="/media" getComponent={ Media }></Route>
+        <Route path="/button" getComponent={ Button }></Route>
+        <Route path="/others" getComponent={ Others }></Route>
         <Route path="/logis" getComponent={ Logis }></Route>
-		<Route path="/icons" getComponent={ Icons }></Route>
+		<Route path="/icon" getComponent={ Icon }></Route>
 		<Redirect from="*" to="/" />
 	</Router>
 );

@@ -1,82 +1,63 @@
 import React, { Component, PropTypes } from 'react'
 
-import Header from '../../Xui/Components/Header'
-import Body from '../../Xui/Components/Body'
-import Footer from '../../Xui/Components/Footer'
+
+import Layout from '../../Xui/Components/Layout'
 import Icon from '../../Xui/Components/Icon'
+import Cell from '../../Xui/Components/Cell'
+
+
+let Row = (props) => {
+	return (
+		<Cell.Row to={ props.to }>
+			<Cell.Row.Header>
+				{
+					props.done ? <Icon name="check" type="vital" />
+						: <Icon name="close" type="warn" />
+				}
+			</Cell.Row.Header>
+			<Cell.Row.Body>
+				<h2>{ props.title }<span>{ props.desc }</span></h2>
+			</Cell.Row.Body>
+		</Cell.Row>
+	);
+}
 
 
 class Index extends Component {
 	constructor(props) {
 		super(props);
-		this.footerNavClick = this.footerNavClick.bind(this);
-		this.state = {
-			title: '',
-			nav: [
-				{
-					title: '列表',
-					link: '/',
-					icon: 'home'
-				},
-				{
-					title: '模块',
-					link: '/panel',
-					icon: 'friend'
-				},
-				{
-					title: '媒体',
-					link: '/media',
-					icon: 'mail'
-				},
-				{
-					title: '按钮',
-					link: '/button',
-					icon: 'user'
-				},
-				{
-					title: '其他',
-					link: '/others',
-					icon: 'more'
-				}
-			]
-		}
-	}
-	footerNavClick(e) {
-		this.state.title = e.dataset.title;
-		this.setState(this.state);
-	}
-	componentWillMount() {
-		this.state.nav.map(e => {
-			if (e.link == this.props.location.pathname){
-				this.setState({
-					title: e.title
-				});
-			}
-		});
 	}
 	render() {
 		return (
-			<div>
-				<Header title={ this.state.title }>
-					<Header.Tools align="right">
-						<a href="javascript:;"><Icon name="more" /></a>
-					</Header.Tools>
-				</Header>
+			<Layout>
+				<Layout.Header title="XUI-React">
+					<Layout.Header.Tools align="left">
+						<a onClick={ this.goBack }><Icon name="back" />返回</a>
+					</Layout.Header.Tools>
+				</Layout.Header>
 
-				<Body>
-					{ this.props.children }
-				</Body>
+				<Layout.Body>
+					
+					<Cell.Title title="UI List" />
 
-				<Footer>
-					<Footer.Nav.Group>
-					{
-						this.state.nav.map((e, i) => {
-							return <Footer.Nav key={ i } onClick={ this.footerNavClick } { ...e } />
-						})
-					}
-					</Footer.Nav.Group>
-				</Footer>
-			</div>
+					<Cell>
+					
+						<Row title="布局" desc="Layout" done={ false } to="/layout" />
+						<Row title="列表" desc="Cell" done={ true } to="/cell" />
+						<Row title="按钮" desc="Button" done={ true } to="/button" />
+						<Row title="弹出框" desc="Alert" done={ false } to="/alert" />
+						<Row title="提示框" desc="Toast" done={ false } to="/toast" />
+						<Row title="加载提示" desc="Loading" done={ false } to="/loading" />
+						<Row title="模块" desc="Panel" done={ true } to="/panel" />
+						<Row title="宫格" desc="Panel" done={ false } to="/grid" />
+						<Row title="商品" desc="Goods" done={ false } to="/goods" />
+						<Row title="物流跟踪" desc="Logis" done={ true } to="/logis" />
+						<Row title="图标" desc="Icon" done={ true } to="/icon" />
+
+					</Cell>
+
+				</Layout.Body>
+			</Layout>
 		);
 	}
 }

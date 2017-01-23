@@ -8,7 +8,7 @@
 	@extend %line-top;
 	@extend %line-bottom;
 	&__header {
-		padding: pr(20);
+		padding: pr(16) pr(20);
 		display: flex;
 		align-items: center;
 		h2 {
@@ -31,17 +31,20 @@
 					font-size: pr(30);
 				}
 			}
+			&:active {
+				opacity: 0.7;
+			}
 		}
 	}
 	&__body {
 
 	}
 	&__footer {
-		padding: pr(20);
+		padding: pr(16) pr(20);
 		p, span {
 			display: block;
 			font-size: pr(26);
-			line-height: 1.2;
+			line-height: 1.5;
 		}
 		span {
 			color: cr(span);

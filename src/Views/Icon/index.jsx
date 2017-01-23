@@ -1,16 +1,12 @@
 import React, { Component, PropTypes } from 'react'
-import { createHistory } from 'history'
 
-import Header from '../../Xui/Components/Header'
-import Body from '../../Xui/Components/Body'
+import Layout from '../../Xui/Components/Layout'
 import Icon from '../../Xui/Components/Icon'
 import Cell from '../../Xui/Components/Cell'
 
 class Icons extends Component {
 	constructor(props) {
 		super(props);
-		this.history = createHistory();
-		this.goBack = this.goBack.bind(this);
 		this.icons = [
 			{ name: 'check', p: 'check' },
 			{ name: 'close', p: 'close' },
@@ -42,18 +38,17 @@ class Icons extends Component {
 			{ name: 'mail', p: 'mail' },
 		];
 	}
-	goBack() {
-		this.history.goBack();
-	}
 	render() {
 		return (
-			<div>
-				<Header title="图标">
-					<Header.Tools>
-						<a onClick={ this.goBack }><Icon name="back" />返回</a>
-					</Header.Tools>
-				</Header>
-				<Body>
+			<Layout>
+
+				<Layout.Header title="图标">
+					<Layout.Header.Tools>
+						<a onClick={ this.props.router.goBack }><Icon name="back" />返回</a>
+					</Layout.Header.Tools>
+				</Layout.Header>
+
+				<Layout.Body>
 					<Cell.Title title="图标列表" />
 
 					<Cell>
@@ -71,8 +66,8 @@ class Icons extends Component {
 						}
 					</Cell>
 
-				</Body>
-			</div>
+				</Layout.Body>
+			</Layout>
 		);
 	}
 }

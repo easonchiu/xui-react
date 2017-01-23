@@ -2,8 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { createHistory } from 'history'
 
-import Header from '../../Xui/Components/Header'
-import Body from '../../Xui/Components/Body'
+import Layout from '../../Xui/Components/Layout'
 import Cell from '../../Xui/Components/Cell'
 import Logis from '../../Xui/Components/Logis'
 import Icon from '../../Xui/Components/Icon'
@@ -20,14 +19,18 @@ class LogisView extends Component {
 	}
 	render() {
 		return (
-			<div>
-				<Header title="物流跟踪">
-					<Header.Tools>
+			<Layout>
+
+				<Layout.Header title="物流跟踪">
+					<Layout.Header.Tools>
 						<a onClick={ this.goBack }><Icon name="back" />返回</a>
-					</Header.Tools>
-				</Header>
-				<Body>
+					</Layout.Header.Tools>
+				</Layout.Header>
+
+				<Layout.Body>
+
 					<Cell.Title title="物流跟踪" />
+					
 					<Logis>
 						{
 							[1, 2, 3].map(e => {
@@ -40,8 +43,10 @@ class LogisView extends Component {
 							})
 						}
 					</Logis>
-				</Body>
-			</div>
+
+				</Layout.Body>
+
+			</Layout>
 		);
 	}
 }
