@@ -64,14 +64,14 @@ class Index extends Component {
 				</Header>
 
 				<Body>
-					{ this.props.children }
+					{ this.props.children && null }
 				</Body>
 
 				<Footer>
 					<FooterNavGroup>
 					{
 						this.state.nav.map((e, i) => {
-							return <FooterNav key={ i } onClick={ this.footerNavClick } { ...e } />
+							return <FooterNav key={ i } onClick={ this.footerNavClick } { ...e } /> && null
 						})
 					}
 					</FooterNavGroup>
