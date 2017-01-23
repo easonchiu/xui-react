@@ -46,12 +46,6 @@ const Icons = (ns, cb) => {
     }, 'icons');
 }
 
-const Test = (ns, cb) => {
-    require.ensure([], (require) => {
-        cb(null, require('../Views/Test').default);
-    }, 'test');
-}
-
 
 
 const Routes = (
@@ -65,7 +59,6 @@ const Routes = (
 		</Route>
         <Route path="/logis" getComponent={ Logis }></Route>
 		<Route path="/icons" getComponent={ Icons }></Route>
-		<Route path="/t" getComponent={ Test }></Route>
 		<Redirect from="*" to="/" />
 	</Router>
 );

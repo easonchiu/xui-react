@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import Cell from '../../Xui/Components/Cell'
 
+
+
 class OthersView extends Component {
 	constructor(props) {
 		super(props);
