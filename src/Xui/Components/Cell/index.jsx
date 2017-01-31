@@ -22,37 +22,83 @@ class CellRow extends Component {
 	constructor(props) {
 		super(props);
 	}
-	clickHandle(e) {
+
+	_click(e) {
 		this.props.onClick(e);
 	}
-	render(){
-		var others = {};
-		if (this.props.onClick){
-			others.onClick = this.clickHandle.bind(this);
-		}
-		if (this.props.to && !this.props.radio) {
-			let css = classnames('x-cell__row', {
-				'x-cell__row--vstart': this.props.vstart
-			});
-			return (
-				<Link to={ this.props.to } className={ css } { ...others }>
-					{ this.props.children }
-				</Link>
-			);
-		}
+
+	render() {
+
+		// props
+		let props = {};
+
+		// 样式名
 		let css = classnames('x-cell__row', {
+			'x-cell__row--vstart': this.props.vstart,
 			'x-cell__row--radio': this.props.radio,
 			'x-cell__row--radio-checked': this.props.radio && this.props.checked,
 			'x-cell__row--checkbox': this.props.checkbox,
 			'x-cell__row--checkbox-checked': this.props.checkbox && this.props.checked,
-			'x-cell__row--vstart': this.props.vstart,
-			'x-cell__row--arrow': this.props.arrow
+			'x-cell__row--arrow': this.props.arrow,
 		});
-		return (
-			<article className={ css } { ...others }>
-				{ this.props.children }
-			</article>
-		);
+
+		// 如果有onClick事件则绑定
+		if (this.props.onClick){
+			props.onClick = this._click.bind(this);
+		}
+
+		// 一些快捷的绑定方式（只允许在没有children时）
+		let children = [];
+		if (this.props.children == undefined){
+			if (this.props.header) {
+				let node;
+				if (typeof this.props.header === 'object') {
+					node = this.props.header;
+				} else {
+					node = <label>{ this.props.header }</label>;
+				}
+				children.push(
+					<CellRowHeader key={ 'x-key-' + children.length }>{ node }</CellRowHeader>
+				);
+			}
+			if (this.props.body) {
+				let node;
+				if (typeof this.props.body === 'object') {
+					node = this.props.body;
+				} else {
+					node = <p>{ this.props.body }</p>;
+				}
+				children.push(
+					<CellRowBody key={ 'x-key-' + children.length }>{ node }</CellRowBody>
+				);
+			}
+			if (this.props.footer) {
+				let node;
+				if (typeof this.props.footer === 'object') {
+					node = this.props.footer;
+				} else {
+					node = <span>{ this.props.footer }</span>;
+				}
+				children.push(
+					<CellRowFooter key={ 'x-key-' + children.length }>{ node }</CellRowFooter>
+				);
+			}
+		}
+
+		// 返回
+		if (this.props.to && !this.props.radio) {
+			return (
+				<Link to={ this.props.to } className={ css } { ...props }>
+					{ this.props.children }{ children }
+				</Link>
+			);
+		} else {
+			return (
+				<article className={ css } { ...props }>
+					{ this.props.children }{ children }
+				</article>
+			);
+		}
 	}
 }
 

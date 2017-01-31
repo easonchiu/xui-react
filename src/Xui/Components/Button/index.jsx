@@ -7,7 +7,8 @@ class Button extends Component {
 		super(props);
 	}
 	render() {
-		let css = this.props.type ? 'x-button__' + this.props.type : 'x-button__default';
+		let css = 'x-button';
+		css += this.props.type ? ' x-button__' + this.props.type : ' x-button__default';
 		if (this.props.mini){
 			css += ' x-button--mini';
 		}

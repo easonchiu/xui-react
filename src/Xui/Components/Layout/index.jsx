@@ -32,8 +32,12 @@ class LayoutFooter extends Component {
 		super(props);
 	}
 	render() {
+		let css = 'x-app-footer';
+		if (this.props.padding) {
+			css += ' x-app-footer--padding'
+		}
 		return (
-			<footer className="x-app-footer">
+			<footer className={ css }>
 				{ this.props.children }
 			</footer>
 		);
@@ -46,37 +50,54 @@ class LayoutHeader extends Component {
 	}
 	render() {
 		let title = this.props.title ? <h1>{ this.props.title }</h1> : null;
+
+		let start = (this.props.start && typeof this.props.start == 'object') ?
+					<HeaderStart>{ this.props.start }</HeaderStart> : null;
+		
+		let end = (this.props.end && typeof this.props.end == 'object') ?
+					<HeaderEnd>{ this.props.end }</HeaderEnd> : null;
 		return (
 			<header className="x-app-header">
 				<div className="x-app-header__inner">
 					{ title }
 					{ this.props.children }
+					{ start }
+					{ end }
 				</div>
 			</header>
 		);
 	}
 }
 
-class HeaderTools extends Component {
+class HeaderStart extends Component {
 	constructor(props) {
 		super(props);
 	}
 	render() {
-		let css = 'x-app-header__tools--left';
-		if (this.props.align == 'right'){
-			css = 'x-app-header__tools--right';
-		}
 		return (
-			<nav className={ css }>
+			<nav className="x-app-header__start">
 				{ this.props.children }
 			</nav>
 		);
 	}
 }
 
+class HeaderEnd extends Component {
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		return (
+			<nav className="x-app-header__end">
+				{ this.props.children }
+			</nav>
+		);
+	}
+}
 
 Layout.Header = LayoutHeader
-Layout.Header.Tools = HeaderTools
+Layout.Header.Start = HeaderStart
+Layout.Header.End = HeaderEnd
 Layout.Body = LayoutBody
 Layout.Footer = LayoutFooter
 export default Layout

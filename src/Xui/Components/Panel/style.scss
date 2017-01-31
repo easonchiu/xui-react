@@ -23,11 +23,11 @@
 			font-size: pr(26);
 			line-height: 1.5;
 			color: cr(default);
-			i[class^="x-icon"] {
+			i.x-icon {
 				width: auto;
 				height: auto;
 				&:before {
-					color: inherit;
+					color: cr(default);
 					font-size: pr(30);
 				}
 			}
@@ -40,14 +40,33 @@
 
 	}
 	&__footer {
+		display: flex;
+		align-items: center;
 		padding: pr(16) pr(20);
-		p, span {
+		span {
 			display: block;
 			font-size: pr(26);
 			line-height: 1.5;
-		}
-		span {
 			color: cr(span);
+			flex-grow: 1;
+		}
+		a {
+			display: flex;
+			align-items: center;
+			font-size: pr(26);
+			line-height: 1.5;
+			color: cr(default);
+			i.x-icon {
+				width: auto;
+				height: auto;
+				&:before {
+					color: cr(default);
+					font-size: pr(30);
+				}
+			}
+			&:active {
+				opacity: 0.7;
+			}
 		}
 	}
 }

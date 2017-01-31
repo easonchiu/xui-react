@@ -79,40 +79,34 @@ class PanelView extends Component {
 		return (
 			<Layout>
 
-				<Layout.Header title="模块">
-					<Layout.Header.Tools>
-						<a onClick={ this.props.router.goBack }><Icon name="back" />返回</a>
-					</Layout.Header.Tools>
-				</Layout.Header>
+				<Layout.Header
+					title="模块"
+					start={ <a onClick={ this.props.router.goBack }><Icon name="back" />返回</a> } />
 
 				<Layout.Body>
 					<Cell.Title title="模块" />
 					<Panel>
-						<Panel.Header>
-							<h2>模块名称</h2>
-							<a>更多<Icon name="right" /></a>
-						</Panel.Header>
+						<Panel.Header title="模块名称" />
 						<Panel.Body>
 							
 							<DemoI />
 
 						</Panel.Body>
-						<Panel.Footer>
-							<span>底部提示文字</span>
-						</Panel.Footer>
+						<Panel.Footer text="底部提示文字" />
 					</Panel>
 					
 					<Cell.Title title="录入" />
+
 					<Panel>
-						<Panel.Header>
-							<h2>模块名称</h2>
-						</Panel.Header>
+						<Panel.Header title="模块名称" extra={ <a>更多<Icon name="right" /></a> } />
 						<Panel.Body>
 							
 							<DemoII />
 
 						</Panel.Body>
+						<Panel.Footer text="底部提示文字" extra={ <a>更多<Icon name="right" /></a> } />
 					</Panel>
+
 				</Layout.Body>
 
 			</Layout>

@@ -3,7 +3,6 @@ import { Router, Route, IndexRoute, Redirect, hashHistory } from 'react-router'
 
 import AppIndex from '../Views/Index'
 
-
 const Cell = (ns, cb) => {
     require.ensure([], (require) => {
         cb(null, require('../Views/Cell').default);

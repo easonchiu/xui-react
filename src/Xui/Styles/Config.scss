@@ -2,6 +2,8 @@
 @function cr($type){
 	@if $type == default {
 		@return #76bdff; // 主色调，这里是用的蓝色
+	} @else if $type == em {
+		@return #76bdff; // 最要文字，这里是用的蓝色
 	} @else if $type == strong {
 		@return #ff5e3a; // 重要文字颜色，红的
 	} @else if $type == p {

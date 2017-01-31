@@ -16,7 +16,7 @@ let Row = (props) => {
 				}
 			</Cell.Row.Header>
 			<Cell.Row.Body>
-				<h2>{ props.title }<span>{ props.desc }</span></h2>
+				<h6>{ props.title }<span>{ props.desc }</span></h6>
 			</Cell.Row.Body>
 		</Cell.Row>
 	);
@@ -30,11 +30,9 @@ class Index extends Component {
 	render() {
 		return (
 			<Layout>
-				<Layout.Header title="XUI-React">
-					<Layout.Header.Tools align="left">
-						<a onClick={ this.goBack }><Icon name="back" />返回</a>
-					</Layout.Header.Tools>
-				</Layout.Header>
+				<Layout.Header
+					title="XUI-React"
+					start={ <a onClick={ this.props.router.goBack }><Icon name="back" />返回</a> } />
 
 				<Layout.Body>
 					

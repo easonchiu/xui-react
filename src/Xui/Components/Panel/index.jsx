@@ -21,6 +21,12 @@ class PanelHeader extends Component {
 	render() {
 		return (
 			<header className="x-panel__header">
+				{
+					this.props.title ? <h2>{ this.props.title }</h2> : null
+				}
+				{
+					this.props.extra ? this.props.extra : null
+				}
 				{ this.props.children }
 			</header>
 		);
@@ -47,6 +53,12 @@ class PanelFooter extends Component {
 	render() {
 		return (
 			<footer className="x-panel__footer">
+				{
+					this.props.text ? <span>{ this.props.text }</span> : null
+				}
+				{
+					this.props.extra ? this.props.extra : null
+				}
 				{ this.props.children }
 			</footer>
 		);

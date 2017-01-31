@@ -42,11 +42,9 @@ class Icons extends Component {
 		return (
 			<Layout>
 
-				<Layout.Header title="图标">
-					<Layout.Header.Tools>
-						<a onClick={ this.props.router.goBack }><Icon name="back" />返回</a>
-					</Layout.Header.Tools>
-				</Layout.Header>
+				<Layout.Header
+					title="图标"
+					start={ <a onClick={ this.props.router.goBack }><Icon name="back" />返回</a> } />
 
 				<Layout.Body>
 					<Cell.Title title="图标列表" />

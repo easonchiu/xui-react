@@ -21,11 +21,9 @@ class LogisView extends Component {
 		return (
 			<Layout>
 
-				<Layout.Header title="物流跟踪">
-					<Layout.Header.Tools>
-						<a onClick={ this.goBack }><Icon name="back" />返回</a>
-					</Layout.Header.Tools>
-				</Layout.Header>
+				<Layout.Header
+					title="物流跟踪"
+					start={ <a onClick={ this.props.router.goBack }><Icon name="back" />返回</a> } />
 
 				<Layout.Body>
 

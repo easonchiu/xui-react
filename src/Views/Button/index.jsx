@@ -13,11 +13,9 @@ class Mine extends Component {
 	render() {
 		return (
 			<Layout>
-				<Layout.Header title="列表">
-					<Layout.Header.Tools>
-						<a onClick={ this.props.router.goBack }><Icon name="back" />返回</a>
-					</Layout.Header.Tools>
-				</Layout.Header>
+				<Layout.Header
+					title="按钮"
+					start={ <a onClick={ this.props.router.goBack }><Icon name="back" />返回</a> } />
 
 				<Layout.Body>
 
@@ -82,6 +80,13 @@ class Mine extends Component {
 
 				</Layout.Body>
 
+
+				<Layout.Footer padding>
+					<Button.Group>
+						<Button>取消</Button>
+						<Button type="vital">支付</Button>
+					</Button.Group>
+				</Layout.Footer>
 			</Layout>
 		);
 	}

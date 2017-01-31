@@ -5,7 +5,58 @@ html, body, body > div {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+
+	
 }
+
+* {
+	color: cr(p);
+	line-height: 1.2;
+	text-align: justify;
+	font-size: pr(28);
+}
+
+h1 {
+	font-size: pr(35);
+}
+
+h2 {
+	font-size: pr(34);
+}
+
+h3 {
+	font-size: pr(33);
+}
+
+h4 {
+	font-size: pr(32);
+}
+
+h5 {
+	font-size: pr(31);
+}
+
+h6 {
+	font-size: pr(30);
+}
+
+p {
+	font-size: pr(28);
+}
+
+span {
+	color: cr(span);
+}
+
+em {
+	color: cr(em);
+}
+
+strong {
+	color: cr(strong);
+}
+
+
 
 view.x-app {
 	width: 100%;
@@ -37,40 +88,39 @@ view.x-app {
 		}
 	}
 
-	&__tools {
-		&--left {
-			display: flex;
-			align-items: center;
-			height: 100%;
-			padding: 0 pr(20);
-			position: absolute;
-			left: 0;
-			top: 0;
-			z-index: 2;
-			[class^="x-icon"] {
-				&:before {
-					font-size: pr(40);
-				}
-			}
-			a {
-				display: flex;
-				align-items: center;
-				color: cr(p);
-				font-size: pr(32);
-				margin-right: pr(10);
-				&:active {
-					opacity: 0.5;
-				}
+	&__start {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 0 pr(20);
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+		[class^="x-icon"] {
+			&:before {
+				font-size: pr(40);
 			}
 		}
-		&--right {
-			@extend .x-app-header__tools--left;
-			left: auto;
-			right: 0;
-			a {
-				margin-right: 0;
-				margin-left: pr(10);
+		a {
+			display: flex;
+			align-items: center;
+			color: cr(p);
+			font-size: pr(32);
+			margin-right: pr(10);
+			&:active {
+				opacity: 0.5;
 			}
+		}
+	}
+
+	&__end {
+		@extend .x-app-header__start;
+		left: auto;
+		right: 0;
+		a {
+			margin-right: 0;
+			margin-left: pr(10);
 		}
 	}
 }
@@ -88,7 +138,7 @@ main.x-app-body {
 footer.x-app-footer {
 	background: #fff;
 	@extend %line-top;
-	.x-button-group {
+	&--padding {
 		padding: pr(20);
 	}
 }

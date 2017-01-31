@@ -51,39 +51,7 @@
 			justify-content: center;
 			width: 100%;
 			color: cr(p);
-			p {
-				display: block;
-				font-size: pr(28);
-				line-height: 1.2;
-				padding: pr(6) 0;
-				text-align: justify;
-				span, em {
-					padding-left: pr(6);
-					display: inline;
-				}
-			}
-			h1, h2, h3, h4, h5, h6, strong {
-				display: block;
-				font-size: pr(30);
-				line-height: 1.2;
-				padding: pr(6) 0;
-				font-weight: normal;
-				text-align: justify;
-				span, em {
-					padding-left: pr(6);
-					display: inline;
-				}
-			}
-			span, time, em {
-				display: block;
-				font-size: pr(26);
-				line-height: 1.2;
-				color: cr(span);
-				text-align: justify;
-			}
-			time {
-				font-size: pr(24);
-			}
+			min-height: pr(46);
 			textarea, input, select, div {
 				display: block;
 				background-color: rgba(0,0,0,0);
