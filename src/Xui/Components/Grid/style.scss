@@ -1,0 +1,9 @@
+@charset "utf-8";
+@import "../../Styles/Config.scss";
+
+.x-grid {
+	&__item {
+		padding: 20px;
+		border: 1px solid #f0f;
+	}
+}

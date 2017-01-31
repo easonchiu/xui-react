@@ -2,16 +2,26 @@
 @import "../../Styles/Config.scss";
 
 // 按钮类
+.x-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: pr(88);
+	padding: 0 pr(25);
+	font-size: pr(32);
+	position: relative;
+	border-radius: pr(6);
+	border: none;
+	.x-icon:before {
+		color: inherit;
+	}
+}
+
 $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(cr(body),-5), vital: #04be02);
 @each $name, $color in $x-buttons {
-	.x-button__#{$name} {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: pr(88);
+	.x-button--#{$name} {
 		background-color: $color;
-		padding: 0 pr(25);
 		@if $name == default {
 			color: cr(span) !important;
 			&:after {
@@ -30,15 +40,8 @@ $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(
 		} @else {
 			color: #fff !important;
 		}
-		font-size: pr(32);
-		position: relative;
-		border-radius: pr(6);
-		border: none;
 		&:not(.x-button--disabled):active {
 			background-color: crcalc($color, -15);
-		}
-		[class^="x-icon"]:before {
-			color: inherit;
 		}
 	}
 }
