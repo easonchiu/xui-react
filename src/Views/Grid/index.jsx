@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Layout from '../../Xui/Components/Layout'
 import Icon from '../../Xui/Components/Icon'
 import Grid from '../../Xui/Components/Grid'
+import Cell from '../../Xui/Components/Cell'
 
 class ViewGrid extends Component {
 	constructor(props) {
@@ -18,13 +19,79 @@ class ViewGrid extends Component {
 
 				<Layout.Body>
 
+					<Cell.Title title="默认形式" />
 					<Grid>
-						<Grid.Item col={ 1/2 } />
-						<Grid.Item col={ 1/2 } />
-						<Grid.Item col={ 1/4 } />
-						<Grid.Item col={ 3/4 } />
-						<Grid.Item col={ 1/3 } />
-						<Grid.Item col={ 2/3 } />
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/4 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/4 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/4 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/4 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/3 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/3 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/3 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+					</Grid>
+
+					<Cell.Title title="带描边的形式" />
+					<Grid border>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+					</Grid>
+
+					<Cell.Title title="有边距的形式" />
+					<Grid padding>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
+						<Grid.Item col={ 1/2 }>
+							<img src="./src/Assets/Images/headpic.jpeg" />
+						</Grid.Item>
 					</Grid>
 
 				</Layout.Body>

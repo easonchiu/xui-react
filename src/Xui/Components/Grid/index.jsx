@@ -1,5 +1,5 @@
 import './style'
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 
 class Grid extends Component {
 	constructor(props) {
@@ -7,14 +7,17 @@ class Grid extends Component {
 	}
 	render() {
 		let css = 'x-grid';
-
-		if (this.props.column == 2 || this.props.column == 3){
-			css += ' x-grid--column-' + this.props.column;
+		if (this.props.padding) {
+			css += ' x-grid--padding';
 		}
-
+		if (this.props.border) {
+			css += ' x-grid--border';
+		}
 		return (
 			<div className={ css }>
-				{ this.props.children }
+				<div className="clearfix">
+					{ this.props.children }
+				</div>
 			</div>
 		);
 	}
@@ -23,16 +26,23 @@ class Grid extends Component {
 class GridItem extends Component {
 	constructor(props) {
 		super(props);
-		console.log(props)
 	}
 	render() {
+		let styl = { width: this.props.col * 100 + '%' }
 		return (
-			<div className="x-grid__item">
-				{ this.props.children }
+			<div className="x-grid__item" style={ styl }>
+				<div className="x-grid__inner">
+					{ this.props.children }
+				</div>
 			</div>
 		);
 	}
 }
+
+GridItem.propTypes = {
+	col: PropTypes.number.isRequired
+}
+
 
 Grid.Item = GridItem;
 

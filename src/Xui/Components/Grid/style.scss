@@ -2,8 +2,43 @@
 @import "../../Styles/Config.scss";
 
 .x-grid {
+	padding: 0.1rem;
+	background: #fff;
+	@extend %line-top;
+	@extend %line-bottom;
+
+	&--padding {
+		padding: 0.05rem;
+		background: none;
+		.x-grid__item {
+			padding: 0.05rem;
+		}
+		.x-grid__inner {
+			padding: 0.15rem;
+		}
+		&:before, &:after {
+			display: none;
+		}
+	}
+	&--border {
+		padding: 0;
+		.x-grid__item {
+			@extend %line-right;
+			@extend %line-bottom;
+		}
+		.x-grid__inner {
+			padding: 0.2rem;
+		}
+	}
 	&__item {
-		padding: 20px;
-		border: 1px solid #f0f;
+		float: left;
+	}
+	&__inner {
+		background: #fff;
+		padding: 0.1rem;
+		img {
+			display: block;
+			width: 100%;
+		}
 	}
 }
