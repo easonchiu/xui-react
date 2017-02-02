@@ -7,100 +7,88 @@ import Rmb from '../../Xui/Components/Rmb'
 import Icon from '../../Xui/Components/Icon'
 
 
-const CellA = () => {
+const CellWithGoodsAndLink = () => {
 	return (
-		<div>
-			<Cell.Title title="带链接的商品列表" />
-			<Cell>
-				{
-					[1, 2, 3].map(e => {
-						return (
-							<Cell.Row key={ e } to="/cell#link">
-								<Cell.Row.Header>
-									<img src="./src/Assets/Images/headpic.jpeg" />
-								</Cell.Row.Header>
-								<Cell.Row.Body>
-									<h6>列表的大标题，可以是产品名称等</h6>
-									<span>产品的描述性文字</span>
-								</Cell.Row.Body>
-							</Cell.Row>
-						);
-					})
-				}
-			</Cell>
-		</div>
+		<Cell>
+			{
+				[1, 2, 3].map(e => {
+					return (
+						<Cell.Row key={ e } to="/cell#link">
+							<Cell.Row.Header>
+								<img src="./src/Assets/Images/headpic.jpeg" />
+							</Cell.Row.Header>
+							<Cell.Row.Body>
+								<h6>列表的大标题，可以是产品名称等</h6>
+								<span>产品的描述性文字</span>
+							</Cell.Row.Body>
+						</Cell.Row>
+					);
+				})
+			}
+		</Cell>
 	);
 }
 
-// const CellB = () => {
-// 	return (
-// 		<div>
-// 			<Cell.Title title="带购买信息的商品列表" />
-// 			<Cell>
-// 				{
-// 					[1, 2, 3].map(e => {
-// 						return (
-// 							<Cell.Row key={ e }>
-// 								<Cell.Row.Header>
-// 									<img src="./src/Assets/Images/headpic.jpeg" />
-// 								</Cell.Row.Header>
-// 								<Cell.Row.Body>
-// 									<h6>列表的产品名称等</h6>
-// 									<span>产品的描述性文字</span>
-// 								</Cell.Row.Body>
-// 								<Cell.Row.Footer>
-// 									<Rmb price="199.00" />
-// 									<small>共2件</small>
-// 								</Cell.Row.Footer>
-// 							</Cell.Row>
-// 						);
-// 					})
-// 				}
-// 			</Cell>
-// 		</div>
-// 	)
-// }
+const CellWithGoodsInfo = () => {
+	return (
+		<Cell>
+			{
+				[1, 2, 3].map(e => {
+					return (
+						<Cell.Row key={ e }>
+							<Cell.Row.Header>
+								<img src="./src/Assets/Images/headpic.jpeg" />
+							</Cell.Row.Header>
+							<Cell.Row.Body>
+								<h6>列表的大标题，可以是产品名称等</h6>
+								<span>产品的描述性文字</span>
+							</Cell.Row.Body>
+							<Cell.Row.Footer>
+								<Rmb price="199.00" />
+								<small>共2件</small>
+							</Cell.Row.Footer>
+						</Cell.Row>
+					);
+				})
+			}
+		</Cell>
+	)
+}
 
-// const CellC = () => {
-// 	return (
-// 		<div>
-// 			<Cell.Title title="带说明的列表" />
-// 			<Cell>
-// 				{
-// 					[1, 2, 3].map(e => {
-// 						return (
-// 							<Cell.Row key={ e }>
-// 								<Cell.Row.Body>
-// 									<h6>标题文字</h6>
-// 								</Cell.Row.Body>
-// 								<Cell.Row.Footer>
-// 									<span>说明描述</span>
-// 								</Cell.Row.Footer>
-// 							</Cell.Row>
-// 						);
-// 					})
-// 				}
-// 			</Cell>
-// 		</div>
-// 	)
-// }
+const CellWithRules = () => {
+	return (
+		<Cell>
+			{
+				[1, 2, 3].map(e => {
+					return (
+						<Cell.Row key={ e }>
+							<Cell.Row.Body>
+								<h6>标题文字</h6>
+							</Cell.Row.Body>
+							<Cell.Row.Footer>
+								<span>说明描述</span>
+							</Cell.Row.Footer>
+						</Cell.Row>
+					);
+				})
+			}
+		</Cell>
+	)
+}
 
-// const CellD = () => {
-// 	return (
-// 		<div>
-// 			<Cell.Title title="带说明的链接列表" />
-// 			<Cell>
-// 				{
-// 					[1, 2, 3].map(e => {
-// 						return (
-// 							<Cell.Row key={ e } title="标题文字" desc="说明描述" to="/" />
-// 						);
-// 					})
-// 				}
-// 			</Cell>
-// 		</div>
-// 	)
-// }
+const CellWithLink = () => {
+	return (			
+		<Cell>
+			{
+				[1, 2, 3].map(e => {
+					return (
+						<Cell.Row key={ e } header="标题文字" desc="说明描述" to="/" />
+					);
+				})
+			}
+		</Cell>
+	)
+}
 
 // const CellE = () => {
 // 	return (
@@ -268,14 +256,39 @@ class Message extends Component {
 
 				<Layout.Body>
 
-					<Cell.Title title="aaa" />
+					<Cell.Title title="带链接的商品列表" />
+					<CellWithGoodsAndLink />
+
+					<Cell.Title title="带购买信息的商品列表" />
+					<CellWithGoodsInfo />
+
+					<Cell.Title title="带说明的列表" />
+					<CellWithRules />
+
+					<Cell.Title title="带说明的链接列表" />
+					<CellWithLink />
+
+					<Cell.Title title="简写方式" />
 					<Cell>
 						<Cell.Row
-							header="12312"
-							body="title"
-							footer="footer"
+							header="Header"
+							body="Body"
+							footer="Footer"
+							to="/" />
+						<Cell.Row
+							header="Header"
+							body="Body"
+							footer="Footer"
 							to="/" />
 
+						<Cell.Row
+							header={ <img src="./src/Assets/Images/headpic.jpeg" /> }
+							body={ <h6>标题文字</h6> }
+							footer={ <h6>描述文字</h6> } />
+						<Cell.Row
+							header={ <img src="./src/Assets/Images/headpic.jpeg" /> }
+							body={ <h6>标题文字</h6> }
+							footer={ <h6>描述文字</h6> } />
 						<Cell.Row
 							header={ <img src="./src/Assets/Images/headpic.jpeg" /> }
 							body={ <h6>标题文字</h6> }
