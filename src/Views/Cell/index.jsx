@@ -82,7 +82,7 @@ const CellWithLink = () => {
 			{
 				[1, 2, 3].map(e => {
 					return (
-						<Cell.Row key={ e } header="标题文字" desc="说明描述" to="/" />
+						<Cell.Row key={ e } header={ <Icon name="home" /> } body={ <h6>标题文字</h6> } footer="说明描述" to="/" />
 					);
 				})
 			}

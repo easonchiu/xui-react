@@ -1,5 +1,5 @@
 {
-  "name": "react_react-router_webpack",
+  "name": "xui-react",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/easonchiu/react_react-router_webpack.git"
+    "url": "git+https://github.com/easonchiu/xui-react.git"
   },
   "author": "eason",
   "license": "MIT",
@@ -51,9 +51,9 @@
     "webpack-dev-server": "^1.16.2"
   },
   "bugs": {
-    "url": "https://github.com/easonchiu/react_react-router_webpack/issues"
+    "url": "https://github.com/easonchiu/xui-react/issues"
   },
-  "homepage": "https://github.com/easonchiu/react_react-router_webpack#readme",
+  "homepage": "https://github.com/easonchiu/xui-react#readme",
   "dependencies": {
     "classnames": "^2.2.5"
   }
