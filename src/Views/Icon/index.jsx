@@ -1,8 +1,12 @@
+import './style'
+
 import React, { Component, PropTypes } from 'react'
 
 import Layout from '../../Xui/Components/Layout'
 import Icon from '../../Xui/Components/Icon'
 import Cell from '../../Xui/Components/Cell'
+import Grid from '../../Xui/Components/Grid'
+
 
 class Icons extends Component {
 	constructor(props) {
@@ -63,6 +67,17 @@ class Icons extends Component {
 							))
 						}
 					</Cell>
+
+					<Cell.Title title="大的" />
+					<Grid border className="myGrid">
+						{
+							this.icons.map((e, i) => (
+								<Grid.Item key={ i } col={ 1/5 } className="flex">
+									<Icon name={ e.name } large />
+								</Grid.Item>
+							))
+						}
+					</Grid>
 
 				</Layout.Body>
 			</Layout>

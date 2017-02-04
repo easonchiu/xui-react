@@ -1,18 +1,20 @@
 import './style'
 import React, { Component, PropTypes } from 'react'
+import classnames from 'classnames'
 
 class Grid extends Component {
 	constructor(props) {
 		super(props);
 	}
 	render() {
-		let css = 'x-grid';
-		if (this.props.padding) {
-			css += ' x-grid--padding';
-		}
-		if (this.props.border) {
-			css += ' x-grid--border';
-		}
+		let css = classnames(
+			'x-grid',
+			this.props.className,
+			{
+				'x-grid--padding': this.props.padding,
+				'x-grid--border': this.props.border,
+			}
+		);
 		return (
 			<div className={ css }>
 				<div className="clearfix">
@@ -29,8 +31,12 @@ class GridItem extends Component {
 	}
 	render() {
 		let styl = { width: this.props.col * 100 + '%' }
+		let css = classnames(
+			'x-grid__item',
+			this.props.className,
+		);
 		return (
-			<div className="x-grid__item" style={ styl }>
+			<div className={ css } style={ styl }>
 				<div className="x-grid__inner">
 					{ this.props.children }
 				</div>
