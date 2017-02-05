@@ -61,7 +61,7 @@
 ```
 <Cell>
 	<Cell.Row
-		awwor
+		arrow
 		body="假链接" />
 </Cell>
 ```
@@ -70,7 +70,7 @@
 ```
 <Cell>
 	<Cell.Row
-		awwor
+		arrow
 		onClick={ fn }
 		body="点我" />
 </Cell>
