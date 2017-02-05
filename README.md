@@ -110,6 +110,7 @@
 		header="单行文本"
 		body={ <input type="text" placeholder="请输入" /> } />
 	<Cell.Row
+		vstart
 		header="多行文本"
 		body={ <textarea placeholder="请输入"></textarea> } />
 	<Cell.Row
@@ -117,6 +118,18 @@
 		body={ <select>...</select> } />
 </Cell>
 ```
+垂直顶对齐：
+因为默认是垂直居中对齐，所以在需要设置成顶对齐时添加`vstart`属性  
+一般情况下，被一些特殊内容撑高后的`Cell.Row`有可能会需要用到该属性
+```
+<Cell>
+	<Cell.Row
+		vstart
+		header="多行文本"
+		body={ <textarea placeholder="请输入"></textarea> } />
+</Cell>
+```
+
 
 ## Button
 ### 基本用法
