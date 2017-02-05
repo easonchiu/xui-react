@@ -90,164 +90,95 @@ const CellWithLink = () => {
 	)
 }
 
-// const CellE = () => {
-// 	return (
-// 		<div>
-// 			<Cell.Title title="带图标的列表" />
-// 			<Cell>
-// 				{
-// 					[1, 2, 3].map(e => {
-// 						return (
-// 							<Cell.Row key={ e }>
-// 								<Cell.Row.Header>
-// 									<Icon name="home" />
-// 								</Cell.Row.Header>
-// 								<Cell.Row.Body>
-// 									<h6>标题文字</h6>
-// 								</Cell.Row.Body>
-// 								<Cell.Row.Footer>
-// 									<span>说明描述</span>
-// 								</Cell.Row.Footer>
-// 							</Cell.Row>
-// 						);
-// 					})
-// 				}
-// 			</Cell>
-// 		</div>
-// 	)
-// }
+const CheckboxCell = () => {
+	return (
+		<Cell>
+			{
+				[1, 2, 3].map(e => {
+					return (
+						<Cell.Row
+							key={ e }
+							checkbox
+							checked={ e == 1 }
+							body={ <h6>标题文字</h6> }/>
+					);
+				})
+			}
+		</Cell>
+	);
+}
 
+const RadioCell = () => {
+	return (
+		<Cell>
+			{
+				[1, 2, 3].map(e => {
+					return (
+						<Cell.Row
+							key={ e }
+							radio
+							checked={ e == 1 }
+							body={ <h6>标题文字</h6> }/>
+					);
+				})
+			}
+		</Cell>
+	);
+}
+
+const CellWithInput = () => {
+	return (
+		<Cell>
+			<Cell.Row
+				header={ <label>单行文本</label> }
+				body={ <input type="text" placeholder="请输入" /> } />
+			<Cell.Row
+				vstart
+				header={ <label>多行文本</label> }
+				body={ <textarea placeholder="请输入"></textarea> } />
+		</Cell>
+	);
+}
+
+const CellWithSelect = () => {
+	return (
+		<Cell>
+			<Cell.Row
+				arrow
+				header={ <label>下拉菜单</label> }
+				body={
+					<select>
+						<option value="">请选择</option>
+						<option value="2">下拉菜单A</option>
+						<option value="3">下拉菜单B</option>
+						<option value="4">下拉菜单C</option>
+					</select>
+				} />
+		</Cell>
+	);
+}
+
+const ShortCell = () => {
+	return (
+		<Cell>
+			<Cell.Row
+				header="头部"
+				body="主体"
+				footer="尾部" />
+
+			<Cell.Row
+				header={ <img src="./src/Assets/Images/headpic.jpeg" /> }
+				body={ <h6>标题文字</h6> }
+				footer={ <span>描述文字</span> } />
+		</Cell>
+	);
+}
 
 class Message extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			checkboxid: 1,
-			radioid: 1,
-			select: ''
-		};
-	}
-	onCheckboxClick(v) {
-		if (!this.checked){
-			this.setState({
-				checkboxid: v
-			});
-		}
-	}
-	onRadioClick(v) {
-		if (!this.checked){
-			this.setState({
-				radioid: v
-			});
-		}
-	}
-	onSelectChange() {
-		let val = findDOMNode(this.refs.select).value;
-		this.setState({
-			select: val
-		});
 	}
 	render() {
-
-		// let CellG = (
-		// 	<div>
-		// 		<Cell.Title title="单选框" />
-		// 		<Cell>
-		// 			{
-		// 				[1, 2, 3].map(e => {
-		// 					return (
-		// 						<Cell.Row key={ e } checkbox checked={ this.state.checkboxid == e } onClick={ this.onCheckboxClick.bind(this, e) }>
-		// 							<Cell.Row.Body>
-		// 								<h6>标题文字</h6>
-		// 							</Cell.Row.Body>
-		// 							<Cell.Row.Footer>
-		// 								<small>描述</small>
-		// 							</Cell.Row.Footer>
-		// 						</Cell.Row>
-		// 					);
-		// 				})
-		// 			}
-		// 		</Cell>
-		// 	</div>
-		// )
-
-		// let CellF = (
-		// 	<div>
-		// 		<Cell.Title title="多选框" />
-		// 		<Cell>
-		// 			{
-		// 				[1, 2, 3].map(e => {
-		// 					return (
-		// 						<Cell.Row key={ e } radio checked={ this.state.radioid == e } onClick={ this.onRadioClick.bind(this, e) }>
-		// 							<Cell.Row.Header>
-		// 								<img src="./src/Assets/Images/headpic.jpeg" />
-		// 							</Cell.Row.Header>
-		// 							<Cell.Row.Body>
-		// 								<h6>标题文字</h6>
-		// 							</Cell.Row.Body>
-		// 							<Cell.Row.Footer>
-		// 								<span>说明描述</span>
-		// 							</Cell.Row.Footer>
-		// 						</Cell.Row>
-		// 					);
-		// 				})
-		// 			}
-		// 		</Cell>
-		// 	</div>
-		// )
-		
-		// let selectcss = this.state.select == '' ? 'empty-select' : ''
-		// let CellH = (
-		// 	<div>
-		// 		<Cell.Title title="单选框" />
-		// 		<Cell>
-		// 			<Cell.Row>
-		// 				<Cell.Row.Header>
-		// 					<label>姓名</label>
-		// 				</Cell.Row.Header>
-		// 				<Cell.Row.Body>
-		// 					<input type="text" placeholder="请输入" />
-		// 				</Cell.Row.Body>
-		// 				<Cell.Row.Header>
-		// 					<label>手机号</label>
-		// 				</Cell.Row.Header>
-		// 				<Cell.Row.Body>
-		// 					<input type="text" placeholder="请输入" />
-		// 				</Cell.Row.Body>
-		// 			</Cell.Row>
-		// 			<Cell.Row>
-		// 				<Cell.Row.Header>
-		// 					<label>单行文本</label>
-		// 				</Cell.Row.Header>
-		// 				<Cell.Row.Body>
-		// 					<input type="text" placeholder="请输入" />
-		// 				</Cell.Row.Body>
-		// 			</Cell.Row>
-		// 			<Cell.Row vstart>
-		// 				<Cell.Row.Header>
-		// 					<label>多行文本</label>
-		// 				</Cell.Row.Header>
-		// 				<Cell.Row.Body>
-		// 					<textarea placeholder="请输入"></textarea>
-		// 				</Cell.Row.Body>
-		// 			</Cell.Row>
-		// 			<Cell.Row>
-		// 				<Cell.Row.Header>
-		// 					<label>下拉菜单</label>
-		// 				</Cell.Row.Header>
-		// 				<Cell.Row.Body>
-		// 					<select className={ selectcss } onChange={ this.onSelectChange.bind(this) } ref="select">
-		// 						<option value="">请选择</option>
-		// 						<option value="2">下拉菜单A</option>
-		// 						<option value="3">下拉菜单B</option>
-		// 						<option value="4">下拉菜单C</option>
-		// 					</select>
-		// 				</Cell.Row.Body>
-		// 			</Cell.Row>
-		// 		</Cell>
-		// 	</div>
-		// )
-		
 		return (
 			<Layout>
 				<Layout.Header
@@ -268,33 +199,20 @@ class Message extends Component {
 					<Cell.Title title="带说明的链接列表" />
 					<CellWithLink />
 
+					<Cell.Title title="单选框" />
+					<CheckboxCell />
+
+					<Cell.Title title="多选框" />
+					<RadioCell />
+
+					<Cell.Title title="文本框" />
+					<CellWithInput />
+
+					<Cell.Title title="下拉菜单" />
+					<CellWithSelect />
+
 					<Cell.Title title="简写方式" />
-					<Cell>
-						<Cell.Row
-							header="Header"
-							body="Body"
-							footer="Footer"
-							to="/" />
-						<Cell.Row
-							header="Header"
-							body="Body"
-							footer="Footer"
-							to="/" />
-
-						<Cell.Row
-							header={ <img src="./src/Assets/Images/headpic.jpeg" /> }
-							body={ <h6>标题文字</h6> }
-							footer={ <h6>描述文字</h6> } />
-						<Cell.Row
-							header={ <img src="./src/Assets/Images/headpic.jpeg" /> }
-							body={ <h6>标题文字</h6> }
-							footer={ <h6>描述文字</h6> } />
-						<Cell.Row
-							header={ <img src="./src/Assets/Images/headpic.jpeg" /> }
-							body={ <h6>标题文字</h6> }
-							footer={ <h6>描述文字</h6> } />
-
-					</Cell>
+					<ShortCell />
 
 				</Layout.Body>
 				

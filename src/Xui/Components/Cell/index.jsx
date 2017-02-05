@@ -40,7 +40,7 @@ class CellRow extends Component {
 			'x-cell__row--checkbox': this.props.checkbox,
 			'x-cell__row--checkbox-checked': this.props.checkbox && this.props.checked,
 			'x-cell__row--arrow': this.props.arrow,
-		});
+		}, this.props.className);
 
 		// 如果有onClick事件则绑定
 		if (this.props.onClick){
@@ -112,8 +112,9 @@ class CellRowHeader extends Component {
 		super(props);
 	}
 	render(){
+		let css = classnames('x-cell__row__header', this.props.className);
 		return (
-			<header className="x-cell__row__header">
+			<header className={ css }>
 				{ this.props.children }
 			</header>
 		);
@@ -125,8 +126,9 @@ class CellRowBody extends Component {
 		super(props);
 	}
 	render(){
+		let css = classnames('x-cell__row__body', this.props.className);
 		return (
-			<div className="x-cell__row__body">
+			<div className={ css }>
 				{ this.props.children }
 			</div>
 		);
@@ -138,8 +140,9 @@ class CellRowFooter extends Component {
 		super(props);
 	}
 	render(){
+		let css = classnames('x-cell__row__footer', this.props.className);
 		return (
-			<footer className="x-cell__row__footer">
+			<footer className={ css }>
 				{ this.props.children }
 			</footer>
 		);
@@ -151,8 +154,9 @@ class CellTitle extends Component {
 		super(props);
 	}
 	render() {
+		let css = classnames('x-cell__title', this.props.className);
 		return (
-			<h2 className="x-cell__title">
+			<h2 className={ css }>
 				{ this.props.title }
 			</h2>
 		);
