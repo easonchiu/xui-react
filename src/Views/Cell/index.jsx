@@ -13,7 +13,7 @@ const CellWithGoodsAndLink = () => {
 			{
 				[1, 2, 3].map(e => {
 					return (
-						<Cell.Row key={ e } to="/cell#link">
+						<Cell.Row key={ e } to="http://www.baidu.com">
 							<Cell.Row.Header>
 								<img src="./src/Assets/Images/headpic.jpeg" />
 							</Cell.Row.Header>

@@ -87,6 +87,13 @@ class CellRow extends Component {
 
 		// 返回
 		if (this.props.to && !this.props.radio) {
+			if ((/^[http]/i).test(this.props.to)) {
+				return (
+					<a href={ this.props.to } className={ css } { ...props }>
+						{ this.props.children }{ children }
+					</a>
+				);
+			}
 			return (
 				<Link to={ this.props.to } className={ css } { ...props }>
 					{ this.props.children }{ children }

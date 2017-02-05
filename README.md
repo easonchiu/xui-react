@@ -8,7 +8,115 @@
 4、轻量级，都是些常用组件，实用性强  
 
 
-
+## Cell
+### 基本用法
+```
+<Cell>
+	<Cell.Row>
+		<Cell.Row.Header>
+			头部分
+		</Cell.Row.Header>
+		<Cell.Row.Body>
+			身体部分
+		</Cell.Row.Body>
+		<Cell.Row.Footer>
+			尾部分
+		</Cell.Row.Footer>
+	</Cell.Row>
+</Cell>
+```
+如果觉得以上写法太繁琐，也可以简化成这样：  
+```
+<Cell>
+	<Cell.Row
+		header="头部分"
+		body="身体部分"
+		footer="尾部分" />
+</Cell>
+```
+这样写的话，`header`会自动嵌套`label`标签、`body`嵌套`p`标签、`footer`嵌套`span`标签  
+如果需要自定义的话，可以这样：  
+```
+<Cell>
+	<Cell.Row
+		header={ <img src="..." }
+		body={ <h6>标题</h6> }
+		footer={ <em>描述</em> } />
+</Cell>
+```
+注意：基本写法与简化写法不能混合着用，如果两者都有，即忽略简化方式  
+### 扩展
+链接：  
+`Cell.Row`加上`to`即可  
+这里的`to`若不是以`http`开头的，会使用路由的`Link`来做替换，反之会直接使用`a`标签  
+```
+<Cell>
+	<Cell.Row
+		to="/index"
+		body="跳转" />
+</Cell>
+```
+带链接箭头：  
+如果你想要像有链接一样的箭头，加上`arrow`即可
+```
+<Cell>
+	<Cell.Row
+		awwor
+		body="假链接" />
+</Cell>
+```
+点击事件：  
+加入`onClick`即可，这时可配合上面的`arrow`引导用户点击
+```
+<Cell>
+	<Cell.Row
+		awwor
+		onClick={ fn }
+		body="点我" />
+</Cell>
+```
+单选与多选：  
+添加`checkbox`属性可变成单选样式（行后显示打勾），配合`checked`为`true`或`false`切换不同样式  
+```
+<Cell>
+	<Cell.Row
+		checkbox
+		checked={ true }
+		body="我被选中啦" />
+	<Cell.Row
+		checkbox
+		checked={ false }
+		body="我落选啦" />
+</Cell>
+```
+添加`radio`属性可变成多选的样式（行前有打勾的圆圈），配合`checked`为`true`或`false`切换不同样式  
+```
+<Cell>
+	<Cell.Row
+		radio
+		checked={ true }
+		body="我被选中啦" />
+	<Cell.Row
+		radio
+		checked={ false }
+		body="我落选啦" />
+</Cell>
+```
+其他：  
+单行输入框、多行输入框、下拉框
+```
+<Cell>
+	<Cell.Row
+		header="单行文本"
+		body={ <input type="text" placeholder="请输入" /> } />
+	<Cell.Row
+		header="多行文本"
+		body={ <textarea placeholder="请输入"></textarea> } />
+	<Cell.Row
+		header="下拉框"
+		body={ <select>...</select> } />
+</Cell>
+```
 
 ## Button
 ### 基本用法
