@@ -13,12 +13,16 @@
 	position: relative;
 	border-radius: pr(6);
 	border: none;
-	.x-icon:before {
+	.x-icon {
 		color: inherit;
+		margin: 0 pr(6);
+		&:before {
+			color: inherit;
+		}
 	}
 }
 
-$x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(cr(body),-5), vital: #04be02);
+$x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(cr(border),20), vital: #04be02);
 @each $name, $color in $x-buttons {
 	.x-button--#{$name} {
 		background-color: $color;
@@ -49,7 +53,7 @@ $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(
 .x-button--mini {
 	height: pr(64);
 	font-size: pr(28);
-	[class^="x-icon"] {
+	.x-icon {
 		width: pr(36);
 		height: pr(36);
 		&:before {
@@ -75,10 +79,65 @@ $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(
 
 .x-button-group {
 	display: flex;
-	a[class^="x-button"] {
+	.x-button {
 		margin-right: pr(10);
 		&:last-child {
 			margin-right: 0;
+		}
+	}
+	&--merge {
+		position: relative;
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 200%;
+			height: 200%;
+			border: 1px solid cr(border);
+			border-radius: pr(12);
+			transform: scale(0.5, 0.5);
+			transform-origin: 0 0;
+			pointer-events: none;
+			z-index: 2;
+		}
+		.x-button {
+			margin-right: 0;
+			border-radius: 0;
+			z-index: 3;
+			@extend .x-button--mini;
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				left: auto;
+				top: 0;
+				right: 0;
+				border: none;
+				background-color: cr(border);
+				border-radius: 0;
+				width: 1px;
+				height: 100%;
+				transform: scale(0.5, 1);
+				transform-origin: 100% 0;
+			}
+			&:first-child {
+				border-radius: pr(6) 0 0 pr(6);
+			}
+			&:last-child {
+				border-radius: 0 pr(6) pr(6) 0;
+				&:after {
+					display: none;
+				}
+			}
+			&--default {
+				z-index: 1;
+				background-color: cr(body);
+				&:active {
+					background-color: crcalc(cr(body), -15);
+				}
+			}
 		}
 	}
 }

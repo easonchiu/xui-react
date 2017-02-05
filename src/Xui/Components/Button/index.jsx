@@ -1,38 +1,48 @@
 import './style'
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
+import classnames from 'classnames'
 
 class Button extends Component {
 	constructor(props) {
 		super(props);
 	}
 	render() {
-		let css = 'x-button';
-		css += this.props.type ? ' x-button--' + this.props.type : ' x-button--default';
-		if (this.props.mini){
-			css += ' x-button--mini';
-		}
-		if (this.props.disabled){
-			css += ' x-button--disabled';
-		}
+		let type = this.props.type ? this.props.type : 'default';
+		let css = classnames(
+			'x-button',
+			'x-button--' + type,
+			{
+				'x-button--mini': this.props.mini,
+				'x-button--disabled': this.props.disabled,
+			},
+			this.props.className,
+		);
+		
 		if (this.props.to && this.props.onClick == undefined){
 			return (
 				<Link to={ this.props.to } className={ css }>
 					{ this.props.children }
 				</Link>
 			);
-		} else if (this.props.onClick) {
-			return (
-				<a onClick={ this.props.onClick } className={ css }>
-					{ this.props.children }
-				</a>
-			);
 		}
 		return (
-			<a className={ css }>
+			<a onClick={ this.props.onClick || null } className={ css }>
 				{ this.props.children }
 			</a>
 		);
+	}
+}
+
+let buttonWithActive = (Button) => {
+	return class Comp extends Component {
+		render() {
+			return (
+				<Button>
+					asdf
+				</Button>
+			);
+		}
 	}
 }
 
@@ -47,8 +57,15 @@ class ButtonGroup extends Component {
 		super(props);
 	}
 	render() {
+		let css = classnames(
+			'x-button-group',
+			{
+				'x-button-group--merge': this.props.merge,
+			},
+			this.props.className,
+		);
 		return (
-			<menu className="x-button-group">
+			<menu className={ css }>
 				{ this.props.children }
 			</menu>
 		);
