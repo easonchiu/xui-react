@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var config = require('./base');
 
 // 配置公共路径
-config.output.publicPath = '';
+config.output.publicPath = '/xui-react/dist/';
 
 // 文件重命名
 config.output.filename = 'static/js/[name].[chunkhash:8].js';
