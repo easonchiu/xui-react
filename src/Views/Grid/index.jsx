@@ -1,3 +1,5 @@
+import './style'
+
 import React, { Component } from 'react'
 
 import Layout from '../../Xui/Components/Layout'
@@ -22,75 +24,75 @@ class ViewGrid extends Component {
 					<Cell.Title title="默认形式" />
 					<Grid>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/4 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/4 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/4 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/4 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/3 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/3 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/3 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 					</Grid>
 
 					<Cell.Title title="带描边的形式" />
 					<Grid border>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 					</Grid>
 
 					<Cell.Title title="有边距的形式" />
 					<Grid margin>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
-							<img src="./src/Assets/Images/headpic.jpeg" />
+							<span className="gridspace"></span>
 						</Grid.Item>
 					</Grid>
 

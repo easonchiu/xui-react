@@ -184,10 +184,62 @@
 
 
 
+
 ## Panel [Demo范例](https://easonchiu.github.io/xui-react/dist/#/panel)
 ### 基本用法
 ```
+<Panel>
+	<Panel.Header title="标题文字" />
+	<Panel.Body>
+		
+		content
 
+	</Panel.Body>
+	<Panel.Footer text="底部提示文字" />
+</Panel>
+```
+`Panel.Body`内可以与其他的组件相结合，如果是列表类的结合`Cell`，或者商品列表结合`Grid`等等，或自行开发组件
+### 扩展
+头部和尾部的链接：
+```
+<Panel>
+	<Panel.Header title="标题文字" extra={ <a>更多<Icon name="right" /></a> } />
+	<Panel.Body>
+		
+		content
+
+	</Panel.Body>
+	<Panel.Footer text="底部提示文字" extra={ <a>更多<Icon name="right" /></a> } />
+</Panel>
+```
+或者：
+```
+<Panel>
+	<Panel.Header title="标题文字" extra={ <Button type="primary" mini>按钮</Button> } />
+	<Panel.Body>
+		
+		content
+
+	</Panel.Body>
+	<Panel.Footer text="底部提示文字" extra={ <Button type="primary" mini>按钮</Button> } />
+</Panel>
+```
+自定义：  
+如果对头尾的结构要有更复杂的定制，则可以如下写法
+```
+<Panel>
+	<Panel.Header>
+		定制内容
+	</Panel.Header>
+	<Panel.Body>
+		
+		content
+
+	</Panel.Body>
+	<Panel.Footer>
+		定制内容
+	</Panel.Footer>
+</Panel>
 ```
 
 

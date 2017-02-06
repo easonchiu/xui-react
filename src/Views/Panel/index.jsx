@@ -130,6 +130,21 @@ class PanelView extends Component {
 						<Panel.Footer text="底部提示文字" extra={ <a>更多<Icon name="right" /></a> } />
 					</Panel>
 
+					<Cell.Title title="头尾按钮" />
+					<Panel>
+						<Panel.Header title="模块名称" extra={ <Button type="vital" mini>验证</Button> } />
+						<Panel.Body>
+							
+							<Cell>
+								<Cell.Row body="身体部分" />
+							</Cell>
+
+						</Panel.Body>
+						<Panel.Footer>
+							<Button type="primary" mini>底部按钮</Button>
+						</Panel.Footer>
+					</Panel>
+
 					<Cell.Title title="与Grid结合" />
 					<Panel>
 						<Panel.Header title="模块名称" />

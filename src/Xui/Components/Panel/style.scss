@@ -15,47 +15,34 @@
 			font-size: pr(30);
 			line-height: 1.5;
 			color: $cr-title;
-			flex-grow: 1;
-		}
-		a {
-			display: flex;
-			align-items: center;
-			font-size: pr(26);
-			line-height: 1.5;
-			color: $cr;
-			i.x-icon {
-				width: auto;
-				height: auto;
-				&:before {
-					color: $cr;
-					font-size: pr(30);
-				}
-			}
-			&:active {
-				opacity: 0.7;
-			}
 		}
 	}
 	&__body {
 
 	}
 	&__footer {
+		padding: pr(16) pr(20);
 		display: flex;
 		align-items: center;
-		padding: pr(16) pr(20);
 		span {
 			display: block;
 			font-size: pr(26);
 			line-height: 1.5;
 			color: $cr-span;
-			flex-grow: 1;
 		}
+	}
+	&__extra {
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
 		a {
 			display: flex;
 			align-items: center;
 			font-size: pr(26);
 			line-height: 1.5;
 			color: $cr;
+			width: auto;
 			i.x-icon {
 				width: auto;
 				height: auto;
