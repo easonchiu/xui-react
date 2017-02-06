@@ -73,7 +73,7 @@ class ViewGrid extends Component {
 					</Grid>
 
 					<Cell.Title title="有边距的形式" />
-					<Grid padding>
+					<Grid margin>
 						<Grid.Item col={ 1/2 }>
 							<img src="./src/Assets/Images/headpic.jpeg" />
 						</Grid.Item>

@@ -102,7 +102,7 @@ view.x-app {
 		left: 0;
 		top: 0;
 		z-index: 2;
-		[class^="x-icon"] {
+		.x-icon {
 			&:before {
 				font-size: pr(40);
 			}

@@ -1,3 +1,5 @@
+import './style'
+
 import React, { Component, PropTypes } from 'react'
 import { findDOMNode } from 'react-dom'
 
@@ -15,7 +17,7 @@ const CellWithGoodsAndLink = () => {
 					return (
 						<Cell.Row key={ e } to="http://www.baidu.com">
 							<Cell.Row.Header>
-								<img src="./src/Assets/Images/headpic.jpeg" />
+								<span className="space"></span>
 							</Cell.Row.Header>
 							<Cell.Row.Body>
 								<h6>列表的大标题，可以是产品名称等</h6>
@@ -37,7 +39,7 @@ const CellWithGoodsInfo = () => {
 					return (
 						<Cell.Row key={ e }>
 							<Cell.Row.Header>
-								<img src="./src/Assets/Images/headpic.jpeg" />
+								<span className="space"></span>
 							</Cell.Row.Header>
 							<Cell.Row.Body>
 								<h6>列表的大标题，可以是产品名称等</h6>
@@ -167,7 +169,7 @@ const ShortCell = () => {
 				footer="尾部" />
 
 			<Cell.Row
-				header={ <img src="./src/Assets/Images/headpic.jpeg" /> }
+				header={ <span className="space"></span> }
 				body={ <h6>标题文字</h6> }
 				footer={ <span>描述文字</span> } />
 		</Cell>

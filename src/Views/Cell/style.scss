@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+.space {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1rem;
+	height: 1rem;
+	background: #ddd;
+	&:after {
+		content: "thumb";
+		display: block;
+		color: #fff;
+		font-size: 0.1rem;
+	}
+}

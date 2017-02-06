@@ -11,7 +11,7 @@ class Grid extends Component {
 			'x-grid',
 			this.props.className,
 			{
-				'x-grid--padding': this.props.padding,
+				'x-grid--margin': this.props.margin,
 				'x-grid--border': this.props.border,
 			}
 		);

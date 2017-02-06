@@ -7,7 +7,7 @@
 	@include line-top;
 	@include line-bottom;
 
-	&--padding {
+	&--margin {
 		padding: pr(5);
 		background: none;
 		.x-grid__item {

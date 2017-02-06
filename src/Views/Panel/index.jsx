@@ -1,9 +1,13 @@
+import './style'
+
 import React, { Component, PropTypes } from 'react'
+
 import Layout from '../../Xui/Components/Layout'
 import Cell from '../../Xui/Components/Cell'
 import Button from '../../Xui/Components/Button'
 import Panel from '../../Xui/Components/Panel'
 import Icon from '../../Xui/Components/Icon'
+import Grid from '../../Xui/Components/Grid'
 
 
 let DemoI = () => {
@@ -14,7 +18,7 @@ let DemoI = () => {
 					return (
 						<Cell.Row key={ e }>
 							<Cell.Row.Header>
-								<img src="./src/Assets/Images/headpic.jpeg" />
+								<span className="space"></span>
 							</Cell.Row.Header>
 							<Cell.Row.Body>
 								<h6>列表的大标题，可以是产品名称等</h6>
@@ -71,6 +75,25 @@ let DemoII = () => {
 	)
 }
 
+let DemoIII = () => {
+	return (
+		<Grid border>
+			<Grid.Item col={ 1/5 }>grid</Grid.Item>
+			<Grid.Item col={ 1/5 }>grid</Grid.Item>
+			<Grid.Item col={ 1/5 }>grid</Grid.Item>
+			<Grid.Item col={ 1/5 }>grid</Grid.Item>
+			<Grid.Item col={ 1/5 }>grid</Grid.Item>
+			<Grid.Item col={ 1/4 }>grid</Grid.Item>
+			<Grid.Item col={ 1/4 }>grid</Grid.Item>
+			<Grid.Item col={ 1/4 }>grid</Grid.Item>
+			<Grid.Item col={ 1/4 }>grid</Grid.Item>
+			<Grid.Item col={ 1/3 }>grid</Grid.Item>
+			<Grid.Item col={ 1/3 }>grid</Grid.Item>
+			<Grid.Item col={ 1/3 }>grid</Grid.Item>
+		</Grid>
+	)
+}
+
 class PanelView extends Component {
 	constructor(props) {
 		super(props);
@@ -84,6 +107,7 @@ class PanelView extends Component {
 					start={ <a onClick={ this.props.router.goBack }><Icon name="back" />返回</a> } />
 
 				<Layout.Body>
+
 					<Cell.Title title="模块" />
 					<Panel>
 						<Panel.Header title="模块名称" />
@@ -96,7 +120,6 @@ class PanelView extends Component {
 					</Panel>
 					
 					<Cell.Title title="录入" />
-
 					<Panel>
 						<Panel.Header title="模块名称" extra={ <a>更多<Icon name="right" /></a> } />
 						<Panel.Body>
@@ -105,6 +128,17 @@ class PanelView extends Component {
 
 						</Panel.Body>
 						<Panel.Footer text="底部提示文字" extra={ <a>更多<Icon name="right" /></a> } />
+					</Panel>
+
+					<Cell.Title title="与Grid结合" />
+					<Panel>
+						<Panel.Header title="模块名称" />
+						<Panel.Body>
+							
+							<DemoIII />
+
+						</Panel.Body>
+						<Panel.Footer text="底部提示文字" />
 					</Panel>
 
 				</Layout.Body>

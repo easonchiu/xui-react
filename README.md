@@ -8,7 +8,7 @@
 4、轻量级，都是些常用组件，实用性强  
 
 
-## Cell
+## Cell [范例](https://easonchiu.github.io/xui-react/dist/#/cell)
 ### 基本用法
 ```
 <Cell>
@@ -131,7 +131,68 @@
 ```
 
 
-## Button
+
+
+## Grid [范例](https://easonchiu.github.io/xui-react/dist/#/grid)
+### 基本用法
+```
+<Grid>
+	<Grid.Item col={ width }>
+		content
+	</Grid.Item>
+</Grid>
+```
+`width`一般我们写作`1/5`、`1/4`等形式，容易阅读，其实得出来的值就是`0.2`、`0.25`，也可以是任意值  
+即：  
+```
+<Grid>
+	<Grid.Item col={ 1/4 }>
+		contentA
+	</Grid.Item>
+	<Grid.Item col={ 1/4 }>
+		contentB
+	</Grid.Item>
+	<Grid.Item col={ 1/4 }>
+		contentC
+	</Grid.Item>
+	<Grid.Item col={ 1/4 }>
+		contentD
+	</Grid.Item>
+</Grid>
+```
+这样就可以实现一行4个格子展示  
+### 扩展
+带边框模式：  
+`Grid`添加`border`即可
+```
+<Grid border>
+	<Grid.Item col={ width }>
+		content
+	</Grid.Item>
+</Grid>
+```
+有外边距模式：  
+`Grid`添加`margin`即可，格子与格子之间有外边距
+```
+<Grid margin>
+	<Grid.Item col={ width }>
+		content
+	</Grid.Item>
+</Grid>
+```
+如果以上2种模式都不用的话，默认情况下是有内边距的
+
+
+
+## Panel [范例](https://easonchiu.github.io/xui-react/dist/#/panel)
+### 基本用法
+```
+
+```
+
+
+
+## Button [范例](https://easonchiu.github.io/xui-react/dist/#/button)
 ### 基本用法
 ```
 <Button>按钮文字</Button>
