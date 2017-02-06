@@ -64,11 +64,11 @@ module.exports = function makeWebpackConfig(){
 	);
 
 	// 将运行时runtime抽离出来放到manifest
-	config.plugins.push(
-		new webpack.optimize.CommonsChunkPlugin({
-			name: ['vendor', 'manifest'],
-		})
-	);
+	// config.plugins.push(
+	// 	new webpack.optimize.CommonsChunkPlugin({
+	// 		name: ['vendor', 'manifest'],
+	// 	})
+	// );
 
 	// 加载器
 	config.fileLoader = {
