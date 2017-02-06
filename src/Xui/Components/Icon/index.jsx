@@ -1,18 +1,23 @@
 import './style'
 import React, { Component, PropTypes } from 'react'
+import classnames from 'classnames'
 
 class Icon extends Component {
 	constructor(props) {
 		super(props);
 	}
 	render() {
-		let css = 'x-icon x-icon--' + this.props.name;
-		css += this.props.type ? ' x-icon--' + this.props.type : '';
-
-		if (this.props.large){
-			css += ' x-icon--large';
-		}
-
+		let type = this.props.type ? 'x-icon--' + this.props.type : '';
+		let css = classnames(
+			'x-icon',
+			'x-icon--' + this.props.name,
+			{
+				'x-icon--large': this.props.large,
+			},
+			type,
+			this.props.className
+		);
+		
 		return (
 			<i className={ css } />
 		);

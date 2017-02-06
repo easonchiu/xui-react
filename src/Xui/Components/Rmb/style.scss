@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import "../../Styles/Config.scss";
+@import "../../Styles/variables";
 
 .x-rmb {
 	display: flex;
@@ -7,7 +7,7 @@
 	height: pr(40);
 	font-size: pr(30);
 	overflow: hidden;
-	color: cr(strong);
+	color: $cr-strong;
 	font-weight: normal;
 	&:before {
 		content: "\e616";
@@ -20,7 +20,7 @@
 		-webkit-font-smoothing: antialiased;
 	}
 	&--dark {
-		color: crcalc(cr(span), -30);
+		color: crcalc($cr-span, -30);
 	}
 	&.x-s {
 		font-size: pr(28);

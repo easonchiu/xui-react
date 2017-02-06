@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import "../../Styles/Config.scss";
+@import "../../Styles/variables";
 
 // 按钮类
 .x-button {
@@ -22,12 +22,12 @@
 	}
 }
 
-$x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(cr(border),20), vital: #04be02);
+$x-buttons: (primary: $cr, warn: crcalc($cr-strong,20), default: crcalc($cr-border,20), vital: $cr-vital);
 @each $name, $color in $x-buttons {
 	.x-button--#{$name} {
 		background-color: $color;
 		@if $name == default {
-			color: cr(span) !important;
+			color: $cr-span !important;
 			&:after {
 				content: "";
 				display: block;
@@ -95,7 +95,7 @@ $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(
 			top: 0;
 			width: 200%;
 			height: 200%;
-			border: 1px solid cr(border);
+			border: 1px solid $cr-border;
 			border-radius: pr(12);
 			transform: scale(0.5, 0.5);
 			transform-origin: 0 0;
@@ -115,7 +115,7 @@ $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(
 				top: 0;
 				right: 0;
 				border: none;
-				background-color: cr(border);
+				background-color: $cr-border;
 				border-radius: 0;
 				width: 1px;
 				height: 100%;
@@ -133,9 +133,9 @@ $x-buttons: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(
 			}
 			&--default {
 				z-index: 1;
-				background-color: cr(body);
+				background-color: $cr-body;
 				&:active {
-					background-color: crcalc(cr(body), -15);
+					background-color: crcalc($cr-body, -15);
 				}
 			}
 		}

@@ -68,7 +68,23 @@ class Icons extends Component {
 						}
 					</Cell>
 
-					<Cell.Title title="大的" />
+					<Cell.Title title="带颜色的" />
+					<Grid border className="myGrid">
+						<Grid.Item col={ 1/4 } className="flex">
+							<Icon name="home" large type="primary" />
+						</Grid.Item>
+						<Grid.Item col={ 1/4 } className="flex">
+							<Icon name="home" large type="warn" />
+						</Grid.Item>
+						<Grid.Item col={ 1/4 } className="flex">
+							<Icon name="home" large type="default" />
+						</Grid.Item>
+						<Grid.Item col={ 1/4 } className="flex">
+							<Icon name="home" large type="vital" />
+						</Grid.Item>
+					</Grid>
+
+					<Cell.Title title="大尺寸" />
 					<Grid border className="myGrid">
 						{
 							this.icons.map((e, i) => (

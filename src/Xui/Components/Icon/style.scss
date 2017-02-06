@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import "../../Styles/Config.scss";
+@import "../../Styles/variables";
 
 // icon字体
 @font-face {
@@ -20,7 +20,7 @@ $x-icons: (check: "\e600", close: "\e601", round-check-fill: "\e602", round-chec
 	overflow: hidden;
 	&:before {
 		content: "";
-		color: crcalc(cr(p),30);
+		color: crcalc($cr-p,30);
 		font-size: pr(36);
 		line-height: 1;
 		font-family: "icons" !important;
@@ -37,7 +37,7 @@ $x-icons: (check: "\e600", close: "\e601", round-check-fill: "\e602", round-chec
 }
 
 // 不同颜色
-$x-icon-colors: (primary: cr(default), warn: crcalc(cr(strong),20), default: crcalc(cr(p),30), vital: #04be02);
+$x-icon-colors: (primary: $cr, warn: crcalc($cr-strong,20), default: crcalc($cr-p,30), vital: $cr-vital);
 @each $name, $color in $x-icon-colors {
 	.x-icon--#{$name} {
 		&:before {

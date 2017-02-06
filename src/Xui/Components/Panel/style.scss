@@ -1,12 +1,12 @@
 @charset "utf-8";
-@import "../../Styles/Config.scss";
+@import "../../Styles/variables";
 
 .x-panel {
 	overflow: hidden;
 	position: relative;
 	background-color: #fff;
-	@extend %line-top;
-	@extend %line-bottom;
+	@include line-top;
+	@include line-bottom;
 	&__header {
 		padding: pr(16) pr(20);
 		display: flex;
@@ -14,7 +14,7 @@
 		h2 {
 			font-size: pr(30);
 			line-height: 1.5;
-			color: cr(p);
+			color: $cr-p;
 			flex-grow: 1;
 		}
 		a {
@@ -22,12 +22,12 @@
 			align-items: center;
 			font-size: pr(26);
 			line-height: 1.5;
-			color: cr(default);
+			color: $cr;
 			i.x-icon {
 				width: auto;
 				height: auto;
 				&:before {
-					color: cr(default);
+					color: $cr;
 					font-size: pr(30);
 				}
 			}
@@ -47,7 +47,7 @@
 			display: block;
 			font-size: pr(26);
 			line-height: 1.5;
-			color: cr(span);
+			color: $cr-span;
 			flex-grow: 1;
 		}
 		a {
@@ -55,12 +55,12 @@
 			align-items: center;
 			font-size: pr(26);
 			line-height: 1.5;
-			color: cr(default);
+			color: $cr;
 			i.x-icon {
 				width: auto;
 				height: auto;
 				&:before {
-					color: cr(default);
+					color: $cr;
 					font-size: pr(30);
 				}
 			}

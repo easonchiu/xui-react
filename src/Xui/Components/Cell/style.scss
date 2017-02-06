@@ -1,14 +1,14 @@
 @charset "utf-8";
-@import "../../Styles/Config.scss";
+@import "../../Styles/variables";
 
 .x-cell {
 	overflow: hidden;
 	position: relative;
 	background-color: #fff;
-	@extend %line-top;
-	@extend %line-bottom;
+	@include line-top;
+	@include line-bottom;
 	&__title {
-		color: cr(span);
+		color: $cr-span;
 		padding: pr(20) pr(20) pr(8) pr(20);
 		font-size: pr(30);
 		line-height: 1.5;
@@ -17,7 +17,7 @@
 	&__row {
 		display: flex;
 		padding: pr(20);
-		@extend %line-top;
+		@include line-top;
 		&:before {
 			left: pr(20);
 		}
@@ -50,7 +50,7 @@
 			flex-grow: 1;
 			justify-content: center;
 			width: 100%;
-			color: cr(p);
+			color: $cr-p;
 			min-height: pr(46);
 			textarea, input, select, div {
 				display: block;
@@ -85,13 +85,13 @@
 				display: block;
 				font-size: pr(28);
 				line-height: 1.2;
-				color: cr(span);
+				color: $cr-span;
 			}
 			small {
 				display: block;
 				font-size: pr(26);
 				line-height: 1.2;
-				color: cr(span);
+				color: $cr-span;
 			}
 		}
 		&--radio {
@@ -103,7 +103,7 @@
 				left: pr(20);
 				top: 50%;
 				-webkit-transform: translate(0, -50%);
-				color: cr(border);
+				color: $cr-border;
 				font-family: "icons" !important;
 				font-style: normal;
 				font-weight: 100;
@@ -115,7 +115,7 @@
 			}
 			&-checked:after {
 				content: "\e602";
-				color: cr(default);
+				color: $cr;
 			}
 		}
 		&--checkbox {
@@ -130,7 +130,7 @@
 				right: pr(20);
 				top: 50%;
 				-webkit-transform: translate(0, -50%);
-				color: cr(default);
+				color: $cr;
 				font-family: "icons" !important;
 				font-style: normal;
 				font-weight: 100;
@@ -160,7 +160,7 @@ a.x-cell__row, .x-cell__row--arrow {
 		content: "\e606";
 		display: block;
 		line-height: pr(48);
-		color: crcalc(cr(border), -30);
+		color: crcalc($cr-border, -30);
 		font-family: "icons" !important;
 		font-style: normal;
 		-webkit-font-smoothing: antialiased;

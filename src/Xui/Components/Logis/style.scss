@@ -1,12 +1,12 @@
 @charset "utf-8";
-@import "../../Styles/Config.scss";
+@import "../../Styles/variables";
 
 .x-logis {
 	overflow: hidden;
 	position: relative;
 	background-color: #fff;
-	@extend %line-top;
-	@extend %line-bottom;
+	@include line-top;
+	@include line-bottom;
 	.x-logis__row {
 		padding: pr(20) pr(20) pr(20) pr(80);
 		display: flex;
@@ -14,8 +14,8 @@
 		flex-grow: 1;
 		justify-content: center;
 		width: 100%;
-		color: cr(p);
-		@extend %line-top;
+		color: $cr-p;
+		@include line-top;
 		&:before {
 			left: pr(80);
 		}
@@ -30,7 +30,7 @@
 			display: block;
 			font-size: pr(24);
 			line-height: 1.2;
-			color: cr(span);
+			color: $cr-span;
 			padding: pr(4) 0;
 			text-align: justify;
 		}
@@ -48,7 +48,7 @@
 				width: pr(20);
 				height: pr(20);
 				border-radius: 50%;
-				background-color: cr(border);
+				background-color: $cr-border;
 				position: absolute;
 				left: 50%;
 				top: 50%;
@@ -66,7 +66,7 @@
 				transform: scaleX(0.5);
 				width: 1px;
 				height: 100%;
-				border-left: 1px solid cr(border);
+				border-left: 1px solid $cr-border;
 			}
 		}
 		&:first-child {
@@ -74,10 +74,10 @@
 				top: 50%;
 			}
 			i:after {
-				background-color: cr(default);
+				background-color: $cr;
 			}
 			p, time {
-				color: cr(default);
+				color: $cr;
 			}
 		}
 	}

@@ -1,20 +1,20 @@
 @charset "utf-8";
-@import "../../Styles/Config.scss";
+@import "../../Styles/variables";
 
 .x-grid {
-	padding: 0.1rem;
+	padding: pr(10);
 	background: #fff;
-	@extend %line-top;
-	@extend %line-bottom;
+	@include line-top;
+	@include line-bottom;
 
 	&--padding {
-		padding: 0.05rem;
+		padding: pr(5);
 		background: none;
 		.x-grid__item {
-			padding: 0.05rem;
+			padding: pr(5);
 		}
 		.x-grid__inner {
-			padding: 0.15rem;
+			padding: pr(15);
 		}
 		&:before, &:after {
 			display: none;
@@ -23,11 +23,11 @@
 	&--border {
 		padding: 0;
 		.x-grid__item {
-			@extend %line-right;
-			@extend %line-bottom;
+			@include line-right;
+			@include line-bottom;
 		}
 		.x-grid__inner {
-			padding: 0.2rem;
+			padding: pr(20);
 		}
 	}
 	&__item {
@@ -35,7 +35,7 @@
 	}
 	&__inner {
 		background: #fff;
-		padding: 0.1rem;
+		padding: pr(10);
 		img {
 			display: block;
 			width: 100%;
