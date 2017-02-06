@@ -39,8 +39,6 @@ const Icon = (ns, cb) => {
     }, 'icon');
 }
 
-
-
 const Routes = (
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }></Route>
