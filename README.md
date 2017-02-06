@@ -302,8 +302,61 @@
 
 
 
+## Icon [Demo范例](https://easonchiu.github.io/xui-react/dist/#/icon)
+### 基本用法
+本框架中包含将近30种常用icon图标，具体看demo
+```
+<Icon name="home" />
+```
+### 扩展
+大尺寸：  
+添加`large`属性即可变成大尺寸的icon
+```
+<Icon name="home" large />
+```
+改变颜色：  
+除默认的灰色外，还可以有以下3种颜色供选择，这3种颜色与按钮的相对应  
+```
+<Icon name="home" type="primary" />
+<Icon name="home" type="warn" />
+<Icon name="home" type="vital" />
+```
+若还不能满足的话，使用`className`自定义重写
 
 
+
+## Logis [Demo范例](https://easonchiu.github.io/xui-react/dist/#/logis)
+### 基本用法
+最上面的一个`Logis.Row`为当前状态，会不同颜色标识
+```
+<Logis>
+	<Logis.Row>
+		<p>快递已到达上海速递处理中心，等待中转</p>
+		<time>2016-01-22 11:45:20</time>
+	</Logis.Row>
+	<Logis.Row>
+		<p>已离开收寄点，发往上海速递处理中心，南通市</p>
+		<time>2016-01-21 11:45:20</time>
+	</Logis.Row>
+	<Logis.Row>
+		<p>快递已打包</p>
+		<time>2016-01-17 11:45:20</time>
+	</Logis.Row>
+</Logis>
+```
+
+
+## Rmb [Demo范例](https://easonchiu.github.io/xui-react/dist/#/cell)
+至于为什么会有这个组件...因为Icon组件中的人民币符号在结合数字时不太容易控制都在同一水平线，故写了这个组件
+### 基本用法
+人民币符号，默认红色：
+```
+<Rmb price="199.00" />
+```
+如果要变成灰色的话：
+```
+<Rmb price="199.00" gray />
+```
 
 
 

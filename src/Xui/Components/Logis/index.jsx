@@ -1,13 +1,18 @@
 import './style'
 import React, { Component, PropTypes } from 'react'
+import classnames from 'classnames'
 
 class Logis extends Component {
 	constructor(props) {
 		super(props);
 	}
 	render() {
+		let css = classnames(
+			'x-logis',
+			this.props.className,
+		);
 		return (
-			<section className="x-logis">
+			<section className={ css }>
 				{ this.props.children }
 			</section>
 		);
@@ -19,8 +24,12 @@ class LogisRow extends Component {
 		super(props);
 	}
 	render() {
+		let css = classnames(
+			'x-logis__row',
+			this.props.className,
+		);
 		return (
-			<article className="x-logis__row">
+			<article className={ css }>
 				<i></i>
 				{ this.props.children }
 			</article>
