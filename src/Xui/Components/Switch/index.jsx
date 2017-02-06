@@ -17,8 +17,8 @@ class Switch extends Component {
 		return (
 			<a className={ css } onClick={ this.props.onClick }>
 				<span></span>
-				<sub>{ this.props.on || '开' }</sub>
-				<sup>{ this.props.off || '关' }</sup>
+				<sub>{ this.props.on }</sub>
+				<sup>{ this.props.off }</sup>
 			</a>
 		);
 	}

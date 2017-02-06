@@ -346,6 +346,26 @@
 ```
 
 
+## Switch [Demo范例](https://easonchiu.github.io/xui-react/dist/#/switch)
+### 基本用法
+```
+<Switch active={ true } onClick={ fn } />
+```
+### 扩展
+改变文字：
+```
+<Switch on="开" off="关" active={ true } onClick={ fn } />
+```
+结合`Cell`：  
+这种样式的开关一般放在`Cell`里居多
+```
+<Cell.Row
+	body="开关提示文字"
+	footer={ <Switch ... /> } />
+```
+
+
+
 ## Rmb [Demo范例](https://easonchiu.github.io/xui-react/dist/#/cell)
 至于为什么会有这个组件...因为Icon组件中的人民币符号在结合数字时不太容易控制都在同一水平线，故写了这个组件
 ### 基本用法

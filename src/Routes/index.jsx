@@ -45,6 +45,12 @@ const Icon = (ns, cb) => {
     }, 'icon');
 }
 
+const Switch = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Switch').default);
+    }, 'switch');
+}
+
 const Routes = (
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }></Route>
@@ -54,7 +60,8 @@ const Routes = (
         <Route path="/grid" getComponent={ Grid }></Route>
         <Route path="/button" getComponent={ Button }></Route>
         <Route path="/logis" getComponent={ Logis }></Route>
-		<Route path="/icon" getComponent={ Icon }></Route>
+        <Route path="/icon" getComponent={ Icon }></Route>
+		<Route path="/switch" getComponent={ Switch }></Route>
 		<Redirect from="*" to="/" />
 	</Router>
 );
