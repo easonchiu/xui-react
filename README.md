@@ -8,7 +8,7 @@
 4、轻量级，都是些常用组件，实用性强  
 
 
-## Cell [范例](https://easonchiu.github.io/xui-react/dist/#/cell)
+## Cell [Demo范例](https://easonchiu.github.io/xui-react/dist/#/cell)
 ### 基本用法
 ```
 <Cell>
@@ -133,7 +133,7 @@
 
 
 
-## Grid [范例](https://easonchiu.github.io/xui-react/dist/#/grid)
+## Grid [Demo范例](https://easonchiu.github.io/xui-react/dist/#/grid)
 ### 基本用法
 ```
 <Grid>
@@ -184,7 +184,7 @@
 
 
 
-## Panel [范例](https://easonchiu.github.io/xui-react/dist/#/panel)
+## Panel [Demo范例](https://easonchiu.github.io/xui-react/dist/#/panel)
 ### 基本用法
 ```
 
@@ -192,7 +192,7 @@
 
 
 
-## Button [范例](https://easonchiu.github.io/xui-react/dist/#/button)
+## Button [Demo范例](https://easonchiu.github.io/xui-react/dist/#/button)
 ### 基本用法
 ```
 <Button>按钮文字</Button>
