@@ -1,0 +1,58 @@
+@charset "utf-8";
+@import "../../Styles/variables";
+
+.x-switch {
+	width: pr(100);
+	height: pr(46);
+	background: crcalc($cr-border, 10);
+	border-radius: pr(46/2);
+	position: relative;
+	transition: background 0.2s ease-out;
+	sub, sup {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		padding: 0 pr(18);
+		color: crcalc($cr-border, -40);
+		font-size: pr(22);
+		font-weight: 100;
+	}
+	sub {
+		display: none;
+	}
+	sup {
+		justify-content: flex-end;
+	}
+	span {
+		position: absolute;
+		left: pr(3);
+		top: pr(3);
+		z-index: 2;
+		border-radius: 50%;
+		display: block;
+		width: pr(40);
+		height: pr(40);
+		background: #fff;
+		transition: transform 0.2s ease-out;
+	}
+	&--active {
+		background: $cr;
+		sub, sup {
+			color: #fff;
+		}
+		sub {
+			display: flex;
+		}
+		sup {
+			display: none;
+		}
+		span {
+			transform: translate(pr(100 - 40 - 6), 0);
+		}
+	}
+}
