@@ -31,6 +31,7 @@ class Icons extends Component {
 			{ name: 'back', p: 'back' },
 			{ name: 'rmb', p: 'rmb' },
 			{ name: 'user', p: 'user' },
+			{ name: 'scan', p: 'scan' },
 			{ name: 'phone', p: 'phone' },
 			{ name: 'mobile', p: 'mobile' },
 			{ name: 'address', p: 'address' },
@@ -40,6 +41,14 @@ class Icons extends Component {
 			{ name: 'help', p: 'help' },
 			{ name: 'tag', p: 'tag' },
 			{ name: 'mail', p: 'mail' },
+			{ name: 'delete', p: 'delete' },
+			{ name: 'refresh', p: 'refresh' },
+			{ name: 'top', p: 'top' },
+			{ name: 'pic', p: 'pic' },
+			{ name: 'idcard', p: 'idcard' },
+			{ name: 'v', p: 'v' },
+			{ name: 'time', p: 'time' },
+			{ name: 'cart', p: 'cart' },
 		];
 	}
 	render() {

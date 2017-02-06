@@ -3,6 +3,12 @@ import { Router, Route, IndexRoute, Redirect, hashHistory } from 'react-router'
 
 import AppIndex from '../Views/Index'
 
+const Layout = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Layout').default);
+    }, 'layout');
+}
+
 const Cell = (ns, cb) => {
     require.ensure([], (require) => {
         cb(null, require('../Views/Cell').default);
@@ -42,6 +48,7 @@ const Icon = (ns, cb) => {
 const Routes = (
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }></Route>
+        <Route path="/layout" getComponent={ Layout }></Route>
         <Route path="/cell" getComponent={ Cell }></Route>
         <Route path="/panel" getComponent={ Panel }></Route>
         <Route path="/grid" getComponent={ Grid }></Route>

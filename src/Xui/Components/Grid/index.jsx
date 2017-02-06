@@ -9,11 +9,11 @@ class Grid extends Component {
 	render() {
 		let css = classnames(
 			'x-grid',
-			this.props.className,
 			{
 				'x-grid--margin': this.props.margin,
 				'x-grid--border': this.props.border,
-			}
+			},
+			this.props.className,
 		);
 		return (
 			<div className={ css }>

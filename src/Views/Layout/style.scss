@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.x-app-body .footer-nav {
+	.x-grid__inner {
+		padding: 0;
+	}
+	a {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		align-items: center;
+		padding: 0.15rem;
+		p {
+			font-size: 0.12rem;
+		}
+	}
+}

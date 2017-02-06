@@ -107,7 +107,7 @@ view.x-app {
 				font-size: pr(40);
 			}
 		}
-		a {
+		a:not(.x-button) {
 			display: flex;
 			align-items: center;
 			color: $cr-p;

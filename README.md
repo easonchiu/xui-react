@@ -304,7 +304,7 @@
 
 ## Icon [Demo范例](https://easonchiu.github.io/xui-react/dist/#/icon)
 ### 基本用法
-本框架中包含将近30种常用icon图标，具体看demo
+本框架中包含将近40种常用icon图标，具体看demo
 ```
 <Icon name="home" />
 ```

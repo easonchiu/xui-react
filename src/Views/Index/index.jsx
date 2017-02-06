@@ -40,7 +40,7 @@ class Index extends Component {
 
 					<Cell>
 					
-						<Row title="布局" desc="Layout" done={ false } to="/layout" />
+						<Row title="布局" desc="Layout" done={ true } to="/layout" />
 						<Row title="列表" desc="Cell" done={ true } to="/cell" />
 						<Row title="按钮" desc="Button" done={ true } to="/button" />
 						<Row title="弹出框" desc="Alert" done={ false } to="/alert" />
