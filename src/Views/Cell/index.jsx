@@ -7,6 +7,7 @@ import Layout from '../../Xui/Components/Layout'
 import Cell from '../../Xui/Components/Cell'
 import Rmb from '../../Xui/Components/Rmb'
 import Icon from '../../Xui/Components/Icon'
+import Switch from '../../Xui/Components/Switch'
 
 
 const CellWithGoodsAndLink = () => {
@@ -160,6 +161,32 @@ const CellWithSelect = () => {
 	);
 }
 
+class CellWithSwitch extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			active: true,
+		}
+	}
+	_click() {
+		this.setState({
+			active: !this.state.active,
+		});
+	}
+	render() {
+		return (
+			<Cell>
+				<Cell.Row
+					body={
+						<p>是否要打开推送</p>
+					}
+					footer={ <Switch active={ this.state.active } onClick={ this._click.bind(this) } /> } />
+			</Cell>
+		);
+	}
+}
+
+
 const ShortCell = () => {
 	return (
 		<Cell>
@@ -212,6 +239,9 @@ class Message extends Component {
 
 					<Cell.Title title="下拉菜单" />
 					<CellWithSelect />
+
+					<Cell.Title title="开关" />
+					<CellWithSwitch />
 
 					<Cell.Title title="简写方式" />
 					<ShortCell />

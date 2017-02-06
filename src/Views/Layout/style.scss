@@ -1,6 +1,17 @@
 @charset "utf-8";
 
 .x-app-body .footer-nav {
+	&:after {
+		display: none;
+	}
+	.x-grid__item {
+		&:after {
+			display: none;
+		}
+		&:last-child:before {
+			display: none;
+		}
+	}
 	.x-grid__inner {
 		padding: 0;
 	}

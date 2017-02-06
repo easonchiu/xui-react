@@ -60,9 +60,6 @@ class ViewGrid extends Component {
 						<Grid.Item col={ 1/2 }>
 							<span className="gridspace"></span>
 						</Grid.Item>
-						<Grid.Item col={ 1/3 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
 						<Grid.Item col={ 1/2 }>
 							<span className="gridspace"></span>
 						</Grid.Item>
