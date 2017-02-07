@@ -1,6 +1,6 @@
 # xui-react
 
-===============----- 完成成 75%  
+===============----- 完成 75%  
 
 [Demo](https://easonchiu.github.io/xui-react/dist/)
 
