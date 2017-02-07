@@ -1,5 +1,8 @@
 # xui-react
 
+===============----- 完成成 75%  
+
+[Demo](https://easonchiu.github.io/xui-react/dist/)
 
 ### 移动端的轻量级ui框架
 1、按需加载  
