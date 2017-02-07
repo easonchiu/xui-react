@@ -78,18 +78,20 @@ let DemoII = () => {
 let DemoIII = () => {
 	return (
 		<Grid border>
-			<Grid.Item col={ 1/5 }>grid</Grid.Item>
-			<Grid.Item col={ 1/5 }>grid</Grid.Item>
-			<Grid.Item col={ 1/5 }>grid</Grid.Item>
-			<Grid.Item col={ 1/5 }>grid</Grid.Item>
-			<Grid.Item col={ 1/5 }>grid</Grid.Item>
-			<Grid.Item col={ 1/4 }>grid</Grid.Item>
-			<Grid.Item col={ 1/4 }>grid</Grid.Item>
-			<Grid.Item col={ 1/4 }>grid</Grid.Item>
-			<Grid.Item col={ 1/4 }>grid</Grid.Item>
-			<Grid.Item col={ 1/3 }>grid</Grid.Item>
-			<Grid.Item col={ 1/3 }>grid</Grid.Item>
-			<Grid.Item col={ 1/3 }>grid</Grid.Item>
+			<Grid.Row>
+				<Grid.Item col={ 1/5 }>grid</Grid.Item>
+				<Grid.Item col={ 1/5 }>grid</Grid.Item>
+				<Grid.Item col={ 1/5 }>grid</Grid.Item>
+				<Grid.Item col={ 1/5 }>grid</Grid.Item>
+				<Grid.Item col={ 1/5 }>grid</Grid.Item>
+				<Grid.Item col={ 1/4 }>grid</Grid.Item>
+				<Grid.Item col={ 1/4 }>grid</Grid.Item>
+				<Grid.Item col={ 1/4 }>grid</Grid.Item>
+				<Grid.Item col={ 1/4 }>grid</Grid.Item>
+				<Grid.Item col={ 1/3 }>grid</Grid.Item>
+				<Grid.Item col={ 1/3 }>grid</Grid.Item>
+				<Grid.Item col={ 1/3 }>grid</Grid.Item>
+			</Grid.Row>
 		</Grid>
 	)
 }

@@ -1,0 +1,47 @@
+@charset "utf-8";
+@import "../../Styles/variables";
+
+.x-alert {
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: rgba(0,34,54,0.2);
+	&__inner {
+		width: 75%;
+		background: #fff;
+		box-shadow: 0 0 pr(16) rgba(0,39,61,0.05);
+		border-radius: pr(6);
+	}
+	&__body {
+		display: flex;
+		justify-content: center;
+		padding: pr(50) pr(50);
+	}
+	&__btns {
+		@include line-top;
+		display: flex;
+		a {
+			flex-grow: 1;
+			text-align: center;
+			line-height: pr(80);
+			font-size: pr(30);
+			color: $cr-p;
+			&:not(:last-child){
+				@include line-right;
+			}
+			&.x-alert__btn-y {
+				color: crcalc($cr, -40);
+				font-weight: bold;
+			}
+			&:active {
+				background: rgba(0,0,0,0.02);
+			}
+		}
+	}
+}

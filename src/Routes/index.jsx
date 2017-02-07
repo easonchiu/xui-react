@@ -51,6 +51,12 @@ const Switch = (ns, cb) => {
     }, 'switch');
 }
 
+const Alert = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Alert').default);
+    }, 'alert');
+}
+
 const Routes = (
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }></Route>
@@ -61,6 +67,7 @@ const Routes = (
         <Route path="/button" getComponent={ Button }></Route>
         <Route path="/logis" getComponent={ Logis }></Route>
         <Route path="/icon" getComponent={ Icon }></Route>
+        <Route path="/alert" getComponent={ Alert }></Route>
 		<Route path="/switch" getComponent={ Switch }></Route>
 		<Redirect from="*" to="/" />
 	</Router>
