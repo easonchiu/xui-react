@@ -10,16 +10,31 @@ class Grid extends Component {
 		let css = classnames(
 			'x-grid',
 			{
-				'x-grid--margin': this.props.margin,
 				'x-grid--border': this.props.border,
 			},
 			this.props.className,
 		);
 		return (
 			<div className={ css }>
-				<div className="clearfix">
-					{ this.props.children }
-				</div>
+				{ this.props.children }
+			</div>
+		);
+	}
+}
+
+class GridRow extends Component {
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		let css = classnames(
+			'x-grid__row',
+			'clearfix',
+			this.props.className,
+		);
+		return (
+			<div className={ css }>
+				{ this.props.children }
 			</div>
 		);
 	}
@@ -50,6 +65,7 @@ GridItem.propTypes = {
 }
 
 
+Grid.Row = GridRow;
 Grid.Item = GridItem;
 
 export default Grid

@@ -2,26 +2,10 @@
 @import "../../Styles/variables";
 
 .x-grid {
-	padding: pr(10);
-	background: #fff;
-	@include line-top;
-	@include line-bottom;
-
-	&--margin {
-		padding: pr(5);
-		background: none;
-		.x-grid__item {
-			padding: pr(5);
-		}
-		.x-grid__inner {
-			padding: pr(15);
-		}
-		&:before, &:after {
-			display: none;
-		}
-	}
 	&--border {
-		padding: 0;
+		background: #fff;
+		@include line-top;
+		@include line-bottom;
 		.x-grid__item {
 			@include line-right;
 			@include line-bottom;
@@ -34,8 +18,6 @@
 		float: left;
 	}
 	&__inner {
-		background: #fff;
-		padding: pr(10);
 		img {
 			display: block;
 			width: 100%;

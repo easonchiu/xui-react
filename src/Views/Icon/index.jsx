@@ -79,29 +79,33 @@ class Icons extends Component {
 
 					<Cell.Title title="带颜色的" />
 					<Grid border className="myGrid">
-						<Grid.Item col={ 1/4 } className="flex">
-							<Icon name="home" large type="primary" />
-						</Grid.Item>
-						<Grid.Item col={ 1/4 } className="flex">
-							<Icon name="home" large type="warn" />
-						</Grid.Item>
-						<Grid.Item col={ 1/4 } className="flex">
-							<Icon name="home" large type="default" />
-						</Grid.Item>
-						<Grid.Item col={ 1/4 } className="flex">
-							<Icon name="home" large type="vital" />
-						</Grid.Item>
+						<Grid.Row>
+							<Grid.Item col={ 1/4 } className="flex">
+								<Icon name="home" large type="primary" />
+							</Grid.Item>
+							<Grid.Item col={ 1/4 } className="flex">
+								<Icon name="home" large type="warn" />
+							</Grid.Item>
+							<Grid.Item col={ 1/4 } className="flex">
+								<Icon name="home" large type="default" />
+							</Grid.Item>
+							<Grid.Item col={ 1/4 } className="flex">
+								<Icon name="home" large type="vital" />
+							</Grid.Item>
+						</Grid.Row>
 					</Grid>
 
 					<Cell.Title title="大尺寸" />
 					<Grid border className="myGrid">
-						{
-							this.icons.map((e, i) => (
-								<Grid.Item key={ i } col={ 1/5 } className="flex">
-									<Icon name={ e.name } large />
-								</Grid.Item>
-							))
-						}
+						<Grid.Row>
+							{
+								this.icons.map((e, i) => (
+									<Grid.Item key={ i } col={ 1/5 } className="flex">
+										<Icon name={ e.name } large />
+									</Grid.Item>
+								))
+							}
+						</Grid.Row>
 					</Grid>
 
 				</Layout.Body>

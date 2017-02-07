@@ -6,6 +6,7 @@ import Layout from '../../Xui/Components/Layout'
 import Cell from '../../Xui/Components/Cell'
 import Icon from '../../Xui/Components/Icon'
 import Button from '../../Xui/Components/Button'
+import Rmb from '../../Xui/Components/Rmb'
 import Grid from '../../Xui/Components/Grid'
 
 class ViewLayout extends Component {
@@ -21,6 +22,12 @@ class ViewLayout extends Component {
 					start={ <a onClick={ this.props.router.goBack }><Icon name="back" />返回</a> } />
 
 				<Layout.Body>
+
+					<Cell.Title title="头基本结构" />
+					<Layout.Header
+						title="标题"
+						start={ <a>返回</a> }
+						end={ <a>更多</a> } />
 
 					<Cell.Title title="头基本结构" />
 					<Layout.Header
@@ -44,7 +51,7 @@ class ViewLayout extends Component {
 					<Layout.Header title="标题">
 						<Layout.Header.Start>
 							<a><Icon name="back" /></a>
-							<a><Icon name="add" /></a>
+							<a><Icon name="close" /></a>
 						</Layout.Header.Start>
 						<Layout.Header.End>
 							<a><Icon name="user" /></a>
@@ -56,7 +63,7 @@ class ViewLayout extends Component {
 					<Cell.Title title="头部按钮" />
 					<Layout.Header title="标题">
 						<Layout.Header.Start>
-							<Button mini>返回</Button>
+							<Button mini><Icon name="home" />&nbsp;返回首页</Button>
 						</Layout.Header.Start>
 						<Layout.Header.End>
 							<Button type="vital" mini>完成注册</Button>
@@ -65,36 +72,39 @@ class ViewLayout extends Component {
 
 					<Cell.Title title="底部菜单（结合Grid与Icon）" />
 					<Layout.Footer>
-						<Grid border className="footer-nav">
-							<Grid.Item col={ 1/4 }>
-								<Link to="/layout">
-									<Icon name="home" />
-									<p>首页</p>
-								</Link>
-							</Grid.Item>
-							<Grid.Item col={ 1/4 }>
-								<Link to="/layout">
-									<Icon name="cart" />
-									<p>购物车</p>
-								</Link>
-							</Grid.Item>
-							<Grid.Item col={ 1/4 }>
-								<Link to="/layout">
-									<Icon name="mail" />
-									<p>邮箱</p>
-								</Link>
-							</Grid.Item>
-							<Grid.Item col={ 1/4 }>
-								<Link to="/layout">
-									<Icon name="user" />
-									<p>我</p>
-								</Link>
-							</Grid.Item>
+						<Grid className="footer-nav">
+							<Grid.Row>
+								<Grid.Item col={ 1/4 }>
+									<Link to="/layout">
+										<Icon name="home" />
+										<p>首页</p>
+									</Link>
+								</Grid.Item>
+								<Grid.Item col={ 1/4 }>
+									<Link to="/layout">
+										<Icon name="cart" />
+										<p>购物车</p>
+									</Link>
+								</Grid.Item>
+								<Grid.Item col={ 1/4 }>
+									<Link to="/layout">
+										<Icon name="mail" />
+										<p>邮箱</p>
+									</Link>
+								</Grid.Item>
+								<Grid.Item col={ 1/4 }>
+									<Link to="/layout">
+										<Icon name="user" />
+										<p>我</p>
+									</Link>
+								</Grid.Item>
+							</Grid.Row>
 						</Grid>
 					</Layout.Footer>
 
 					<Cell.Title title="底部按钮（结合Button）" />
 					<Layout.Footer padding>
+						<p className="total-price">总共需支付<Rmb price="199.00" />元</p>
 						<Button.Group>
 							<Button>按钮A</Button>
 							<Button type="primary">按钮B</Button>

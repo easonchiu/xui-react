@@ -163,7 +163,8 @@
 这样就可以实现一行4个格子展示  
 ### 扩展
 带边框模式：  
-`Grid`添加`border`即可
+`Grid`添加`border`即可  
+一般用于产品列表等
 ```
 <Grid border>
 	<Grid.Item col={ width }>
@@ -171,16 +172,6 @@
 	</Grid.Item>
 </Grid>
 ```
-有外边距模式：  
-`Grid`添加`margin`即可，格子与格子之间有外边距
-```
-<Grid margin>
-	<Grid.Item col={ width }>
-		content
-	</Grid.Item>
-</Grid>
-```
-如果以上2种模式都不用的话，默认情况下是有内边距的
 
 
 

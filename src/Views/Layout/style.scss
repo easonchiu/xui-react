@@ -1,20 +1,6 @@
 @charset "utf-8";
 
 .x-app-body .footer-nav {
-	&:after {
-		display: none;
-	}
-	.x-grid__item {
-		&:after {
-			display: none;
-		}
-		&:last-child:before {
-			display: none;
-		}
-	}
-	.x-grid__inner {
-		padding: 0;
-	}
 	a {
 		display: flex;
 		flex-direction: column;
@@ -24,5 +10,15 @@
 		p {
 			font-size: 0.12rem;
 		}
+		&:active {
+			background: rgba(0,0,0,0.02);
+		}
 	}
+}
+
+.total-price {
+	display: -webkit-box;
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 0.1rem;
 }

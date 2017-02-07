@@ -21,80 +21,63 @@ class ViewGrid extends Component {
 
 				<Layout.Body>
 
-					<Cell.Title title="默认形式" />
+					<Cell.Title title="默认形式（灰边框是占位色块的，Grid无边框）" />
 					<Grid>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/4 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/4 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/4 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/4 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/3 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/3 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/3 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
+						<Grid.Row>
+							<Grid.Item col={ 1/2 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/2 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/4 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/4 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/4 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/4 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/3 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/3 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/3 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+						</Grid.Row>
 					</Grid>
 
 					<Cell.Title title="带描边的形式" />
 					<Grid border>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
+						<Grid.Row>
+							<Grid.Item col={ 1/2 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/2 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/2 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/2 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/2 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+							<Grid.Item col={ 1/2 }>
+								<span className="gridspace"></span>
+							</Grid.Item>
+						</Grid.Row>
 					</Grid>
 
-					<Cell.Title title="有边距的形式" />
-					<Grid margin>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-						<Grid.Item col={ 1/2 }>
-							<span className="gridspace"></span>
-						</Grid.Item>
-					</Grid>
 
 				</Layout.Body>
 

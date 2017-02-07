@@ -46,7 +46,7 @@ class Mine extends Component {
 							body={ <Button type="primary" mini>小按钮（一般不会占满宽度使用）</Button> } />
 
 						<Cell.Row
-							body={ <Button type="warn"><Icon name="delete" />带图标按钮</Button> } />
+							body={ <Button type="warn"><Icon name="delete" />&nbsp;带图标按钮</Button> } />
 
 						<Cell.Row
 							body={

@@ -15,7 +15,7 @@
 	border: none;
 	.x-icon {
 		color: inherit;
-		margin: 0 pr(6);
+		width: auto !important;
 		&:before {
 			color: inherit;
 		}
