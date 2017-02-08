@@ -7,11 +7,20 @@
 		align-content: center;
 		align-items: center;
 		padding: 0.15rem;
+		i:before {
+			font-size: 0.4rem;
+		}
 		p {
-			font-size: 0.12rem;
+			font-size: 0.22rem;
 		}
 		&:active {
 			background: rgba(0,0,0,0.02);
+		}
+		&.active {
+			background: #76bdff;
+			i:before, p {
+				color: #fff;
+			}
 		}
 	}
 }

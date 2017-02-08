@@ -5,15 +5,17 @@
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="yes" name="apple-touch-fullscreen" />
     <meta content="telephone=no,email=no" name="format-detection" />
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui" />
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1" />
 	<title><%= htmlWebpackPlugin.options.title %></title>
 	<script>
 	+function(b){var h=document.documentElement,w=h.clientWidth;w=w/b*100;w-=(w-50)/2;h.style.fontSize=Math.round(w)+"px";console.log('rem:px=1:100');}(750);
 	</script>
+
 </head>
 <body ontouchstart>
 
-	<div id="app"></div>
+	<div id="app" style="display:;"></div>
+
 	
 </body>
 </html>

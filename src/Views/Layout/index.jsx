@@ -75,7 +75,7 @@ class ViewLayout extends Component {
 						<Grid className="footer-nav">
 							<Grid.Row>
 								<Grid.Item col={ 1/4 }>
-									<Link to="/layout">
+									<Link to="/layout" className="active">
 										<Icon name="home" />
 										<p>首页</p>
 									</Link>
