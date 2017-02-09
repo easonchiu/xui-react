@@ -12,7 +12,21 @@ class ViewAlert extends Component {
 	}
 
 	_click() {
-		Alert.show({a:3, b: 3});
+
+		Alert.show({
+			title: '标题',
+			desc: 'balabalabala',
+			className: 'css',
+			textN: 'No',
+			textY: 'Yes',
+			callbackN: () => {
+				console.log(1)
+			},
+			callbackY: () => {
+				console.log(2)
+			}
+		});
+		
 	}
 
 	render() {

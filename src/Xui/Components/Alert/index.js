@@ -3,12 +3,22 @@ import classnames from 'classnames'
 
 class Alert {
 	static show({
-		a = 1,
-		b = 2,
-	}) {
+		title = '提示',
+		desc = 'default',
+		className = '',
+		textN = '取消',
+		textY = '确定',
+		callbackN = () => {},
+		callbackY = () => {},
+	} = {}) {
 		this.render({
-			a,
-			b,
+			title,
+			desc,
+			className,
+			textN,
+			textY,
+			callbackN,
+			callbackY,
 		});
 	}
 	static hide() {
