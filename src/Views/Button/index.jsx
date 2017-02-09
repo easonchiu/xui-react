@@ -60,9 +60,9 @@ class Mine extends Component {
 						<Cell.Row
 							body={
 								<Button.Group merge>
-									<Button type="primary">按钮A</Button>
+									<Button>按钮A</Button>
 									<Button>按钮B</Button>
-									<Button>按钮C</Button>
+									<Button type="primary">按钮C</Button>
 								</Button.Group>
 							} />
 
