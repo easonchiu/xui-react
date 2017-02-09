@@ -1,5 +1,5 @@
+import './style'
 import React, { Component, PropTypes } from 'react'
-
 
 import Layout from '../../Xui/Components/Layout'
 import Icon from '../../Xui/Components/Icon'
@@ -29,7 +29,7 @@ class Index extends Component {
 	}
 	render() {
 		return (
-			<Layout>
+			<Layout className="view-index">
 				<Layout.Header
 					title="XUI-React"
 					start={ <a onClick={ this.props.router.goBack }><Icon name="back" />返回</a> } />

@@ -23,7 +23,7 @@ class ViewAlert extends Component {
 				console.log(1)
 			},
 			callbackY: () => {
-				console.log(2)
+				Alert.show();
 			}
 		});
 		

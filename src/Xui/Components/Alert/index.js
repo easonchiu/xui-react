@@ -24,26 +24,30 @@ class Alert {
 	static hide() {
 		let alert = document.getElementById('j-x-alert');
 		if (alert){
-
-			let btnN = document.getElementById('j-x-alert-btn-n');
-			let btnY = document.getElementById('j-x-alert-btn-y');
-			btnN.removeEventListener('click', Alert.clickN);
-			btnY.removeEventListener('click', Alert.clickY);
-			alert.remove();
+			alert.classList.remove('x-alert--show');
+			alert.classList.add('x-alert--hide');
+			setTimeout(() => {
+				Alert.destroy(alert);
+			}, 200);
 		}
 	}
 	static clickN(e) {
+		Alert.callbackN();
 		Alert.hide();
 	}
 	static clickY() {
+		Alert.callbackY();
 		Alert.hide();
 	}
 	static render(o) {
-		console.log(o)
+		
 		Alert.hide();
+		
+		Alert.callbackY = o.callbackY;
+		Alert.callbackN = o.callbackN;
 
 		let css = classnames(
-			'x-alert'
+			'x-alert',
 		);
 
 		let html = `
@@ -72,6 +76,21 @@ class Alert {
 		btnN.addEventListener('click', this.clickN);
 		btnY.addEventListener('click', this.clickY);
 
+		setTimeout(() => {
+			alert.classList.add('x-alert--show');
+		}, 0);
+	}
+	static destroy(alert) {
+		let btnN = document.getElementById('j-x-alert-btn-n');
+		let btnY = document.getElementById('j-x-alert-btn-y');
+
+		btnN.removeEventListener('click', Alert.clickN);
+		btnY.removeEventListener('click', Alert.clickY);
+
+		Alert.callbackY = null;
+		Alert.callbackN = null;
+		
+		alert.remove();
 	}
 }
 
