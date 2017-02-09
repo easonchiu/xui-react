@@ -104,7 +104,7 @@ class ViewLayout extends Component {
 
 					<Cell.Title title="底部按钮（结合Button）" />
 					<Layout.Footer padding>
-						<p className="total-price">总共需支付<Rmb price="199.00" />元</p>
+						<div className="total-price">总共需支付<Rmb price="199.00" />元</div>
 						<Button.Group>
 							<Button>按钮A</Button>
 							<Button type="primary">按钮B</Button>

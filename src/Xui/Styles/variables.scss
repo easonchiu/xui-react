@@ -29,8 +29,6 @@ $cr-vital: #02a400 !default; // 决定色，绿
 		left: 0;
 		top: 0;
 		z-index: 99;
-		transform-origin: 0 0;
-		transform: scaleY(0.5);
 		width: 100%;
 		height: 1px;
 		background-color: $cr-border;
@@ -48,8 +46,6 @@ $cr-vital: #02a400 !default; // 决定色，绿
 		left: 0;
 		bottom: 0;
 		z-index: 99;
-		transform-origin: 0 100%;
-		transform: scaleY(0.5);
 		width: 100%;
 		height: 1px;
 		background-color: $cr-border;
@@ -67,8 +63,6 @@ $cr-vital: #02a400 !default; // 决定色，绿
 		right: 0;
 		top: 0;
 		z-index: 99;
-		transform-origin: 100% 0;
-		transform: scaleX(0.5);
 		width: 1px;
 		height: 100%;
 		background-color: $cr-border;
