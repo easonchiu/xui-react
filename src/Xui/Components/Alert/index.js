@@ -6,12 +6,15 @@ class Alert {
 		title = '提示',
 		desc = 'default',
 		className = '',
-		textN = '取消',
-		textY = '确定',
+		textN,
+		text = '确定',
+		textY = text,
 		callbackN = () => {},
-		callbackY = () => {},
+		callback = () => {},
+		callbackY = callback,
 	} = {}) {
-		this.render({
+
+		let o = {
 			title,
 			desc,
 			className,
@@ -19,45 +22,53 @@ class Alert {
 			textY,
 			callbackN,
 			callbackY,
-		});
+		}
+		if (typeof arguments[0] == 'string') {
+			o.desc = arguments[0];
+		}
+
+		let alert = document.getElementById('j-x-alert');
+		if (alert) {
+			return;
+		}
+		this.render(o);
 	}
-	static hide() {
+	static hide(callback = () => {}) {
 		let alert = document.getElementById('j-x-alert');
 		if (alert){
 			alert.classList.remove('x-alert--show');
 			alert.classList.add('x-alert--hide');
 			setTimeout(() => {
-				Alert.destroy(alert);
+				this.destroy(alert);
+				callback();
 			}, 200);
 		}
 	}
 	static clickN(e) {
-		Alert.callbackN();
-		Alert.hide();
+		Alert.hide(Alert.callbackN);
 	}
 	static clickY() {
-		Alert.callbackY();
-		Alert.hide();
+		Alert.hide(Alert.callbackY);
 	}
 	static render(o) {
-		
-		Alert.hide();
-		
-		Alert.callbackY = o.callbackY;
-		Alert.callbackN = o.callbackN;
+
+		this.callbackY = o.callbackY;
+		this.callbackN = o.callbackN;
 
 		let css = classnames(
 			'x-alert',
 		);
 
+		let htmlBtnN = o.textN ? `<a href='javascript:;' class='x-alert__btn-n' id='j-x-alert-btn-n'>${o.textN}</a>` : '';
+
 		let html = `
 			<div class='x-alert__inner'>
 				<div class='x-alert__body'>
-					<p>coding now...</p>
+					<p>${o.desc}</p>
 				</div>
 				<div class='x-alert__btns'>
-					<a href='javascript:;' class='x-alert__btn-n' id='j-x-alert-btn-n'>取消</a>
-					<a href='javascript:;' class='x-alert__btn-y' id='j-x-alert-btn-y'>确定</a>
+					${htmlBtnN}
+					<a href='javascript:;' class='x-alert__btn-y' id='j-x-alert-btn-y'>${o.textY}</a>
 				</div>
 			</div>
 		`;
@@ -73,24 +84,26 @@ class Alert {
 		let btnN = document.getElementById('j-x-alert-btn-n');
 		let btnY = document.getElementById('j-x-alert-btn-y');
 
-		btnN.addEventListener('click', this.clickN);
-		btnY.addEventListener('click', this.clickY);
+		btnN && btnN.addEventListener('click', this.clickN);
+		btnY && btnY.addEventListener('click', this.clickY);
 
 		setTimeout(() => {
 			alert.classList.add('x-alert--show');
-		}, 0);
+		});
 	}
+
 	static destroy(alert) {
 		let btnN = document.getElementById('j-x-alert-btn-n');
 		let btnY = document.getElementById('j-x-alert-btn-y');
 
-		btnN.removeEventListener('click', Alert.clickN);
-		btnY.removeEventListener('click', Alert.clickY);
+		btnN && btnN.removeEventListener('click', this.clickN);
+		btnY && btnY.removeEventListener('click', this.clickY);
 
-		Alert.callbackY = null;
-		Alert.callbackN = null;
+		this.callbackY = null;
+		this.callbackN = null;
 		
 		alert.remove();
+
 	}
 }
 

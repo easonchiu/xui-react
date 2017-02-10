@@ -18,15 +18,15 @@ class ViewAlert extends Component {
 			desc: 'balabalabala',
 			className: 'css',
 			textN: 'No',
-			textY: 'Yes',
+			text: 'Yes',
 			callbackN: () => {
-				console.log(1)
+				Alert.show('callback no');
 			},
-			callbackY: () => {
-				Alert.show();
+			callback: () => {
+				Alert.show('callback yes');
 			}
 		});
-		
+
 	}
 
 	render() {
