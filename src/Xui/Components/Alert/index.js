@@ -1,11 +1,10 @@
 import './style'
-import classnames from 'classnames'
 
 class Alert {
 	static show({
 		title = '提示',
-		desc = 'default',
-		className = '',
+		desc = 'empty',
+		className = 'x-alert',
 		textN,
 		text = '确定',
 		textY = text,
@@ -55,15 +54,12 @@ class Alert {
 		this.callbackY = o.callbackY;
 		this.callbackN = o.callbackN;
 
-		let css = classnames(
-			'x-alert',
-		);
-
 		let htmlBtnN = o.textN ? `<a href='javascript:;' class='x-alert__btn-n' id='j-x-alert-btn-n'>${o.textN}</a>` : '';
 
 		let html = `
 			<div class='x-alert__inner'>
 				<div class='x-alert__body'>
+					<h1>${o.title}</h1>
 					<p>${o.desc}</p>
 				</div>
 				<div class='x-alert__btns'>
@@ -74,7 +70,7 @@ class Alert {
 		`;
 
 		let alert = document.createElement('div');
-		alert.classList.add(css);
+		alert.classList.add('x-alert', o.className);
 		alert.id = 'j-x-alert';
 		alert.innerHTML = html;
 

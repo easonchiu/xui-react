@@ -22,7 +22,19 @@
 	&__body {
 		display: flex;
 		justify-content: center;
-		padding: pr(50) pr(50);
+		align-items: center;
+		flex-direction: column; 
+		padding: pr(25) pr(50) pr(40) pr(50);
+		h1 {
+			display: block;
+			margin-bottom: pr(15);
+			font-size: pr(34);
+			line-height: 1.5;
+		}
+		p {
+			font-size: pr(30);
+			line-height: 1.2;
+		}
 	}
 	&__btns {
 		@include line-top;

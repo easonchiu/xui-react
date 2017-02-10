@@ -14,9 +14,8 @@ class ViewAlert extends Component {
 	_click() {
 
 		Alert.show({
-			title: '标题',
+			title: 'Tips',
 			desc: 'balabalabala',
-			className: 'css',
 			textN: 'No',
 			text: 'Yes',
 			callbackN: () => {
