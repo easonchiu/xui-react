@@ -358,6 +358,41 @@
 	footer={ <Switch ... /> } />
 ```
 
+## Alert [Demo范例](https://easonchiu.github.io/xui-react/dist/#/alert)
+### 基本用法
+```
+Alert.show({
+	title: 'Tips',
+	desc: 'balabalabala',
+	className: 'myAlert',
+	textN: 'No',
+	textY: 'Yes',
+	callbackN: () => { },
+	callbackY: () => { }
+});
+```
+### 扩展
+简写形式：  
+```
+Alert.show('message');
+```
+如果只有一个按钮，也可以这样写：  
+```
+Alert.show({
+	desc: 'message',
+	callback: () => {}
+});
+```
+或者只有一个按钮并要设置确认按钮文字时：
+```
+Alert.show({
+	desc: 'message',
+	text: 'Enter',
+	callback: () => {}
+});
+```
+`textY`可以用`text`代替，`callbackY`同样也可以用`callback`代替  
+如果需要两个按钮，请参考基本用法
 
 
 ## Rmb [Demo范例](https://easonchiu.github.io/xui-react/dist/#/cell)
