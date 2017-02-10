@@ -36,22 +36,24 @@ class Alert {
 		}
 		this.render(o);
 	}
-	static hide(callback = () => {}) {
+	static hide(callback = () => {}, val) {
 		let alert = document.getElementById('j-x-alert');
 		if (alert){
 			alert.classList.remove('x-alert--show');
 			alert.classList.add('x-alert--hide');
 			setTimeout(() => {
 				this.destroy(alert);
-				callback();
+				callback(val);
 			}, 200);
 		}
 	}
-	static clickN(e) {
+	static clickN() {
 		Alert.hide(Alert.callbackN);
 	}
 	static clickY() {
-		Alert.hide(Alert.callbackY);
+		let inputVal = document.getElementById('j-x-alert-input');
+		inputVal = inputVal ? inputVal.value : undefined;
+		Alert.hide(Alert.callbackY, inputVal);
 	}
 	static render(o) {
 
@@ -63,7 +65,8 @@ class Alert {
 		let htmlInput = '';
 		switch (o.input) {
 			case 'text':
-				htmlInput = `<input type="text" placeholder="${o.placeholder}" />`;
+			case 'password':
+				htmlInput = `<input type="${o.input}" id="j-x-alert-input" placeholder="${o.placeholder}" />`;
 			break;
 			default:
 				htmlInput = '';

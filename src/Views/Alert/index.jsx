@@ -48,7 +48,7 @@ class ViewAlert extends Component {
 
 	_click4(){
 		Alert.show({
-			desc: '（未完全实现）',
+			desc: '提示文字',
 			input: 'text',
 			placeholder: '请输入您的姓名',
 			btnTextN: '否',
@@ -56,8 +56,8 @@ class ViewAlert extends Component {
 			callbackN: () => {
 				
 			},
-			callbackY: () => {
-				
+			callbackY: (e) => {
+				Alert.show(`你输入了"${e}"`);
 			}
 		});
 	}
