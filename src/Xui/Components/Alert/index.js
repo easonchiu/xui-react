@@ -4,10 +4,12 @@ class Alert {
 	static show({
 		title = '提示',
 		desc = 'empty',
+		input = '',
+		placeholder = '',
 		className = 'x-alert',
-		textN,
-		text = '确定',
-		textY = text,
+		btnTextN,
+		btnText = '确定',
+		btnTextY = btnText,
 		callbackN = () => {},
 		callback = () => {},
 		callbackY = callback,
@@ -16,9 +18,11 @@ class Alert {
 		let o = {
 			title,
 			desc,
+			input,
+			placeholder,
 			className,
-			textN,
-			textY,
+			btnTextN,
+			btnTextY,
 			callbackN,
 			callbackY,
 		}
@@ -54,17 +58,28 @@ class Alert {
 		this.callbackY = o.callbackY;
 		this.callbackN = o.callbackN;
 
-		let htmlBtnN = o.textN ? `<a href='javascript:;' class='x-alert__btn-n' id='j-x-alert-btn-n'>${o.textN}</a>` : '';
+		let htmlBtnN = o.btnTextN ? `<a href='javascript:;' class='x-alert__btn-n' id='j-x-alert-btn-n'>${o.btnTextN}</a>` : '';
+
+		let htmlInput = '';
+		switch (o.input) {
+			case 'text':
+				htmlInput = `<input type="text" placeholder="${o.placeholder}" />`;
+			break;
+			default:
+				htmlInput = '';
+			break;
+		}
 
 		let html = `
 			<div class='x-alert__inner'>
 				<div class='x-alert__body'>
 					<h1>${o.title}</h1>
 					<p>${o.desc}</p>
+					${htmlInput}
 				</div>
 				<div class='x-alert__btns'>
 					${htmlBtnN}
-					<a href='javascript:;' class='x-alert__btn-y' id='j-x-alert-btn-y'>${o.textY}</a>
+					<a href='javascript:;' class='x-alert__btn-y' id='j-x-alert-btn-y'>${o.btnTextY}</a>
 				</div>
 			</div>
 		`;

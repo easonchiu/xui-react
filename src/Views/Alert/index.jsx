@@ -1,3 +1,5 @@
+import './style'
+
 import React, { Component } from 'react'
 
 import Layout from '../../Xui/Components/Layout'
@@ -12,24 +14,55 @@ class ViewAlert extends Component {
 	}
 
 	_click() {
+		Alert.show('内容区域');
+	}
 
+	_click2(){
 		Alert.show({
-			title: 'Tips',
-			desc: 'balabalabala',
-			textN: 'No',
-			text: 'Yes',
+			desc: '内容区域',
+			btnTextN: '否',
+			btnTextY: '是',
 			callbackN: () => {
-				Alert.show('callback no');
+				Alert.show('<否>的回调');
 			},
-			callback: () => {
-				Alert.show('callback yes');
+			callbackY: () => {
+				Alert.show('<是>的回调');
 			}
 		});
+	}
 
+	_click3(){
+		Alert.show({
+			desc: '内容区域',
+			btnTextN: '否',
+			btnTextY: '是',
+			className: 'myAlert',
+			callbackN: () => {
+				
+			},
+			callbackY: () => {
+				
+			}
+		});
+	}
+
+	_click4(){
+		Alert.show({
+			desc: '（未完全实现）',
+			input: 'text',
+			placeholder: '请输入您的姓名',
+			btnTextN: '否',
+			btnTextY: '是',
+			callbackN: () => {
+				
+			},
+			callbackY: () => {
+				
+			}
+		});
 	}
 
 	render() {
-
 		return (
 			<Layout>
 				
@@ -43,6 +76,9 @@ class ViewAlert extends Component {
 
 					<Cell>
 						<Cell.Row body={ <Button type="primary" onClick={ this._click }>弹出</Button> } />
+						<Cell.Row body={ <Button type="primary" onClick={ this._click2 }>两个按钮</Button> } />
+						<Cell.Row body={ <Button type="primary" onClick={ this._click3 }>自定义样式</Button> } />
+						<Cell.Row body={ <Button type="primary" onClick={ this._click4 }>输入框</Button> } />
 					</Cell>
 
 				</Layout.Body>

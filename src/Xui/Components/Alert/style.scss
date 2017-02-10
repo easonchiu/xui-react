@@ -24,7 +24,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column; 
-		padding: pr(25) pr(50) pr(40) pr(50);
+		padding: pr(25) pr(50) pr(20) pr(50);
 		h1 {
 			display: block;
 			margin-bottom: pr(15);
@@ -34,6 +34,17 @@
 		p {
 			font-size: pr(30);
 			line-height: 1.2;
+			margin-bottom: pr(20);
+		}
+		input {
+			padding: pr(10);
+			width: 100%;
+			line-height: 1.2;
+			font-size: pr(30);
+			background: crcalc($cr-body, 5) !important;
+			border-radius: pr(6) !important;
+			border: 1px solid $cr-border !important;
+			margin-bottom: pr(20);
 		}
 	}
 	&__btns {

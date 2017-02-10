@@ -365,8 +365,8 @@ Alert.show({
 	title: 'Tips',
 	desc: 'balabalabala',
 	className: 'myAlert',
-	textN: 'No',
-	textY: 'Yes',
+	btnTextN: 'No',
+	btnTextY: 'Yes',
 	callbackN: () => { },
 	callbackY: () => { }
 });
@@ -387,11 +387,11 @@ Alert.show({
 ```
 Alert.show({
 	desc: 'message',
-	text: 'Enter',
+	btnText: 'Enter',
 	callback: () => {}
 });
 ```
-`textY`可以用`text`代替，`callbackY`同样也可以用`callback`代替  
+`btnTextY`可以用`btnText`代替，`callbackY`同样也可以用`callback`代替  
 如果需要两个按钮，请参考基本用法
 
 
