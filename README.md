@@ -359,7 +359,14 @@
 ```
 
 ## Alert [Demo范例](https://easonchiu.github.io/xui-react/dist/#/alert)
-### 基本用法
+### 基本用法  
+`title`：标题文字  
+`desc`：描述文字  
+`className`：附加样式名  
+`btnTextN`：取消按钮的文字  
+`btnTextY`：确定按钮的文字，也可写作`btnText`  
+`callbackN`：取消按钮的回调函数  
+`callbackY`：确定按钮的回调函数，也可写作`callback`  
 ```
 Alert.show({
 	title: 'Tips',
@@ -392,7 +399,22 @@ Alert.show({
 });
 ```
 `btnTextY`可以用`btnText`代替，`callbackY`同样也可以用`callback`代替  
-如果需要两个按钮，请参考基本用法
+如果需要两个按钮，请参考基本用法   
+带输入框：  
+添加`input`能实现有按钮的弹出框，`input`的值的类型有`text`和`password`两种
+```
+Alert.show({
+	title: '验证',
+	desc: '请输入您的暗号',
+	input: 'text',
+	placeholder: '请输入',
+	callback: (res) => {
+		// res为input的value
+	}
+});
+```
+注意：在`callbackN`中没有返回`input`的值  
+
 
 
 ## Rmb [Demo范例](https://easonchiu.github.io/xui-react/dist/#/cell)
