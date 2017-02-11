@@ -57,6 +57,12 @@ const Alert = (ns, cb) => {
     }, 'alert');
 }
 
+const Loading = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Loading').default);
+    }, 'loading');
+}
+
 const Routes = (
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }></Route>
@@ -68,6 +74,7 @@ const Routes = (
         <Route path="/logis" getComponent={ Logis }></Route>
         <Route path="/icon" getComponent={ Icon }></Route>
         <Route path="/alert" getComponent={ Alert }></Route>
+        <Route path="/loading" getComponent={ Loading }></Route>
 		<Route path="/switch" getComponent={ Switch }></Route>
 		<Redirect from="*" to="/" />
 	</Router>

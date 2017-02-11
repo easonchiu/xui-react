@@ -22,7 +22,7 @@
 	}
 }
 
-$x-buttons: (primary: $cr, warn: crcalc($cr-strong,20), default: crcalc($cr-border,20), vital: $cr-vital);
+$x-buttons: (primary: $cr, warn: crcalc($cr-strong,20), default: crcalc($cr-body,-5), vital: $cr-vital);
 @each $name, $color in $x-buttons {
 	.x-button--#{$name} {
 		background-color: $color;
