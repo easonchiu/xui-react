@@ -45,7 +45,7 @@ class Index extends Component {
 						<Row title="按钮" desc="Button" done={ true } to="/button" />
 						<Row title="弹出框" desc="Alert" done={ true } to="/alert" />
 						<Row title="提示框" desc="Toast" done={ false } to="/toast" />
-						<Row title="加载提示" desc="Loading" done={ false } to="/loading" />
+						<Row title="加载提示" desc="Loading" done={ true } to="/loading" />
 						<Row title="模块" desc="Panel" done={ true } to="/panel" />
 						<Row title="栅格" desc="Grid" done={ true } to="/grid" />
 						<Row title="物流跟踪" desc="Logis" done={ true } to="/logis" />

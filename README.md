@@ -416,6 +416,14 @@ Alert.show({
 注意：在`callbackN`中没有返回`input`的值  
 
 
+## Loading [Demo范例](https://easonchiu.github.io/xui-react/dist/#/loading)
+### 基本用法：
+```
+Loading.show(); // 显示
+Loading.hide(); // 隐藏
+```
+
+
 
 ## Rmb [Demo范例](https://easonchiu.github.io/xui-react/dist/#/cell)
 至于为什么会有这个组件...因为Icon组件中的人民币符号在结合数字时不太容易控制都在同一水平线，故写了这个组件

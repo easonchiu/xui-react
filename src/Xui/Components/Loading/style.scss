@@ -14,9 +14,10 @@
 	background: rgba(0,34,54,0.2);
 	sup {
 		display: block;
-		width: 1rem;
-		height: 1rem;
-		background: #f0f;
+		width: 0.6rem;
+		height: 0.6rem;
+		background: url(../../Fonts/loading.svg);
+		background-size: 100% 100%;
 		-webkit-transform-origin: center;
 		-webkit-animation: "___x_loadingRotate" 1s linear infinite;
 		animation: "___x_loadingRotate" 1s linear infinite;
