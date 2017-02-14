@@ -10,14 +10,17 @@
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	z-index: 9999;
+	z-index: 99996;
 	background: rgba(0,34,54,0.2);
+	opacity: 0;
+	transition: opacity 0.2s ease-out;
 	&__inner {
 		width: 75%;
 		background: #fff;
 		box-shadow: 0 0 pr(16) rgba(0,39,61,0.05);
 		border-radius: pr(6);
 		opacity: 0;
+		transform-origin: 50%;
 	}
 	&__body {
 		display: flex;
@@ -69,27 +72,27 @@
 		}
 	}
 	&--show {
+		opacity: 1;
 		.x-alert__inner {
 			transform: scale(1,1);
-			transform-origin: 50%;
 			opacity: 1;
-			-webkit-animation: "___x_alertShow" 0.2s ease-out;
-			animation: "___x_alertShow" 0.2s ease-out;
+			-webkit-animation: "___x_alert_show" 0.2s ease-out;
+			animation: "___x_alert_show" 0.2s ease-out;
 		}
 		@at-root {
-			@-webkit-keyframes "___x_alertShow" {
-				0% {-webkit-transform: scale(1.4,1.4); opacity: 0;}
-				75% {-webkit-transform: scale(0.95,0.95); opacity: 1;}
-				100% {-webkit-transform: scale(1,1); opacity: 1;}
+			@-webkit-keyframes "___x_alert_show" {
+				0% { transform: scale(1.4,1.4); opacity: 0;}
+				75% { transform: scale(0.95,0.95); opacity: 1;}
+				100% { transform: scale(1,1); opacity: 1;}
 			}
 		}
 	}
 	&--hide {
 		opacity: 0;
-		-webkit-transition: opacity 0.15s ease-out;
+		transition: opacity 0.15s ease-out;
 		.x-alert__inner {
-			-webkit-transform: scale(0.95,0.95);
-			-webkit-transition: -webkit-transform 0.15s ease-out;
+			transform: scale(0.95,0.95);
+			transition: all 0.15s ease-out;
 		}
 	}
 }

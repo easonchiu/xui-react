@@ -63,6 +63,12 @@ const Loading = (ns, cb) => {
     }, 'loading');
 }
 
+const Toast = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Toast').default);
+    }, 'toast');
+}
+
 const Routes = (
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }></Route>
@@ -75,6 +81,7 @@ const Routes = (
         <Route path="/icon" getComponent={ Icon }></Route>
         <Route path="/alert" getComponent={ Alert }></Route>
         <Route path="/loading" getComponent={ Loading }></Route>
+        <Route path="/toast" getComponent={ Toast }></Route>
 		<Route path="/switch" getComponent={ Switch }></Route>
 		<Redirect from="*" to="/" />
 	</Router>
@@ -86,13 +93,3 @@ export default Routes;
 
 
 
-
-
-
-
-// https://github.com/ruanyf/react-demos/tree/v15.0
-// http://www.cnblogs.com/yongjz/p/5356914.html
-
-// http://www.ruanyifeng.com/blog/2016/05/react_router.html?utm_source=tool.lu
-
-// http://www.cnblogs.com/BestMePeng/p/React_Router.html

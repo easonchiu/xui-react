@@ -417,12 +417,24 @@ Alert.show({
 
 
 ## Loading [Demo范例](https://easonchiu.github.io/xui-react/dist/#/loading)
-### 基本用法：
+### 基本用法
 ```
 Loading.show(); // 显示
 Loading.hide(); // 隐藏
 ```
 
+
+## Toast [Demo范例](https://easonchiu.github.io/xui-react/dist/#/toast)
+### 基本用法
+```
+Toast.show('提示文字');
+```
+### 扩展
+修改显示时长：  
+显示一个5秒时长的提示框
+```
+Toast.show('提示文字', 5000);
+```
 
 
 ## Rmb [Demo范例](https://easonchiu.github.io/xui-react/dist/#/cell)

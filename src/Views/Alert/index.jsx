@@ -1,5 +1,4 @@
 import './style'
-
 import React, { Component } from 'react'
 
 import Layout from '../../Xui/Components/Layout'
