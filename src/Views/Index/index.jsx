@@ -35,7 +35,7 @@ class Index extends Component {
 					start={ <a onClick={ this.props.router.goBack }><Icon name="back" />返回</a> } />
 
 				<Layout.Body>
-					
+
 					<Cell.Title title="UI List" />
 
 					<Cell>

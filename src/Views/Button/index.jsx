@@ -61,8 +61,8 @@ class Mine extends Component {
 							body={
 								<Button.Group merge>
 									<Button>按钮A</Button>
-									<Button>按钮B</Button>
-									<Button type="primary">按钮C</Button>
+									<Button type="primary">按钮B</Button>
+									<Button>按钮C</Button>
 								</Button.Group>
 							} />
 
