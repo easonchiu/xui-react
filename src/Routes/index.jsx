@@ -69,6 +69,12 @@ const Toast = (ns, cb) => {
     }, 'toast');
 }
 
+const Test = (ns, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('../Views/Test').default);
+    }, 'test');
+}
+
 const Routes = (
 	<Router history={ hashHistory }>
 		<Route path="/" component={ AppIndex }></Route>
@@ -82,7 +88,8 @@ const Routes = (
         <Route path="/alert" getComponent={ Alert }></Route>
         <Route path="/loading" getComponent={ Loading }></Route>
         <Route path="/toast" getComponent={ Toast }></Route>
-		<Route path="/switch" getComponent={ Switch }></Route>
+        <Route path="/switch" getComponent={ Switch }></Route>
+		<Route path="/test" getComponent={ Test }></Route>
 		<Redirect from="*" to="/" />
 	</Router>
 );

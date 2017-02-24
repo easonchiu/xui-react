@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+$parent: 'view-test';
+
+.#{$parent} {
+	.tabs {
+		a {
+			display: inline-block;
+			border: 1px solid #f00;
+			padding: 10px;
+			&.active {
+				background-color: #333;
+				color: #fff;
+			}
+		}
+	}
+}
