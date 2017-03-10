@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var htmlWebpackPlugin = require('html-webpack-plugin');
 var extractTextPlugin = require("extract-text-webpack-plugin");
+var babelpolyfill = require("babel-polyfill");
 
 var ROOT_PATH = path.resolve(__dirname, '../');
 var SRC_PATH = path.resolve(ROOT_PATH, 'src');
