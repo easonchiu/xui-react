@@ -1,8 +1,7 @@
-import './style'
+import styles from './style'
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import classnames from 'classnames'
-
 
 class Cell extends Component {
 	constructor(props) {

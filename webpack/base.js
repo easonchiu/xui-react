@@ -123,11 +123,11 @@ module.exports = function makeWebpackConfig(){
 			// },
 			{
 				test: /\.scss$/,
-				loader: extractTextPlugin.extract('style', 'css?minimize!sass?sourceMap')
+				loader: 'style!css-loader!sass-loader?sourceMap'
 			},
 			{
 				test: /\.css$/,
-				loader: extractTextPlugin.extract('style', 'css?minimize')
+				loader: 'style!css-loader'
 			},
 			config.urlLoader,
 			config.fileLoader,

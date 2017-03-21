@@ -7,6 +7,7 @@ import Icon from '../../Xui/Components/Icon'
 import Button from '../../Xui/Components/Button'
 import Alert from '../../Xui/Components/Alert'
 
+
 class ViewAlert extends Component {
 	constructor(props) {
 		super(props);
