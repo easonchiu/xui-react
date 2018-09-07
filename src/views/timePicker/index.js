@@ -9,7 +9,7 @@ class View extends PureComponent {
     super(props)
 
     this.state = {
-      visible: true,
+      visible: false,
 
       // 单时间选择
       picker: {
