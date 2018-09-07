@@ -30,7 +30,7 @@ class View extends PureComponent {
           <br />
           <br />
 
-          <Spin text="Loading..." />
+          <Spin text="加载中" />
 
         </Layout.Body>
       </Layout>

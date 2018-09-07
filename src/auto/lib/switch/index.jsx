@@ -31,7 +31,8 @@ const Switch = props => {
       {
         io ? <sup>{props.o}</sup> : null
       }
-      <em></em>
+      <em />
+      <span className="tracker" />
     </A>
   )
 }
