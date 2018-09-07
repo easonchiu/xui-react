@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.view-index {
+  .list {
+    p {
+      display: block;
+      font-size: 30px;
+      color: #333;
+      margin-right: 10px;
+    }
+    span {
+      display: block;
+      font-size: 28px;
+      color: #999;
+    }
+  }
+}

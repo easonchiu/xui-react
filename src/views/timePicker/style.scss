@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.time-popup {
+  .x-modal__inner {
+    height: auto !important;
+  }
+  .btns {
+    padding: 20px 0 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #b4b4b4; /*no*/
+    .x-button {
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}

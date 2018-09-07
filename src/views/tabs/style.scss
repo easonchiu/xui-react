@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+.view-tabs {
+    .demo {
+        margin: 0 -40px;
+        background: #fff;
+        border-top: 1px solid #e6e6e6; /*no*/
+        border-bottom: 1px solid #e6e6e6; /*no*/
+        .content {
+            border-top: 1px solid #e6e6e6; /*no*/
+            padding: 30px 40px;
+        }
+    }
+}
